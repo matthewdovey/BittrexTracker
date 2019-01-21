@@ -10,6 +10,16 @@
 		9C8F8FB421F67E120034DF4A /* BittrexTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F8FAA21F67E120034DF4A /* BittrexTracker.framework */; };
 		9C8F8FB921F67E120034DF4A /* BittrexTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FB821F67E120034DF4A /* BittrexTrackerTests.swift */; };
 		9C8F8FBB21F67E120034DF4A /* BittrexTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */; };
+		9C8F8FC921F682B10034DF4A /* CoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* CoinRequest.swift */; };
+		9C8F8FCB21F682EB0034DF4A /* BalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* BalanceRequest.swift */; };
+		9C8F8FCD21F682FE0034DF4A /* DepositHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCC21F682FE0034DF4A /* DepositHistoryRequest.swift */; };
+		9C8F8FCF21F6830D0034DF4A /* MarketHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCE21F6830D0034DF4A /* MarketHistoryRequest.swift */; };
+		9C8F8FD121F6831A0034DF4A /* MarketsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* MarketsRequest.swift */; };
+		9C8F8FD321F6836E0034DF4A /* OrderHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD221F6836E0034DF4A /* OrderHistoryRequest.swift */; };
+		9C8F8FD521F683970034DF4A /* TickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD421F683970034DF4A /* TickerRequest.swift */; };
+		9C8F8FD721F683A90034DF4A /* WithdrawalHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD621F683A90034DF4A /* WithdrawalHistoryRequest.swift */; };
+		9C8F8FD921F683EC0034DF4A /* MarketSummaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD821F683EC0034DF4A /* MarketSummaryRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +39,16 @@
 		9C8F8FB321F67E120034DF4A /* BittrexTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BittrexTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8F8FB821F67E120034DF4A /* BittrexTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexTrackerTests.swift; sourceTree = "<group>"; };
 		9C8F8FBA21F67E120034DF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollector.swift; sourceTree = "<group>"; };
+		9C8F8FC821F682B10034DF4A /* CoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRequest.swift; sourceTree = "<group>"; };
+		9C8F8FCA21F682EB0034DF4A /* BalanceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRequest.swift; sourceTree = "<group>"; };
+		9C8F8FCC21F682FE0034DF4A /* DepositHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositHistoryRequest.swift; sourceTree = "<group>"; };
+		9C8F8FCE21F6830D0034DF4A /* MarketHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketHistoryRequest.swift; sourceTree = "<group>"; };
+		9C8F8FD021F6831A0034DF4A /* MarketsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRequest.swift; sourceTree = "<group>"; };
+		9C8F8FD221F6836E0034DF4A /* OrderHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryRequest.swift; sourceTree = "<group>"; };
+		9C8F8FD421F683970034DF4A /* TickerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRequest.swift; sourceTree = "<group>"; };
+		9C8F8FD621F683A90034DF4A /* WithdrawalHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalHistoryRequest.swift; sourceTree = "<group>"; };
+		9C8F8FD821F683EC0034DF4A /* MarketSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSummaryRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +91,8 @@
 		9C8F8FAC21F67E120034DF4A /* BittrexTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9C8F8FC521F681A60034DF4A /* Collector */,
+				9C8F8FC421F6817D0034DF4A /* Requests */,
 				9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */,
 				9C8F8FAE21F67E120034DF4A /* Info.plist */,
 			);
@@ -84,6 +106,30 @@
 				9C8F8FBA21F67E120034DF4A /* Info.plist */,
 			);
 			path = BittrexTrackerTests;
+			sourceTree = "<group>";
+		};
+		9C8F8FC421F6817D0034DF4A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FC821F682B10034DF4A /* CoinRequest.swift */,
+				9C8F8FD021F6831A0034DF4A /* MarketsRequest.swift */,
+				9C8F8FCA21F682EB0034DF4A /* BalanceRequest.swift */,
+				9C8F8FCC21F682FE0034DF4A /* DepositHistoryRequest.swift */,
+				9C8F8FCE21F6830D0034DF4A /* MarketHistoryRequest.swift */,
+				9C8F8FD221F6836E0034DF4A /* OrderHistoryRequest.swift */,
+				9C8F8FD421F683970034DF4A /* TickerRequest.swift */,
+				9C8F8FD621F683A90034DF4A /* WithdrawalHistoryRequest.swift */,
+				9C8F8FD821F683EC0034DF4A /* MarketSummaryRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9C8F8FC521F681A60034DF4A /* Collector */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */,
+			);
+			path = Collector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +194,7 @@
 				TargetAttributes = {
 					9C8F8FA921F67E120034DF4A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					9C8F8FB221F67E120034DF4A = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +241,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8F8FD321F6836E0034DF4A /* OrderHistoryRequest.swift in Sources */,
+				9C8F8FD721F683A90034DF4A /* WithdrawalHistoryRequest.swift in Sources */,
+				9C8F8FD921F683EC0034DF4A /* MarketSummaryRequest.swift in Sources */,
+				9C8F8FD521F683970034DF4A /* TickerRequest.swift in Sources */,
+				9C8F8FC921F682B10034DF4A /* CoinRequest.swift in Sources */,
+				9C8F8FCD21F682FE0034DF4A /* DepositHistoryRequest.swift in Sources */,
+				9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */,
+				9C8F8FD121F6831A0034DF4A /* MarketsRequest.swift in Sources */,
+				9C8F8FCB21F682EB0034DF4A /* BalanceRequest.swift in Sources */,
+				9C8F8FCF21F6830D0034DF4A /* MarketHistoryRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +398,7 @@
 		9C8F8FBF21F67E120034DF4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -359,6 +417,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.follow.BittrexTracker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +426,7 @@
 		9C8F8FC021F67E120034DF4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -393,6 +453,7 @@
 		9C8F8FC221F67E120034DF4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34DLF95UH4;
 				INFOPLIST_FILE = BittrexTrackerTests/Info.plist;
@@ -411,6 +472,7 @@
 		9C8F8FC321F67E120034DF4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34DLF95UH4;
 				INFOPLIST_FILE = BittrexTrackerTests/Info.plist;
