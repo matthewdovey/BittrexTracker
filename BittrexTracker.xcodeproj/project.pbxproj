@@ -24,6 +24,16 @@
 		9C8F8FD521F683970034DF4A /* TickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD421F683970034DF4A /* TickerRequest.swift */; };
 		9C8F8FD721F683A90034DF4A /* WithdrawalHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD621F683A90034DF4A /* WithdrawalHistoryRequest.swift */; };
 		9C8F8FD921F683EC0034DF4A /* MarketSummaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD821F683EC0034DF4A /* MarketSummaryRequest.swift */; };
+		9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */; };
+		9C8F8FDC21F7C9AC0034DF4A /* CoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* CoinRequest.swift */; };
+		9C8F8FDD21F7C9AE0034DF4A /* MarketsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* MarketsRequest.swift */; };
+		9C8F8FDE21F7C9B10034DF4A /* BalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* BalanceRequest.swift */; };
+		9C8F8FDF21F7C9B30034DF4A /* DepositHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCC21F682FE0034DF4A /* DepositHistoryRequest.swift */; };
+		9C8F8FE021F7C9B50034DF4A /* MarketHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCE21F6830D0034DF4A /* MarketHistoryRequest.swift */; };
+		9C8F8FE121F7C9B70034DF4A /* OrderHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD221F6836E0034DF4A /* OrderHistoryRequest.swift */; };
+		9C8F8FE221F7C9B90034DF4A /* TickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD421F683970034DF4A /* TickerRequest.swift */; };
+		9C8F8FE321F7C9BC0034DF4A /* WithdrawalHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD621F683A90034DF4A /* WithdrawalHistoryRequest.swift */; };
+		9C8F8FE421F7C9BE0034DF4A /* MarketSummaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD821F683EC0034DF4A /* MarketSummaryRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,9 +296,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8F8FE221F7C9B90034DF4A /* TickerRequest.swift in Sources */,
 				9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */,
+				9C8F8FDF21F7C9B30034DF4A /* DepositHistoryRequest.swift in Sources */,
+				9C8F8FDD21F7C9AE0034DF4A /* MarketsRequest.swift in Sources */,
+				9C8F8FDE21F7C9B10034DF4A /* BalanceRequest.swift in Sources */,
 				9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */,
+				9C8F8FE421F7C9BE0034DF4A /* MarketSummaryRequest.swift in Sources */,
+				9C8F8FE021F7C9B50034DF4A /* MarketHistoryRequest.swift in Sources */,
+				9C8F8FE321F7C9BC0034DF4A /* WithdrawalHistoryRequest.swift in Sources */,
+				9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */,
+				9C8F8FE121F7C9B70034DF4A /* OrderHistoryRequest.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
+				9C8F8FDC21F7C9AC0034DF4A /* CoinRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
