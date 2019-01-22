@@ -38,7 +38,7 @@ final class BittrexCollector {
   private var apiSecretBytes: [UInt8]?
   
   
-  init(session: URLSession = .shared, apiKey: String, apiSecret: String) {
+  init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.apiKey = apiKey
     self.apiSecret = apiSecret
