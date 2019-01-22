@@ -67,7 +67,6 @@ final class BittrexCollector {
     final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
         let url = URL(string: baseURL+apiVersion+marketsURL)
         let task = session.dataTask(with: url!) { (data, response, error) in
-            print(data)
             if error != nil {
                 print("Error encountered when getting markets: \(String(describing: error))")
             } else {
