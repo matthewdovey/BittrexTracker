@@ -9,19 +9,19 @@
 import Foundation
 
 struct TickerRequest: Decodable {
-    let success: Bool?
-    let message: String?
-    let result: TickerResult?
+  let success: Bool?
+  let message: String?
+  let result: TickerResult?
 }
 
 struct TickerResult: Decodable {
-    let bid: Float?
-    let ask: Float?
-    let last: Float?
-    
-    private enum CodingKeys: String, CodingKey {
-        case bid = "Bid"
-        case ask = "Ask"
-        case last = "Last"
-    }
+  let bid: Float?
+  let ask: Float?
+  let last: Float?
+  
+  private enum CodingKeys: String, CodingKey {
+    case bid = "Bid"
+    case ask = "Ask"
+    case last = "Last"
+  }
 }

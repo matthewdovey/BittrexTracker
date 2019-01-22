@@ -9,27 +9,27 @@
 import Foundation
 
 struct MarketHistoryRequest: Decodable {
-    let success: Bool?
-    let message: String?
-    let result: [MarketHistoryResult]?
+  let success: Bool?
+  let message: String?
+  let result: [MarketHistoryResult]?
 }
 
 struct MarketHistoryResult: Decodable {
-    let id: String?
-    let timeStamp: String?
-    let quantity: Double?
-    let price: Double?
-    let total: Double?
-    let fillType: String?
-    let orderType: String?
-    
-    private enum CodingKeys: String, CodingKey {
-        case id = "ID"
-        case timeStamp = "TimeStamp"
-        case quantity = "Quantity"
-        case price = "Price"
-        case total = "Total"
-        case fillType = "FillType"
-        case orderType = "OrderType"
-    }
+  let id: String?
+  let timeStamp: String?
+  let quantity: Double?
+  let price: Double?
+  let total: Double?
+  let fillType: String?
+  let orderType: String?
+  
+  private enum CodingKeys: String, CodingKey {
+    case id = "ID"
+    case timeStamp = "TimeStamp"
+    case quantity = "Quantity"
+    case price = "Price"
+    case total = "Total"
+    case fillType = "FillType"
+    case orderType = "OrderType"
+  }
 }

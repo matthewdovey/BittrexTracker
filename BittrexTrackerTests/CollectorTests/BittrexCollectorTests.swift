@@ -10,9 +10,9 @@ import Foundation
 import XCTest
 
 class BittrexCollectorTests : XCTestCase {
-    
-    override func setUp() {
-        //TODO: setup properties and objects for tests
-    }
-    
+  
+  override func setUp() {
+    //TODO: setup properties and objects for tests
+  }
+  
 }
