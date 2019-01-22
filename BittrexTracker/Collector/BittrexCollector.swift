@@ -9,7 +9,6 @@
 import Foundation
 
 final class BittrexCollector {
-    
     // URL constants (public requests)
     private let baseURL = "https://bittrex.com/api/"
     private let apiVersion = "v1.1"
@@ -33,22 +32,15 @@ final class BittrexCollector {
     private let apiSecretParam = "&apisecret"
     private let signHeader = "apisign"
     
-    private let session = URLSession.shared
-    
-    private var apiKey: String?
-    private var apiSecret: String?
+    private let session: URLSession
+    private let apiKey: String
+    private let apiSecret: String
     private var apiSecretBytes: [UInt8]?
+  
     
-    static var api: BittrexCollector = {
-        let instance = BittrexCollector()
-        return instance
-    } ()
-    
-    public func storeApiKey(apiKey: String) {
+    init(session: URLSession = .shared, apiKey: String, apiSecret: String) {
+        self.session = session
         self.apiKey = apiKey
-    }
-    
-    public func storeApiSecret(apiSecret: String) {
         self.apiSecret = apiSecret
     }
     
