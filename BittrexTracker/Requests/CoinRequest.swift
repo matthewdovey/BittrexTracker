@@ -8,12 +8,16 @@
 
 import Foundation
 
+
+/// Coin Request struct to hold request state and result
 struct CoinRequest: Decodable {
     let success: Bool?
     let message: String?
     let result: [CoinResult]?
 }
 
+
+/// The data structure for the result of the Coin Request
 struct CoinResult: Decodable {
     let currency: String
     let currencyLong: String

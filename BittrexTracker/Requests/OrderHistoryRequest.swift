@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Order History Request struct to hold request state and result
 struct OrderHistoryRequest: Decodable {
     let success: Bool?
     let message: String?
     let result: [OrderHistoryResult]?
 }
 
+/// The data structure for the result of the Order History Request
 struct OrderHistoryResult: Decodable {
     let orderUuid: String?
     let exchange: String?
