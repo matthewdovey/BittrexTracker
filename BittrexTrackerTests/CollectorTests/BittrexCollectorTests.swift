@@ -117,7 +117,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getMarketSummaries() { (results, error) in
       XCTAssertTrue(results?.success == true)
       XCTAssertFalse(results?.result?.isEmpty == true)
-      print("summaries data exists: \(results?.result?.isEmpty == true)")
     }
   }
   
@@ -141,7 +140,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getSummaryForMarket(market: "") { (results, error) in
       XCTAssertTrue(results?.success == true)
       XCTAssertFalse(results?.result?.isEmpty == true)
-      print("summary data exists: \(results?.result?.isEmpty == true)")
     }
   }
   
@@ -165,7 +163,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getMarketHistoryFor(market: "") { (results, error) in
       XCTAssertTrue(results?.success == true)
       XCTAssertFalse(results?.result?.isEmpty == true)
-      print("history data exists: \(results?.result?.isEmpty == true)")
     }
   }
   
@@ -189,7 +186,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getBalances(apiKey: "btc") { (results, error) in
       XCTAssertTrue(results?.success == true)
       XCTAssertFalse(results?.result?.isEmpty == true)
-      print("balances data exists: \(results?.result?.isEmpty == true)")
     }
   }
   
@@ -213,7 +209,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getBalanceFor(apiKey: "", currency: "") { (results, error) in
       XCTAssertTrue(results?.success == true)
       XCTAssertFalse(results?.result?.isEmpty == true)
-      print("balance data exists: \(results?.result?.isEmpty == true)")
     }
   }
   
