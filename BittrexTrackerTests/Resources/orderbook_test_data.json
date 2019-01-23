@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "message": "''",
+  "result": [
+    {
+      "buy": [
+        {
+          "quantity": 12.37,
+          "rate": 32.55412402
+        }
+      ],
+      "sell": [
+        {
+          "quantity": 12.37,
+          "rate": 32.55412402
+        }
+      ]
+    }
+  ]
+}

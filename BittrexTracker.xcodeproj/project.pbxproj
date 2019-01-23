@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C7F892E21F8AC4900022CE7 /* market_history_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7F892D21F8AC4800022CE7 /* market_history_test_data.json */; };
+		9C7F893021F8AC5000022CE7 /* market_summaries_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7F892F21F8AC5000022CE7 /* market_summaries_test_data.json */; };
+		9C7F893221F8AC5500022CE7 /* markets_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7F893121F8AC5500022CE7 /* markets_test_data.json */; };
+		9C7F893421F8AC5A00022CE7 /* orderbook_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7F893321F8AC5A00022CE7 /* orderbook_test_data.json */; };
+		9C7F893621F8AC5E00022CE7 /* summary_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7F893521F8AC5E00022CE7 /* summary_test_data.json */; };
+		9C7F893821F8AC6200022CE7 /* ticker_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7F893721F8AC6200022CE7 /* ticker_test_data.json */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */; };
@@ -47,6 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C7F892D21F8AC4800022CE7 /* market_history_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_history_test_data.json; sourceTree = "<group>"; };
+		9C7F892F21F8AC5000022CE7 /* market_summaries_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_summaries_test_data.json; sourceTree = "<group>"; };
+		9C7F893121F8AC5500022CE7 /* markets_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = markets_test_data.json; sourceTree = "<group>"; };
+		9C7F893321F8AC5A00022CE7 /* orderbook_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderbook_test_data.json; sourceTree = "<group>"; };
+		9C7F893521F8AC5E00022CE7 /* summary_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summary_test_data.json; sourceTree = "<group>"; };
+		9C7F893721F8AC6200022CE7 /* ticker_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticker_test_data.json; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollectorTests.swift; sourceTree = "<group>"; };
@@ -99,6 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				9C85C05A21F7986B00E9259D /* currency_test_data.json */,
+				9C7F892D21F8AC4800022CE7 /* market_history_test_data.json */,
+				9C7F892F21F8AC5000022CE7 /* market_summaries_test_data.json */,
+				9C7F893121F8AC5500022CE7 /* markets_test_data.json */,
+				9C7F893321F8AC5A00022CE7 /* orderbook_test_data.json */,
+				9C7F893521F8AC5E00022CE7 /* summary_test_data.json */,
+				9C7F893721F8AC6200022CE7 /* ticker_test_data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,7 +286,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7F892E21F8AC4900022CE7 /* market_history_test_data.json in Resources */,
+				9C7F893221F8AC5500022CE7 /* markets_test_data.json in Resources */,
 				9C85C05B21F7986B00E9259D /* currency_test_data.json in Resources */,
+				9C7F893021F8AC5000022CE7 /* market_summaries_test_data.json in Resources */,
+				9C7F893621F8AC5E00022CE7 /* summary_test_data.json in Resources */,
+				9C7F893821F8AC6200022CE7 /* ticker_test_data.json in Resources */,
+				9C7F893421F8AC5A00022CE7 /* orderbook_test_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
