@@ -83,7 +83,7 @@ final class BittrexCollector {
     task.resume()
   }
   
-  final func getTickerFor(market: String, completion: @escaping ((TickerResult) -> Void)) {
+  final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+tickerURL+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -182,7 +182,7 @@ final class BittrexCollector {
     task.resume()
   }
   
-  final func getBalanceFor(apiKey: String, currency: String, completion: @escaping ((BalanceResult) -> Void)) {
+  final func getBalanceFor(apiKey: String, currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+balancesURL+currency)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
