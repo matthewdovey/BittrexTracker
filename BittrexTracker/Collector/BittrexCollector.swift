@@ -170,7 +170,7 @@ final class BittrexCollector {
   
   // Account requests
   final func getBalances(apiKey: String, completion: @escaping ((BalanceRequest?, Error?) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+balancesURL+apiKey)
+    let url = URL(string: baseURL+apiVersion+balancesURL+apiKeyParam+apiKey)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         print("Error encountered when getting balances: \(String(describing: error))")
