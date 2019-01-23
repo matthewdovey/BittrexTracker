@@ -42,23 +42,23 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    
-    collector.getCurrencies() { results in
-      XCTAssertFalse(results.result?.isEmpty == true)
+    print("Currency Error: \(session.error)")
+    collector.getCurrencies() { (results, error) in
+      //XCTAssertFalse(results.result?.isEmpty == true)
     }
   }
   
   func testGetCurrenciesReturnsSuccess() {
     session.error = nil
-    collector.getCurrencies() { results in
-      XCTAssertTrue(results.success == true)
+    collector.getCurrencies() { (results, error) in
+      //XCTAssertTrue(results.success == true)
     }
   }
   
   func testGetCurrenciesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getCurrencies() { results in
-      XCTAssertFalse(results.success == true)
+    collector.getCurrencies() { (results, error) in
+      //XCTAssertFalse(results.success == true)
     }
   }
   
@@ -71,23 +71,23 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    
-    collector.getMarkets() { results in
-      XCTAssertFalse(results.result?.isEmpty == true)
+    print("Markets Error: \(session.error)")
+    collector.getMarkets() { (results, error) in
+      //XCTAssertFalse(results.result?.isEmpty == true)
     }
   }
   
   func testGetMarketsReturnsSuccess() {
     session.error = nil
-    collector.getMarkets() { results in
-      XCTAssertFalse(results.success == true)
+    collector.getMarkets() { (results, error) in
+      XCTAssertTrue(error == nil)
     }
   }
   
   func testGetMarketsReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getMarkets() { results in
-      XCTAssertTrue(results.success == true)
+    collector.getMarkets() { (results, error) in
+      XCTAssertTrue(error != nil)
     }
   }
   
@@ -100,20 +100,24 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    //TODO: check result
+    print("Ticker Error: \(session.error)")
+    collector.getTickerFor(market: "") { (results, error) in
+      XCTAssertTrue(results.result != nil)
+    }
   }
   
   func testGetTickerForReturnsSuccess() {
     session.error = nil
-    
-    collector.getTickerFor(market: "btc") { result in
-      //XCTAssertTrue(results == true)
+    collector.getTickerFor(market: "") { (results, error) in
+      XCTAssertTrue(result.success == true)
     }
   }
   
   func testGetTickerForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    // TODO: check for failure
+    collector.getTickerFor(market: "") { (results, error) in
+      XCTAssertFalse(result.success == true)
+    }
   }
   
   // MARK: getMarketSummaries tests
@@ -125,19 +129,21 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    //TODO: check result
+    collector.getMarketSummaries() { (results, error) in
+      XCTAssertFalse(results.result?.isEmpty == true)
+    }
   }
   
   func testGetMarketSummariesReturnsSuccess() {
     session.error = nil
-    collector.getMarketSummaries() { results in
+    collector.getMarketSummaries() { (results, error) in
       XCTAssertTrue(results.success == true)
     }
   }
   
   func testGetMarketSummariesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getMarketSummaries() { results in
+    collector.getMarketSummaries() { (results, error) in
       XCTAssertFalse(results.success == true)
     }
   }
@@ -151,17 +157,23 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    // TODO: check result
+    collector.getSummaryForMarket(market: "") { (results, error) in
+      XCTAssertFalse(results.result?.isEmpty == true)
+    }
   }
   
   func testGetSummaryForMarketReturnsSuccess() {
     session.error = nil
-    // TODO: check for success
+    collector.getSummaryForMarket(market: "") { (results, error) in
+      XCTAssertTrue(results.success == true)
+    }
   }
   
   func testGetSummaryForMarketReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    // TODO: check for failure
+    collector.getSummaryForMarket(market: "") { (results, error) in
+      XCTAssertFalse(results.success == true)
+    }
   }
   
   // MARK: getMarketHistoryFor tests
@@ -173,17 +185,23 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    // TODO: check result
+    collector.getMarketHistoryFor(market: "") { (results, error) in
+      XCTAssertFalse(results.result?.isEmpty == true)
+    }
   }
   
   func testGetMarketHistoryForReturnsSuccess() {
     session.error = nil
-    // TODO: check for success
+    collector.getMarketHistoryFor(market: "") { (results, error) in
+      XCTAssertTrue(error == nil)
+    }
   }
   
   func testGetMarketHistoryForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    // TODO: check for failure
+    collector.getMarketHistoryFor(market: "") { (results, error) in
+      XCTAssertTrue(error != nil)
+    }
   }
   
   // MARK: getBalances tests
@@ -195,17 +213,26 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    // TODO: check result
+    print("Balances Error: \(session.error)")
+    collector.getBalances(apiKey: "") { (results, error) in
+      XCTAssertFalse(results.result?.isEmpty == true)
+    }
   }
   
   func testGetBalancesReturnsSuccess() {
     session.error = nil
-    // TODO: check for success
+    collector.getBalances(apiKey: "") { (results, error) in
+      XCTAssertTrue(error == nil)
+    }
   }
   
   func testGetBalancesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    // TODO: check for failure
+    print("collector")
+    print(collector)
+    collector.getBalances(apiKey: "") { (results, error) in
+      XCTAssertTrue(error != nil)
+    }
   }
   
   // MARK: getBalanceFor tests
@@ -217,16 +244,22 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    // TODO: check result
+    collector.getBalanceFor(apiKey: "", currency: "") { (results, error) in
+      
+    }
   }
   
   func testGetBalanceForReturnsSuccess() {
     session.error = nil
-    // TODO: check for success
+    collector.getBalanceFor(apiKey: "", currency: "") { (results, error) in
+      
+    }
   }
   
   func testGetBalanceForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    // TODO: check for failure
+    collector.getBalanceFor(apiKey: "", currency: "") { (results, error) in
+      
+    }
   }
 }
