@@ -53,6 +53,7 @@ class BittrexCollectorTests : XCTestCase {
     session.error = URLError(.cannotParseResponse)
     collector.getCurrencies() { (results, error) in
       XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -76,6 +77,7 @@ class BittrexCollectorTests : XCTestCase {
     session.error = URLError(.cannotParseResponse)
     collector.getMarkets() { (results, error) in
       XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -99,6 +101,7 @@ class BittrexCollectorTests : XCTestCase {
     session.error = URLError(.cannotParseResponse)
     collector.getTickerFor(market: "") { (result, error) in
       XCTAssertFalse(result?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -122,6 +125,7 @@ class BittrexCollectorTests : XCTestCase {
     session.error = URLError(.cannotParseResponse)
     collector.getMarketSummaries() { (results, error) in
       XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -145,6 +149,7 @@ class BittrexCollectorTests : XCTestCase {
     session.error = URLError(.cannotParseResponse)
     collector.getSummaryForMarket(market: "") { (results, error) in
       XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -167,7 +172,8 @@ class BittrexCollectorTests : XCTestCase {
   func testGetMarketHistoryForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
     collector.getMarketHistoryFor(market: "") { (results, error) in
-      XCTAssertTrue(error != nil)
+      XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -190,7 +196,8 @@ class BittrexCollectorTests : XCTestCase {
   func testGetBalancesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
     collector.getBalances(apiKey: "") { (results, error) in
-      XCTAssertTrue(error != nil)
+      XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
   
@@ -214,6 +221,7 @@ class BittrexCollectorTests : XCTestCase {
     session.error = URLError(.cannotParseResponse)
     collector.getBalanceFor(apiKey: "", currency: "") { (results, error) in
       XCTAssertFalse(results?.success == true)
+      XCTAssertNotNil(error)
     }
   }
 }
