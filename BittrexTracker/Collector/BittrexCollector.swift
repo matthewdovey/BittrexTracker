@@ -91,7 +91,7 @@ final class BittrexCollector {
       } else {
         if (data != nil) {
           do {
-            let ticker = try JSONDecoder().decode(TickerResult.self, from: data!)
+            let ticker = try JSONDecoder().decode(TickerRequest.self, from: data!)
             completion(ticker)
           } catch {
             print("Error decoding JSON: \(error)")
@@ -190,7 +190,7 @@ final class BittrexCollector {
       } else {
         if data != nil {
           do {
-            let balance = try JSONDecoder().decode(BalanceResult.self, from: data!)
+            let balance = try JSONDecoder().decode(BalanceRequest.self, from: data!)
             completion(balance)
           } catch {
             print("Error decoding JSON: \(error)")
