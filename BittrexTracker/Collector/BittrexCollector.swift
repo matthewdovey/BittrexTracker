@@ -54,7 +54,7 @@ final class BittrexCollector {
   
   /// Method to return all currencies listed on the exchange
   ///
-  /// - Parameter completion:
+  /// - Parameter completion: optionally returning a CoinRequest object and an error
   final func getCurrencies(completion: @escaping ((CoinRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+currenciesURL)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -77,7 +77,7 @@ final class BittrexCollector {
   
   /// Method to return all markets for currencies
   ///
-  /// - Parameter completion:
+  /// - Parameter completion: optionally returning a MarketRequest object and an Error
   final func getMarkets(completion: @escaping ((MarketsRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketsURL)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -101,8 +101,8 @@ final class BittrexCollector {
   /// Method to return ticker results for a specified currency
   ///
   /// - Parameters:
-  ///   - market:
-  ///   - completion:
+  ///   - market: the market to retreive data for
+  ///   - completion: optionally returning a TickerRequest object and an Error
   final func getTickerFor(market: String, completion: @escaping ((TickerRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+tickerURL+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -125,7 +125,7 @@ final class BittrexCollector {
   
   /// Method to return all market summaires
   ///
-  /// - Parameter completion:
+  /// - Parameter completion: optionally returning a MarkertSummaryRequest and an error
   final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketSummariesURL)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -152,8 +152,8 @@ final class BittrexCollector {
   /// Method to return a market summary for a specified currency
   ///
   /// - Parameters:
-  ///   - market:
-  ///   - completion:
+  ///   - market: the summary for a specific market
+  ///   - completion: optionally returning a MarketSummaryRequest object and an error
   final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketSummaryURL+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -177,8 +177,8 @@ final class BittrexCollector {
   /// Method to retrieve the market history for a specified currency
   ///
   /// - Parameters:
-  ///   - market:
-  ///   - completion:
+  ///   - market: the history for a specific market
+  ///   - completion: optionally returning a MarketHistoryRequest object and an error
   final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketHistoryUrl+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -202,8 +202,8 @@ final class BittrexCollector {
   /// Method to retrieve all balances for the users wallet
   ///
   /// - Parameters:
-  ///   - apiKey:
-  ///   - completion:
+  ///   - apiKey: the API key for the user's wallet
+  ///   - completion: optionally returning a BalanceRequest and an error
   final func getBalances(apiKey: String, completion: @escaping ((BalanceRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+balancesURL+apiKeyParam+apiKey)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -227,9 +227,9 @@ final class BittrexCollector {
   /// Method to retrieve the balance of a specified currency from the user's wallet
   ///
   /// - Parameters:
-  ///   - apiKey:
-  ///   - currency:
-  ///   - completion:
+  ///   - apiKey: the API key for the user's wallet
+  ///   - currency: the balance for a specific currency
+  ///   - completion: optionally returning a BalanceRequest object and an error
   final func getBalanceFor(apiKey: String, currency: String, completion: @escaping ((BalanceRequest?, Error?) -> Void)) {
     let url = URL(string: baseURL+apiVersion+balancesURL+currency)
     let task = session.dataTask(with: url!) { (data, response, error) in
