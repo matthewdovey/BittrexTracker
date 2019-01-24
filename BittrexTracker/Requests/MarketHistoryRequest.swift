@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Market History Request struct to hold request state and result
 struct MarketHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [MarketHistoryResult]?
 }
 
+/// The data structure for the result of the Market History Request
 struct MarketHistoryResult: Decodable {
   let id: String?
   let timeStamp: String?

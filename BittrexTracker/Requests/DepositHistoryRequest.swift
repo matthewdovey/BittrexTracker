@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Deposit History Request struct to hold request state and result
 struct DepositHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [DepositHistoryResult]?
 }
 
+/// The data structure for the result of the Deposit History Request
 struct DepositHistoryResult: Decodable {
   let paymentUuid: String?
   let currency: String?

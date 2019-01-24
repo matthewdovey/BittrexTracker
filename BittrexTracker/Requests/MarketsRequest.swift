@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Markets Request struct to hold request state and result
 struct MarketsRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [MarketsResult]?
 }
 
+/// The data structure for the result of the Markets Request
 struct MarketsResult: Decodable {
   let baseCurrency: String?
   let marketCurrencyLong: String?

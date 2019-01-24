@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Ticker Request struct to hold request state and result
 struct TickerRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: TickerResult?
 }
 
+/// The data structure for the result of the Ticker Request
 struct TickerResult: Decodable {
   let bid: Float?
   let ask: Float?
