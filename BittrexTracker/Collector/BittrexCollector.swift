@@ -32,15 +32,28 @@ final class BittrexCollector {
   private let apiSecretParam = "&apisecret"
   private let signHeader = "apisign"
   
-  private let session: URLSession
-  private let apiKey: String
-  private let apiSecret: String
+  private var session: URLSession
+  private var apiKey: String
+  private var apiSecret: String
   private var apiSecretBytes: [UInt8]?
   
+  static var api: BittrexCollector = {
+    let instance = BittrexCollector()
+    instance.session = URLSession.shared
+    return instance
+  }()
   
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.apiKey = apiKey
+    self.apiSecret = apiSecret
+  }
+  
+  public func setApiKey(apiKey: String) {
+    self.apiKey = apiKey
+  }
+  
+  public func setApiSecret(apiSecret: String) {
     self.apiSecret = apiSecret
   }
   
