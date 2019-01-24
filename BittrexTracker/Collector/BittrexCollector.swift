@@ -39,6 +39,7 @@ final class BittrexCollector {
   private var apiSecret: String
   private var apiSecretBytes: [UInt8]?
   
+  /// shared singleton instance of the Bittrex collector class
   static var api: BittrexCollector = {
     let instance = BittrexCollector()
     instance.session = URLSession.shared
@@ -57,10 +58,16 @@ final class BittrexCollector {
     self.apiSecret = apiSecret
   }
   
+  /// API key property setter
+  ///
+  /// - Parameter apiKey: the API key
   public func setApiKey(apiKey: String) {
     self.apiKey = apiKey
   }
   
+  /// API secret property setter
+  ///
+  /// - Parameter apiSecret: the API secret
   public func setApiSecret(apiSecret: String) {
     self.apiSecret = apiSecret
   }
