@@ -1,0 +1,105 @@
+{
+    "success": true,
+    "message": "",
+    "result": [{
+        "Currency": "BTC",
+        "CurrencyLong": "Bitcoin",
+        "MinConfirmation": 2,
+        "TxFee": 0.00100000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": "1N52wHoVR79PMDishab2XmRHsbekCdGquK",
+        "Notice": null
+    },
+    {
+        "Currency": "LTC",
+        "CurrencyLong": "Litecoin",
+        "MinConfirmation": 6,
+        "TxFee": 0.01000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": "LhyLNfBkoKshT7R8Pce6vkB9T2cP2o84hx",
+        "Notice": null
+    },
+    {
+        "Currency": "DOGE",
+        "CurrencyLong": "Dogecoin",
+        "MinConfirmation": 6,
+        "TxFee": 2.00000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": "D9GqmkGCpgtnXP7xMD78v9xfqeDkqBZBMT",
+        "Notice": null
+    },
+    {
+        "Currency": "VTC",
+        "CurrencyLong": "Vertcoin",
+        "MinConfirmation": 6,
+        "TxFee": 0.02000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": "VfukW89WKT9h3YjHZdSAAuGNVGELY31wyj",
+        "Notice": null
+    },
+    {
+        "Currency": "PPC",
+        "CurrencyLong": "Peercoin",
+        "MinConfirmation": 6,
+        "TxFee": 0.02000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": null,
+        "Notice": null
+    },
+    {
+        "Currency": "FTC",
+        "CurrencyLong": "Feathercoin",
+        "MinConfirmation": 20,
+        "TxFee": 0.20000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": null,
+        "Notice": null
+    },
+    {
+        "Currency": "RDD",
+        "CurrencyLong": "ReddCoin",
+        "MinConfirmation": 20,
+        "TxFee": 2.00000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": null,
+        "Notice": null
+    },
+    {
+        "Currency": "NXT",
+        "CurrencyLong": "NXT",
+        "MinConfirmation": 8,
+        "TxFee": 2.00000000,
+        "IsActive": true,
+        "CoinType": "NXT",
+        "BaseAddress": "NXT-97H4-KRWL-A53G-7GVRG",
+        "Notice": null
+    },
+    {
+        "Currency": "DASH",
+        "CurrencyLong": "Dash",
+        "MinConfirmation": 6,
+        "TxFee": 0.00200000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": "XxsTca1ATYAuZdCo6E8ePQQovGG5bvayeN",
+        "Notice": null
+    },
+    {
+        "Currency": "GRC",
+        "CurrencyLong": "GridCoin",
+        "MinConfirmation": 120,
+        "TxFee": 0.20000000,
+        "IsActive": true,
+        "CoinType": "BITCOIN",
+        "BaseAddress": null,
+        "Notice": null
+    }
+    ]
+}

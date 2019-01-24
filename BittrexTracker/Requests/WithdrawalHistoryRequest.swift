@@ -10,36 +10,36 @@ import Foundation
 
 /// Withdrawal History Request struct to hold request state and result
 struct WithdrawalHistoryRequest: Decodable {
-    let success: Bool?
-    let message: String?
-    let result: [WithdrawalHistoryResult]?
+  let success: Bool?
+  let message: String?
+  let result: [WithdrawalHistoryResult]?
 }
 
 /// The data structure for the result of the Withdrawal History Request
 struct WithdrawalHistoryResult: Decodable {
-    let paymentUuid: String?
-    let currency: String?
-    let amount: Double?
-    let address: String?
-    let opened: String?
-    let authorized: Bool?
-    let pendingPayments: Bool?
-    let txCost: Double?
-    let txId: String?
-    let canceled: Bool?
-    let invalidAddress: Bool?
-    
-    private enum CodingKeys: String, CodingKey {
-        case paymentUuid = "PaymentUUID"
-        case currency = "Currency"
-        case amount = "Amount"
-        case address = "Address"
-        case opened = "Opened"
-        case authorized = "Authorized"
-        case pendingPayments = "PendingPayments"
-        case txCost = "TxCost"
-        case txId = "TxID"
-        case canceled = "Canceled"
-        case invalidAddress = "InvalidAddress"
-    }
+  let paymentUuid: String?
+  let currency: String?
+  let amount: Double?
+  let address: String?
+  let opened: String?
+  let authorized: Bool?
+  let pendingPayments: Bool?
+  let txCost: Double?
+  let txId: String?
+  let canceled: Bool?
+  let invalidAddress: Bool?
+  
+  private enum CodingKeys: String, CodingKey {
+    case paymentUuid = "PaymentUUID"
+    case currency = "Currency"
+    case amount = "Amount"
+    case address = "Address"
+    case opened = "Opened"
+    case authorized = "Authorized"
+    case pendingPayments = "PendingPayments"
+    case txCost = "TxCost"
+    case txId = "TxID"
+    case canceled = "Canceled"
+    case invalidAddress = "InvalidAddress"
+  }
 }

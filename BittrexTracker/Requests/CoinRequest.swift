@@ -11,31 +11,31 @@ import Foundation
 
 /// Coin Request struct to hold request state and result
 struct CoinRequest: Decodable {
-    let success: Bool?
-    let message: String?
-    let result: [CoinResult]?
+  let success: Bool?
+  let message: String?
+  let result: [CoinResult]?
 }
 
 
 /// The data structure for the result of the Coin Request
 struct CoinResult: Decodable {
-    let currency: String
-    let currencyLong: String
-    let minConfirmation: Int64
-    let txFee: Double
-    let isActive: Bool
-    let coinType: String
-    let baseAddress: String?
-    var bittrexSummary: MarketSummaryResult?
-    
-    private enum CodingKeys: String, CodingKey {
-        case currency = "Currency"
-        case currencyLong = "CurrencyLong"
-        case minConfirmation = "MinConfirmation"
-        case txFee = "TxFee"
-        case isActive = "IsActive"
-        case coinType = "CoinType"
-        case baseAddress = "BaseAddress"
-        case bittrexSummary = "BittrexSummary"
-    }
+  let currency: String
+  let currencyLong: String
+  let minConfirmation: Int64
+  let txFee: Double
+  let isActive: Bool
+  let coinType: String
+  let baseAddress: String?
+  var bittrexSummary: MarketSummaryResult?
+  
+  private enum CodingKeys: String, CodingKey {
+    case currency = "Currency"
+    case currencyLong = "CurrencyLong"
+    case minConfirmation = "MinConfirmation"
+    case txFee = "TxFee"
+    case isActive = "IsActive"
+    case coinType = "CoinType"
+    case baseAddress = "BaseAddress"
+    case bittrexSummary = "BittrexSummary"
+  }
 }
