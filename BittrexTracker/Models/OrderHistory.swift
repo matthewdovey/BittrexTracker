@@ -12,11 +12,11 @@ import Foundation
 struct OrderHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [OrderHistoryResult]?
+  let result: [OrderHistory]?
 }
 
 /// The data structure for the result of the Order History Request
-struct OrderHistoryResult: Decodable {
+struct OrderHistory: Decodable {
   let orderUuid: String?
   let exchange: String?
   let timeStamp: String?

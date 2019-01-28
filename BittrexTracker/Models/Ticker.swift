@@ -12,11 +12,11 @@ import Foundation
 struct TickerRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: TickerResult?
+  let result: Ticker?
 }
 
 /// The data structure for the result of the Ticker Request
-struct TickerResult: Decodable {
+struct Ticker: Decodable {
   let bid: Float?
   let ask: Float?
   let last: Float?

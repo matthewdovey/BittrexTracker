@@ -12,11 +12,11 @@ import Foundation
 struct MarketHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [MarketHistoryResult]?
+  let result: [MarketHistory]?
 }
 
 /// The data structure for the result of the Market History Request
-struct MarketHistoryResult: Decodable {
+struct MarketHistory: Decodable {
   let id: String?
   let timeStamp: String?
   let quantity: Double?

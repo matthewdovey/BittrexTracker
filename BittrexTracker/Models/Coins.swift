@@ -13,12 +13,12 @@ import Foundation
 struct CoinRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [CoinResult]?
+  let result: [Coin]?
 }
 
 
 /// The data structure for the result of the Coin Request
-struct CoinResult: Decodable {
+struct Coin: Decodable {
   let currency: String
   let currencyLong: String
   let minConfirmation: Int64
@@ -26,7 +26,7 @@ struct CoinResult: Decodable {
   let isActive: Bool
   let coinType: String
   let baseAddress: String?
-  var bittrexSummary: MarketSummaryResult?
+  var bittrexSummary: MarketSummary?
   
   private enum CodingKeys: String, CodingKey {
     case currency = "Currency"

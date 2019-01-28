@@ -12,11 +12,11 @@ import Foundation
 struct WithdrawalHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [WithdrawalHistoryResult]?
+  let result: [WithdrawalHistory]?
 }
 
 /// The data structure for the result of the Withdrawal History Request
-struct WithdrawalHistoryResult: Decodable {
+struct WithdrawalHistory: Decodable {
   let paymentUuid: String?
   let currency: String?
   let amount: Double?
