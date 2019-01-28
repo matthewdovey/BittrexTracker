@@ -46,8 +46,6 @@
 		9C8F8FF421F90D940034DF4A /* orderbook_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */; };
 		9C8F8FF521F90D990034DF4A /* summary_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE821F90D430034DF4A /* summary_test_data.json */; };
 		9C8F8FF621F90DA30034DF4A /* ticker_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */; };
-		9CFC20A221FF39DF00CCAA98 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC20A121FF39DF00CCAA98 /* Request.swift */; };
-		9CFC20A421FF3BAB00CCAA98 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC20A321FF3BAB00CCAA98 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +84,6 @@
 		9C8F8FE821F90D430034DF4A /* summary_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summary_test_data.json; sourceTree = "<group>"; };
 		9C8F8FE921F90D430034DF4A /* markets_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = markets_test_data.json; sourceTree = "<group>"; };
 		9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticker_test_data.json; sourceTree = "<group>"; };
-		9CFC20A121FF39DF00CCAA98 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		9CFC20A321FF3BAB00CCAA98 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +148,6 @@
 		9C8F8FAC21F67E120034DF4A /* BittrexTracker */ = {
 			isa = PBXGroup;
 			children = (
-				9CFC20A021FF39CF00CCAA98 /* Requests */,
 				9C8F8FC521F681A60034DF4A /* Collector */,
 				9C8F8FC421F6817D0034DF4A /* Models */,
 				9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */,
@@ -185,7 +180,6 @@
 				9C8F8FD421F683970034DF4A /* Ticker.swift */,
 				9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */,
 				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
-				9CFC20A321FF3BAB00CCAA98 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,14 +190,6 @@
 				9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */,
 			);
 			path = Collector;
-			sourceTree = "<group>";
-		};
-		9CFC20A021FF39CF00CCAA98 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				9CFC20A121FF39DF00CCAA98 /* Request.swift */,
-			);
-			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +318,7 @@
 				9C8F8FD321F6836E0034DF4A /* OrderHistory.swift in Sources */,
 				9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C8F8FD921F683EC0034DF4A /* MarketSummary.swift in Sources */,
-				9CFC20A421FF3BAB00CCAA98 /* Model.swift in Sources */,
 				9C8F8FD521F683970034DF4A /* Ticker.swift in Sources */,
-				9CFC20A221FF39DF00CCAA98 /* Request.swift in Sources */,
 				9C8F8FC921F682B10034DF4A /* Coins.swift in Sources */,
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */,
