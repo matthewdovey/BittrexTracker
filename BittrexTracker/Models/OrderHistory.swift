@@ -13,6 +13,12 @@ struct OrderHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [OrderHistory]?
+  
+  init(success: Bool?, message: String?, result: [OrderHistory]?) {
+    self.success = success
+    self.message = message
+    self.result = result
+  }
 }
 
 /// The data structure for the result of the Order History Request

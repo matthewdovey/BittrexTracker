@@ -13,6 +13,12 @@ struct MarketHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [MarketHistory]?
+  
+  init(success: Bool?, message: String?, result: [MarketHistory]?) {
+    self.success = success
+    self.message = message
+    self.result = result
+  }
 }
 
 /// The data structure for the result of the Market History Request

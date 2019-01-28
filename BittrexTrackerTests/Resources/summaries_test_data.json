@@ -17,6 +17,21 @@
       "PrevDay": 0.01229501,
       "Created": "2014-02-13T00:00:00",
       "DisplayMarketName": "string"
+    },
+    {
+      "MarketName":"BTC-ABY",
+      "High":0.00000034,
+      "Low":0.00000032,
+      "Volume":1027132.46607498,
+      "Last":0.00000032,
+      "BaseVolume":0.33261296,
+      "TimeStamp":"2019-01-28T21:54:38.097",
+      "Bid":0.00000032,
+      "Ask":0.00000033,
+      "OpenBuyOrders":191,
+      "OpenSellOrders":770,
+      "PrevDay":0.00000033,
+      "Created":"2014-10-31T01:43:25.743"
     }
   ]
 }

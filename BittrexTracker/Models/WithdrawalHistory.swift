@@ -13,6 +13,12 @@ struct WithdrawalHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [WithdrawalHistory]?
+  
+  init(success: Bool?, message: String?, result: [WithdrawalHistory]?) {
+    self.success = success
+    self.message = message
+    self.result = result
+  }
 }
 
 /// The data structure for the result of the Withdrawal History Request
