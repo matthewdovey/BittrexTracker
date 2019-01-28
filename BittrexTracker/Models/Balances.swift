@@ -12,11 +12,11 @@ import Foundation
 struct BalanceRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [BalanceResult]?
+  let result: [Balance]?
 }
 
 /// The data structure for the result of the Balance Request
-struct BalanceResult: Decodable {
+struct Balance: Decodable {
   let currency: String?
   let balance: Double?
   let available: Double?

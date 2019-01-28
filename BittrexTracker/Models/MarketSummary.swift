@@ -12,11 +12,11 @@ import Foundation
 struct MarketSummaryRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [MarketSummaryResult]?
+  let result: [MarketSummary]?
 }
 
 /// The data structure for the result of the Market Summary Request
-struct MarketSummaryResult: Decodable {
+struct MarketSummary: Decodable {
   let marketName: String
   let high: Double
   let low: Double
