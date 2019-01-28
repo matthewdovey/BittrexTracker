@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Request: Decodable {
-  let success: Bool?
-  let message: String?
-  //let result: [Any]?
+protocol Request: Decodable {
+  var success: Bool? { get set }
+  var message: String? { get set }
+  var result: [Model]? { get set }
 }
