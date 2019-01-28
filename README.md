@@ -3,7 +3,7 @@ A framework to retrieve data from the Bittrex exchange.
 
 ## Version
 
-1.1.1
+1.0.2
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Feel free to put in pull requests :D
 
 ## Versioning
 
-This version will be increased by 0.1.0 per feature and 0.0.1 per pull request that goes into the project.
+This version will be increased by 0.1.0 per release and 0.0.1 per pull request that goes into the project.
 
 ## Authors
 
