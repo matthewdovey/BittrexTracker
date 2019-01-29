@@ -247,26 +247,59 @@ final class BittrexCollector {
     }
     task.resume()
   }
+  
+  // TODO: getOrderBook
+  final func getOrderBook() {
+    
+  }
+  
+  // TODO: buyLimit
+  final func getBuyLimit() {
+    
+  }
+  
+  // TODO: sellLimit
+  final func getSellLimit() {
+    
+  }
+  
+  // TODO: cancel
+  final func cancel() {
+    
+  }
+  
+  // TODO: withdraw
+  final func withdraw() {
+    
+  }
+  
+  // TODO: getOpenOrders
+  final func getOpenOrders() {
+    
+  }
+  
+  // TODO: getOrder
+  final func getOrder() {
+    
+  }
+  
+  // TODO: getDepositAddress
+  final func getDepositAddress() {
+    
+  }
+  
+  // TODO: getOrderHistory
+  final func getOrderHistory() {
+    
+  }
+  
+  // TODO: getWithdrawalHistory
+  final func getWithdrawalHistory() {
+    
+  }
+  
+  // TODO: getDepositHistory
+  final func getDepositHistory() {
+    
+  }
 }
-
-// TODO: getOrderBook
-
-// TODO: buyLimit
-
-// TODO: sellLimit
-
-// TODO: cancel
-
-// TODO: withdraw
-
-// TODO: getOpenOrders
-
-// TODO: getOrder
-
-// TODO: getDepositAddress
-
-// TODO: getOrderHistory
-
-// TODO: getWithdrawalHistory
-
-// TODO: getDepositHistory
