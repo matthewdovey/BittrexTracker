@@ -13,6 +13,12 @@ struct MarketSummaryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [MarketSummary]?
+  
+  init(success: Bool?, message: String?, result: [MarketSummary]?) {
+    self.success = success
+    self.message = message
+    self.result = result
+  }
 }
 
 /// The data structure for the result of the Market Summary Request

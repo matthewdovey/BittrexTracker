@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C3CEDB921FFB72900476CCD /* balance_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDB821FFB72900476CCD /* balance_test_data.json */; };
+		9C3CEDBB21FFB8B300476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
+		9C3CEDBC21FFBFB200476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
+		9C3CEDBD21FFBFFA00476CCD /* balance_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDB821FFB72900476CCD /* balance_test_data.json */; };
+		9C3CEDBF21FFCFFD00476CCD /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBE21FFCFFD00476CCD /* Balance.swift */; };
+		9C3CEDC021FFD0FE00476CCD /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBE21FFCFFD00476CCD /* Balance.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */; };
@@ -35,13 +41,13 @@
 		9C8F8FE321F7C9BC0034DF4A /* WithdrawalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */; };
 		9C8F8FE421F7C9BE0034DF4A /* MarketSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */; };
 		9C8F8FEB21F90D430034DF4A /* orderbook_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */; };
-		9C8F8FEC21F90D430034DF4A /* market_summaries_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE621F90D430034DF4A /* market_summaries_test_data.json */; };
+		9C8F8FEC21F90D430034DF4A /* summaries_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE621F90D430034DF4A /* summaries_test_data.json */; };
 		9C8F8FED21F90D430034DF4A /* market_history_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE721F90D430034DF4A /* market_history_test_data.json */; };
 		9C8F8FEE21F90D430034DF4A /* summary_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE821F90D430034DF4A /* summary_test_data.json */; };
 		9C8F8FEF21F90D430034DF4A /* markets_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE921F90D430034DF4A /* markets_test_data.json */; };
 		9C8F8FF021F90D430034DF4A /* ticker_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */; };
 		9C8F8FF121F90D8B0034DF4A /* market_history_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE721F90D430034DF4A /* market_history_test_data.json */; };
-		9C8F8FF221F90D8F0034DF4A /* market_summaries_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE621F90D430034DF4A /* market_summaries_test_data.json */; };
+		9C8F8FF221F90D8F0034DF4A /* summaries_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE621F90D430034DF4A /* summaries_test_data.json */; };
 		9C8F8FF321F90D920034DF4A /* markets_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE921F90D430034DF4A /* markets_test_data.json */; };
 		9C8F8FF421F90D940034DF4A /* orderbook_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */; };
 		9C8F8FF521F90D990034DF4A /* summary_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE821F90D430034DF4A /* summary_test_data.json */; };
@@ -59,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C3CEDB821FFB72900476CCD /* balance_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = balance_test_data.json; sourceTree = "<group>"; };
+		9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = balances_test_data.json; sourceTree = "<group>"; };
+		9C3CEDBE21FFCFFD00476CCD /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollectorTests.swift; sourceTree = "<group>"; };
@@ -79,7 +88,7 @@
 		9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalHistory.swift; sourceTree = "<group>"; };
 		9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSummary.swift; sourceTree = "<group>"; };
 		9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderbook_test_data.json; sourceTree = "<group>"; };
-		9C8F8FE621F90D430034DF4A /* market_summaries_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_summaries_test_data.json; sourceTree = "<group>"; };
+		9C8F8FE621F90D430034DF4A /* summaries_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summaries_test_data.json; sourceTree = "<group>"; };
 		9C8F8FE721F90D430034DF4A /* market_history_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_history_test_data.json; sourceTree = "<group>"; };
 		9C8F8FE821F90D430034DF4A /* summary_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summary_test_data.json; sourceTree = "<group>"; };
 		9C8F8FE921F90D430034DF4A /* markets_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = markets_test_data.json; sourceTree = "<group>"; };
@@ -116,9 +125,11 @@
 		9C85C05C21F7987D00E9259D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */,
+				9C3CEDB821FFB72900476CCD /* balance_test_data.json */,
 				9C85C05A21F7986B00E9259D /* currency_test_data.json */,
 				9C8F8FE721F90D430034DF4A /* market_history_test_data.json */,
-				9C8F8FE621F90D430034DF4A /* market_summaries_test_data.json */,
+				9C8F8FE621F90D430034DF4A /* summaries_test_data.json */,
 				9C8F8FE921F90D430034DF4A /* markets_test_data.json */,
 				9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */,
 				9C8F8FE821F90D430034DF4A /* summary_test_data.json */,
@@ -180,6 +191,7 @@
 				9C8F8FD421F683970034DF4A /* Ticker.swift */,
 				9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */,
 				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
+				9C3CEDBE21FFCFFD00476CCD /* Balance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,11 +296,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3CEDBD21FFBFFA00476CCD /* balance_test_data.json in Resources */,
+				9C3CEDBC21FFBFB200476CCD /* balances_test_data.json in Resources */,
 				9C8F8FF621F90DA30034DF4A /* ticker_test_data.json in Resources */,
 				9C8F8FF521F90D990034DF4A /* summary_test_data.json in Resources */,
 				9C85C05D21F7A76700E9259D /* currency_test_data.json in Resources */,
 				9C8F8FF121F90D8B0034DF4A /* market_history_test_data.json in Resources */,
-				9C8F8FF221F90D8F0034DF4A /* market_summaries_test_data.json in Resources */,
+				9C8F8FF221F90D8F0034DF4A /* summaries_test_data.json in Resources */,
 				9C8F8FF321F90D920034DF4A /* markets_test_data.json in Resources */,
 				9C8F8FF421F90D940034DF4A /* orderbook_test_data.json in Resources */,
 			);
@@ -302,9 +316,11 @@
 				9C8F8FEF21F90D430034DF4A /* markets_test_data.json in Resources */,
 				9C85C05B21F7986B00E9259D /* currency_test_data.json in Resources */,
 				9C8F8FEB21F90D430034DF4A /* orderbook_test_data.json in Resources */,
+				9C3CEDB921FFB72900476CCD /* balance_test_data.json in Resources */,
 				9C8F8FED21F90D430034DF4A /* market_history_test_data.json in Resources */,
+				9C3CEDBB21FFB8B300476CCD /* balances_test_data.json in Resources */,
 				9C8F8FF021F90D430034DF4A /* ticker_test_data.json in Resources */,
-				9C8F8FEC21F90D430034DF4A /* market_summaries_test_data.json in Resources */,
+				9C8F8FEC21F90D430034DF4A /* summaries_test_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +338,7 @@
 				9C8F8FC921F682B10034DF4A /* Coins.swift in Sources */,
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */,
+				9C3CEDBF21FFCFFD00476CCD /* Balance.swift in Sources */,
 				9C8F8FD121F6831A0034DF4A /* Markets.swift in Sources */,
 				9C8F8FCB21F682EB0034DF4A /* Balances.swift in Sources */,
 				9C8F8FCF21F6830D0034DF4A /* MarketHistory.swift in Sources */,
@@ -344,6 +361,7 @@
 				9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */,
 				9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
+				9C3CEDC021FFD0FE00476CCD /* Balance.swift in Sources */,
 				9C8F8FDC21F7C9AC0034DF4A /* Coins.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

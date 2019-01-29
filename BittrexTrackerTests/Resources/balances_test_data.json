@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "message": "''",
+  "result": [
+    {
+      "Currency": "DOGE",
+      "Balance": 4.21549076,
+      "Available": 4.21549076,
+      "Pending": 0,
+      "CryptoAddress": "DLxcEt3AatMyr2NTatzjsfHNoB9NT62HiF",
+      "Requested": false,
+      "Uuid": null
+    },
+    {
+      "Currency": "BTC",
+      "Balance": 4.21549076,
+      "Available": 4.21549076,
+      "Pending": 0,
+      "CryptoAddress": "DLxcEt3AatMyr2NTatzjsfHNoB9NT62HiF",
+      "Requested": false,
+      "Uuid": null
+    }
+  ]
+}

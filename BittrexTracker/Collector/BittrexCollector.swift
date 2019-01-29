@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// A class to provide a wrapper around the Bittrex Exchange APIs
 final class BittrexCollector {
   // URL constants (public requests)
@@ -77,20 +76,21 @@ final class BittrexCollector {
   /// Method to return all currencies listed on the exchange
   ///
   /// - Parameter completion: optionally returning a CoinRequest object and an error
-  final func getCurrencies(completion: @escaping ((CoinRequest?, Error?) -> Void)) {
+  final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+currenciesURL)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting currencies: \(String(describing: error))")
-        completion(nil, error)
+        completion(CoinRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if (data != nil) {
           do {
             let coins = try JSONDecoder().decode(CoinRequest.self, from: data!)
-            completion(coins, error)
+            completion(coins)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(CoinRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(CoinRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -100,20 +100,21 @@ final class BittrexCollector {
   /// Method to return all markets for currencies
   ///
   /// - Parameter completion: optionally returning a MarketRequest object and an Error
-  final func getMarkets(completion: @escaping ((MarketsRequest?, Error?) -> Void)) {
+  final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketsURL)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting markets: \(String(describing: error))")
-        completion(nil, error)
+        completion(MarketsRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if (data != nil) {
           do {
             let markets = try JSONDecoder().decode(MarketsRequest.self, from: data!)
-            completion(markets, error)
+            completion(markets)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(MarketsRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(MarketsRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -125,20 +126,21 @@ final class BittrexCollector {
   /// - Parameters:
   ///   - market: the market to retreive data for
   ///   - completion: optionally returning a TickerRequest object and an Error
-  final func getTickerFor(market: String, completion: @escaping ((TickerRequest?, Error?) -> Void)) {
+  final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+tickerURL+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting ticker: \(String(describing: error))")
-        completion(nil, error)
+        completion(TickerRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if (data != nil) {
           do {
             let ticker = try JSONDecoder().decode(TickerRequest.self, from: data!)
-            completion(ticker, error)
+            completion(ticker)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(TickerRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(TickerRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -148,23 +150,21 @@ final class BittrexCollector {
   /// Method to return all market summaires
   ///
   /// - Parameter completion: optionally returning a MarkertSummaryRequest and an error
-  final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest?, Error?) -> Void)) {
+  final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketSummariesURL)
     let task = session.dataTask(with: url!) { (data, response, error) in
-      if let response = response as? HTTPURLResponse {
-        print("Market Summaries Response: \(response.statusCode)")
-      }
       if error != nil {
-        print("Error encountered when getting market summaries: \(String(describing: error))")
-        completion(nil, error)
+        completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
             let summaries = try JSONDecoder().decode(MarketSummaryRequest.self, from: data!)
-            completion(summaries, error)
+            completion(summaries)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(MarketSummaryRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -176,20 +176,21 @@ final class BittrexCollector {
   /// - Parameters:
   ///   - market: the summary for a specific market
   ///   - completion: optionally returning a MarketSummaryRequest object and an error
-  final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest?, Error?) -> Void)) {
+  final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketSummaryURL+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting summary for market: \(String(describing: error))")
-        completion(nil, error)
+        completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
             let summary = try JSONDecoder().decode(MarketSummaryRequest.self, from: data!)
-            completion(summary, error)
+            completion(summary)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(MarketSummaryRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -201,20 +202,21 @@ final class BittrexCollector {
   /// - Parameters:
   ///   - market: the history for a specific market
   ///   - completion: optionally returning a MarketHistoryRequest object and an error
-  final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest?, Error?) -> Void)) {
+  final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+marketHistoryUrl+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting market history: \(String(describing: error))")
-        completion(nil, error)
+        completion(MarketHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
             let history = try JSONDecoder().decode(MarketHistoryRequest.self, from: data!)
-            completion(history, error)
+            completion(history)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(MarketHistoryRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(MarketHistoryRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -223,23 +225,22 @@ final class BittrexCollector {
   
   /// Method to retrieve all balances for the users wallet
   ///
-  /// - Parameters:
-  ///   - apiKey: the API key for the user's wallet
-  ///   - completion: optionally returning a BalanceRequest and an error
-  final func getBalances(apiKey: String, completion: @escaping ((BalanceRequest?, Error?) -> Void)) {
+  /// - Parameter completion: optionally returning a BalanceRequest and an error
+  final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+balancesURL+apiKeyParam+apiKey)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting balances: \(String(describing: error))")
-        completion(nil, error)
+        completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-            let balances = try JSONDecoder().decode(BalanceRequest.self, from: data!)
-            completion(balances, error)
+            let balances = try JSONDecoder().decode(BalancesRequest.self, from: data!)
+            completion(balances)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(BalancesRequest(success: false, message: nil, result: nil))
         }
       }
     }
@@ -249,23 +250,23 @@ final class BittrexCollector {
   /// Method to retrieve the balance of a specified currency from the user's wallet
   ///
   /// - Parameters:
-  ///   - apiKey: the API key for the user's wallet
   ///   - currency: the balance for a specific currency
   ///   - completion: optionally returning a BalanceRequest object and an error
-  final func getBalanceFor(apiKey: String, currency: String, completion: @escaping ((BalanceRequest?, Error?) -> Void)) {
+  final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+balancesURL+currency)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        print("Error encountered when getting balance: \(String(describing: error))")
-        completion(nil, error)
+        completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
             let balance = try JSONDecoder().decode(BalanceRequest.self, from: data!)
-            completion(balance, error)
+            completion(balance)
           } catch {
-            print("Error decoding JSON: \(error)")
+            completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
           }
+        } else {
+          completion(BalanceRequest(success: false, message: nil, result: nil))
         }
       }
     }

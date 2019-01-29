@@ -13,6 +13,12 @@ struct TickerRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: Ticker?
+  
+  init(success: Bool?, message: String?, result: Ticker?) {
+    self.success = success
+    self.message = message
+    self.result = result
+  }
 }
 
 /// The data structure for the result of the Ticker Request

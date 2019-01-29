@@ -13,6 +13,12 @@ struct DepositHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [DepositHistory]?
+  
+  init(success: Bool?, message: String?, result: [DepositHistory]?) {
+    self.success = success
+    self.message = message
+    self.result = result
+  }
 }
 
 /// The data structure for the result of the Deposit History Request
