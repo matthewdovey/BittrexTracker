@@ -10,33 +10,9 @@ import Foundation
 
 /// A class to provide a wrapper around the Bittrex Exchange APIs
 final class BittrexCollector {
-  // URL constants (public requests)
-  private let baseURL = "https://bittrex.com/api/"
-  private let apiVersion = "v1.1"
-  private let marketsURL = "/public/getmarkets"
-  private let currenciesURL = "/public/getcurrencies"
-  private let marketSummariesURL = "/public/getmarketsummaries"
-  private let tickerURL = "/public/getticker?market="
-  private let marketSummaryURL = "/public/getmarketsummary?market="
-  private let marketHistoryUrl = "/public/getmarkethistory?market="
-  
-  // URL constants (account requests)
-  private let balancesURL = "/account/getbalances"
-  private let orderHistoryURL = "/account/getorderhistory"
-  private let depositHistoryURL = "/account/getdeposithistory"
-  private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  private let balanceURL = "/account/getbalance?currency="
-  
-  // Parameter constants
-  private let apiKeyParam = "?apikey="
-  private let nonceParam = "&nonce="
-  private let apiSecretParam = "&apisecret"
-  private let signHeader = "apisign"
   
   private var session: URLSession
-  private var apiKey: String
-  private var apiSecret: String
-  private var apiSecretBytes: [UInt8]?
+  private var urlBuilder: RequestUrlBuilder
   
   /// shared singleton instance of the Bittrex collector class
   static var api: BittrexCollector = {
@@ -53,22 +29,21 @@ final class BittrexCollector {
   ///   - apiSecret:
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
-    self.apiKey = apiKey
-    self.apiSecret = apiSecret
+    self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)
   }
   
   /// API key property setter
   ///
   /// - Parameter apiKey: the API key
   public func setApiKey(apiKey: String) {
-    self.apiKey = apiKey
+    urlBuilder.setKey(key: apiKey)
   }
   
   /// API secret property setter
   ///
   /// - Parameter apiSecret: the API secret
   public func setApiSecret(apiSecret: String) {
-    self.apiSecret = apiSecret
+    urlBuilder.setSecret(secret: apiSecret)
   }
   
   // MARK: public requests
@@ -77,7 +52,7 @@ final class BittrexCollector {
   ///
   /// - Parameter completion: optionally returning a CoinRequest object and an error
   final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+currenciesURL)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .Currencies))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(CoinRequest(success: false, message: String(describing: error), result: nil))
@@ -101,7 +76,7 @@ final class BittrexCollector {
   ///
   /// - Parameter completion: optionally returning a MarketRequest object and an Error
   final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+marketsURL)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .Markets))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketsRequest(success: false, message: String(describing: error), result: nil))
@@ -127,7 +102,7 @@ final class BittrexCollector {
   ///   - market: the market to retreive data for
   ///   - completion: optionally returning a TickerRequest object and an Error
   final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+tickerURL+market)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .Ticker)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(TickerRequest(success: false, message: String(describing: error), result: nil))
@@ -151,7 +126,7 @@ final class BittrexCollector {
   ///
   /// - Parameter completion: optionally returning a MarkertSummaryRequest and an error
   final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+marketSummariesURL)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .MarketSummaries))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
@@ -177,7 +152,7 @@ final class BittrexCollector {
   ///   - market: the summary for a specific market
   ///   - completion: optionally returning a MarketSummaryRequest object and an error
   final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+marketSummaryURL+market)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .MarketSummary)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
@@ -203,7 +178,7 @@ final class BittrexCollector {
   ///   - market: the history for a specific market
   ///   - completion: optionally returning a MarketHistoryRequest object and an error
   final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+marketHistoryUrl+market)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .MarketHistory)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketHistoryRequest(success: false, message: String(describing: error), result: nil))
@@ -227,7 +202,7 @@ final class BittrexCollector {
   ///
   /// - Parameter completion: optionally returning a BalanceRequest and an error
   final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+balancesURL+apiKeyParam+apiKey)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .Balances))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
@@ -253,7 +228,7 @@ final class BittrexCollector {
   ///   - currency: the balance for a specific currency
   ///   - completion: optionally returning a BalanceRequest object and an error
   final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
-    let url = URL(string: baseURL+apiVersion+balancesURL+currency)
+    let url = URL(string: urlBuilder.buildUrlFor(request: .Balance)+currency)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
