@@ -34,6 +34,7 @@ final class RequestUrlBuilder {
   private let apiSecretParam = "&apisecret"
   private let signHeader = "apisign"
   
+  // Wallet access properties
   private var apiKey: String
   private var apiSecret: String
   private var apiSecretBytes: [UInt8]?
