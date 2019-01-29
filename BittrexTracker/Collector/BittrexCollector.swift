@@ -226,21 +226,21 @@ final class BittrexCollector {
   /// Method to retrieve all balances for the users wallet
   ///
   /// - Parameter completion: optionally returning a BalanceRequest and an error
-  final func getBalances(completion: @escaping ((BalanceRequest) -> Void)) {
+  final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
     let url = URL(string: baseURL+apiVersion+balancesURL+apiKeyParam+apiKey)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
+        completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-            let balances = try JSONDecoder().decode(BalanceRequest.self, from: data!)
+            let balances = try JSONDecoder().decode(BalancesRequest.self, from: data!)
             completion(balances)
           } catch {
-            completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
+            completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion(BalanceRequest(success: false, message: nil, result: nil))
+          completion(BalancesRequest(success: false, message: nil, result: nil))
         }
       }
     }

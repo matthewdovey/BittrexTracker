@@ -45,7 +45,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getCurrencies() { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
-      print("currencies data exists: \(results.result?.isEmpty == true)")
     }
   }
   
@@ -68,7 +67,6 @@ class BittrexCollectorTests : XCTestCase {
     collector.getMarkets() { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
-      print("markets data exists: \(results.result?.isEmpty == true)")
     }
   }
   
@@ -88,10 +86,9 @@ class BittrexCollectorTests : XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getTickerFor(market: "") { results in
+    collector.getTickerFor(market: "btc-ltc") { results in
       XCTAssertTrue(results.success == true)
-      XCTAssertTrue(results.result != nil)
-      print("ticker data exists: \(results.result != nil)")
+      XCTAssertNotNil(results.result)
     }
   }
   
@@ -197,14 +194,12 @@ class BittrexCollectorTests : XCTestCase {
     if let url = bundle?.url(forResource: BALANCE_DATA_FILE, withExtension: JSON) {
       do {
         let data = try Data(contentsOf: url, options: .mappedIfSafe)
-        print(data)
         session.data = data
       } catch {}
     }
     collector.getBalanceFor(currency: "") { results in
       XCTAssertTrue(results.success == true)
-      XCTAssertFalse(results.result?.isEmpty == true)
-      print(results)
+      XCTAssertNotNil(results.result)
     }
   }
   
