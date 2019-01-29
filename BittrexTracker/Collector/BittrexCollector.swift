@@ -248,3 +248,25 @@ final class BittrexCollector {
     task.resume()
   }
 }
+
+// TODO: getOrderBook
+
+// TODO: buyLimit
+
+// TODO: sellLimit
+
+// TODO: cancel
+
+// TODO: withdraw
+
+// TODO: getOpenOrders
+
+// TODO: getOrder
+
+// TODO: getDepositAddress
+
+// TODO: getOrderHistory
+
+// TODO: getWithdrawalHistory
+
+// TODO: getDepositHistory
