@@ -33,19 +33,19 @@
 		9C8F8FB421F67E120034DF4A /* BittrexTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F8FAA21F67E120034DF4A /* BittrexTracker.framework */; };
 		9C8F8FBB21F67E120034DF4A /* BittrexTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */; };
-		9C8F8FC921F682B10034DF4A /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* Coins.swift */; };
-		9C8F8FCB21F682EB0034DF4A /* Balances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* Balances.swift */; };
+		9C8F8FC921F682B10034DF4A /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* Coin.swift */; };
+		9C8F8FCB21F682EB0034DF4A /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* Balance.swift */; };
 		9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */; };
 		9C8F8FCF21F6830D0034DF4A /* MarketHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */; };
-		9C8F8FD121F6831A0034DF4A /* Markets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* Markets.swift */; };
+		9C8F8FD121F6831A0034DF4A /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* Market.swift */; };
 		9C8F8FD321F6836E0034DF4A /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */; };
 		9C8F8FD521F683970034DF4A /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD421F683970034DF4A /* Ticker.swift */; };
 		9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */; };
 		9C8F8FD921F683EC0034DF4A /* MarketSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */; };
 		9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */; };
-		9C8F8FDC21F7C9AC0034DF4A /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* Coins.swift */; };
-		9C8F8FDD21F7C9AE0034DF4A /* Markets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* Markets.swift */; };
-		9C8F8FDE21F7C9B10034DF4A /* Balances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* Balances.swift */; };
+		9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* Coin.swift */; };
+		9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* Market.swift */; };
+		9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* Balance.swift */; };
 		9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */; };
 		9C8F8FE021F7C9B50034DF4A /* MarketHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */; };
 		9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */; };
@@ -101,11 +101,11 @@
 		9C8F8FB321F67E120034DF4A /* BittrexTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BittrexTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8F8FBA21F67E120034DF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollector.swift; sourceTree = "<group>"; };
-		9C8F8FC821F682B10034DF4A /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
-		9C8F8FCA21F682EB0034DF4A /* Balances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balances.swift; sourceTree = "<group>"; };
+		9C8F8FC821F682B10034DF4A /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		9C8F8FCA21F682EB0034DF4A /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositHistory.swift; sourceTree = "<group>"; };
 		9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketHistory.swift; sourceTree = "<group>"; };
-		9C8F8FD021F6831A0034DF4A /* Markets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markets.swift; sourceTree = "<group>"; };
+		9C8F8FD021F6831A0034DF4A /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
 		9C8F8FD421F683970034DF4A /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalHistory.swift; sourceTree = "<group>"; };
@@ -232,9 +232,9 @@
 		9C8F8FC421F6817D0034DF4A /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C8F8FC821F682B10034DF4A /* Coins.swift */,
-				9C8F8FD021F6831A0034DF4A /* Markets.swift */,
-				9C8F8FCA21F682EB0034DF4A /* Balances.swift */,
+				9C8F8FC821F682B10034DF4A /* Coin.swift */,
+				9C8F8FD021F6831A0034DF4A /* Market.swift */,
+				9C8F8FCA21F682EB0034DF4A /* Balance.swift */,
 				9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */,
 				9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */,
 				9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */,
@@ -388,16 +388,16 @@
 				9C8F8FD921F683EC0034DF4A /* MarketSummary.swift in Sources */,
 				9C3CEDCA2200D74B00476CCD /* CoinRequest.swift in Sources */,
 				9C8F8FD521F683970034DF4A /* Ticker.swift in Sources */,
-				9C8F8FC921F682B10034DF4A /* Coins.swift in Sources */,
+				9C8F8FC921F682B10034DF4A /* Coin.swift in Sources */,
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */,
 				9C3CEDDA2200E0A900476CCD /* MarketSummaryRequest.swift in Sources */,
 				9C3CEDD82200E08B00476CCD /* WithdrawalHistoryRequest.swift in Sources */,
 				9C3CEDC321FFD45300476CCD /* RequestUrl.swift in Sources */,
-				9C8F8FD121F6831A0034DF4A /* Markets.swift in Sources */,
+				9C8F8FD121F6831A0034DF4A /* Market.swift in Sources */,
 				9C3CEDDC2200E10200476CCD /* BalanceRequest.swift in Sources */,
 				9C3CEDD62200E03800476CCD /* TickerRequest.swift in Sources */,
-				9C8F8FCB21F682EB0034DF4A /* Balances.swift in Sources */,
+				9C8F8FCB21F682EB0034DF4A /* Balance.swift in Sources */,
 				9C3CEDD42200E01800476CCD /* OrderHistoryRequest.swift in Sources */,
 				9C3CEDD22200DF6200476CCD /* MarketHistoryRequest.swift in Sources */,
 				9C3CEDCC2200D76600476CCD /* MarketsRequest.swift in Sources */,
@@ -413,8 +413,8 @@
 				9C8F8FE221F7C9B90034DF4A /* Ticker.swift in Sources */,
 				9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */,
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
-				9C8F8FDD21F7C9AE0034DF4A /* Markets.swift in Sources */,
-				9C8F8FDE21F7C9B10034DF4A /* Balances.swift in Sources */,
+				9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */,
+				9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */,
 				9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */,
 				9C8F8FE421F7C9BE0034DF4A /* MarketSummary.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* RequestUrl.swift in Sources */,
@@ -423,7 +423,7 @@
 				9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */,
 				9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
-				9C8F8FDC21F7C9AC0034DF4A /* Coins.swift in Sources */,
+				9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */,
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
