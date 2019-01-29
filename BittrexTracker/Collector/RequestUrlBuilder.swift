@@ -26,9 +26,11 @@ final class RequestUrlBuilder {
   private let orderHistoryURL = "/account/getorderhistory"
   private let depositHistoryURL = "/account/getdeposithistory"
   private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  private let balanceURL = "/account/getbalance?currency="
+  private let balanceURL = "/account/getbalance"
   
   // Parameter constants
+  private let currencyParam = "?currency="
+  private let andCurrencyParam = "&currency="
   private let apiKeyParam = "?apikey="
   private let nonceParam = "&nonce="
   private let apiSecretParam = "&apisecret"
@@ -81,17 +83,17 @@ final class RequestUrlBuilder {
     case .Ticker:
       return baseURL+apiVersion+tickerURL
     case .Balance:
-      return baseURL+apiVersion+balancesURL
+      return baseURL+apiVersion+balanceURL+apiKeyParam+apiKey+andCurrencyParam
     case .Balances:
       return baseURL+apiVersion+balancesURL+apiKeyParam+apiKey
     case .MarketHistory:
       return baseURL+apiVersion+marketHistoryUrl
     case .DepositHistory:
-      return ""
+      return baseURL+apiVersion+depositHistoryURL+currencyParam
     case .OrderHistory:
-      return ""
+      return baseURL+apiVersion+orderHistoryURL
     case .WithdrawalHistory:
-      return ""
+      return baseURL+apiVersion+withdrawalHistoryURL
     }
   }
 }
