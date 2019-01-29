@@ -50,7 +50,7 @@ class RequestUrlBuilderTests: XCTestCase {
   func testMarketHistoryUrl() {
     let marketHistoryUrl = urlBuilder.buildUrlFor(request: .MarketHistory)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarkethistory?market="
-    XCTAssertEqual(actualUrl, actualUrl)
+    XCTAssertEqual(marketHistoryUrl, actualUrl)
   }
   
   func testBalanceUrl() {
