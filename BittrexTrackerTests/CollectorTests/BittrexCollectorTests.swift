@@ -20,7 +20,7 @@ private let BALANCES_DATA_FILE = "balances_test_data"
 private let BALANCE_DATA_FILE = "balance_test_data"
 private let JSON = "json"
 
-class BittrexCollectorTests : XCTestCase {
+class BittrexCollectorTests: XCTestCase {
   
   private var collector: BittrexCollector!
   private var session: URLSessionMock!
