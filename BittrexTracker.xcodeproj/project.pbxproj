@@ -426,16 +426,11 @@
 				9C3CEDE62201000D00476CCD /* TickerRequest.swift in Sources */,
 				9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */,
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
-<<<<<<< HEAD
 				9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */,
 				9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */,
-=======
 				9C3CEDEA2201001700476CCD /* BalancesRequest.swift in Sources */,
 				9C3CEDEB2201001900476CCD /* MarketsRequest.swift in Sources */,
-				9C8F8FDD21F7C9AE0034DF4A /* Markets.swift in Sources */,
-				9C8F8FDE21F7C9B10034DF4A /* Balances.swift in Sources */,
 				9C3CEDE72201001000476CCD /* OrderHistoryRequest.swift in Sources */,
->>>>>>> master
 				9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */,
 				9C8F8FE421F7C9BE0034DF4A /* MarketSummary.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* RequestUrl.swift in Sources */,
@@ -445,12 +440,8 @@
 				9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */,
 				9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
-<<<<<<< HEAD
 				9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */,
-=======
-				9C8F8FDC21F7C9AC0034DF4A /* Coins.swift in Sources */,
 				9C3CEDE32201000600476CCD /* BalanceRequest.swift in Sources */,
->>>>>>> master
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C3CEDE82201001200476CCD /* MarketHistoryRequest.swift in Sources */,
 				9C3CEDEC2201001C00476CCD /* CoinRequest.swift in Sources */,
