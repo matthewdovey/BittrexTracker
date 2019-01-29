@@ -8,19 +8,6 @@
 
 import Foundation
 
-/// Balances Request struct to hold request state and result
-struct BalancesRequest: Decodable {
-  let success: Bool?
-  let message: String?
-  let result: [Balance]?
-  
-  init(success: Bool?, message: String?, result: [Balance]?) {
-    self.success = success
-    self.message = message
-    self.result = result
-  }
-}
-
 /// The data structure for the result of the Balance Request
 struct Balance: Decodable {
   let currency: String?

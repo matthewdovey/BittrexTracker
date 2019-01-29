@@ -1,5 +1,5 @@
 //
-//  DepositHistoryRequest.swift
+//  WithdrawalHistoryRequest.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 21/01/2019.
@@ -8,28 +8,15 @@
 
 import Foundation
 
-/// Deposit History Request struct to hold request state and result
-struct DepositHistoryRequest: Decodable {
-  let success: Bool?
-  let message: String?
-  let result: [DepositHistory]?
-  
-  init(success: Bool?, message: String?, result: [DepositHistory]?) {
-    self.success = success
-    self.message = message
-    self.result = result
-  }
-}
-
-/// The data structure for the result of the Deposit History Request
-struct DepositHistory: Decodable {
+/// The data structure for the result of the Withdrawal History Request
+struct WithdrawalHistory: Decodable {
   let paymentUuid: String?
   let currency: String?
   let amount: Double?
   let address: String?
   let opened: String?
   let authorized: Bool?
-  let pendingPayment: Bool?
+  let pendingPayments: Bool?
   let txCost: Double?
   let txId: String?
   let canceled: Bool?
@@ -42,7 +29,7 @@ struct DepositHistory: Decodable {
     case address = "Address"
     case opened = "Opened"
     case authorized = "Authorized"
-    case pendingPayment = "PendingPayment"
+    case pendingPayments = "PendingPayments"
     case txCost = "TxCost"
     case txId = "TxID"
     case canceled = "Canceled"

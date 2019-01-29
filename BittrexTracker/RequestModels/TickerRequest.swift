@@ -2,7 +2,7 @@
 //  TickerRequest.swift
 //  BittrexTracker
 //
-//  Created by Matthew Dovey on 21/01/2019.
+//  Created by Matthew Dovey on 29/01/2019.
 //  Copyright © 2019 Matthew Dovey. All rights reserved.
 //
 
@@ -18,18 +18,5 @@ struct TickerRequest: Decodable {
     self.success = success
     self.message = message
     self.result = result
-  }
-}
-
-/// The data structure for the result of the Ticker Request
-struct Ticker: Decodable {
-  let bid: Float?
-  let ask: Float?
-  let last: Float?
-  
-  private enum CodingKeys: String, CodingKey {
-    case bid = "Bid"
-    case ask = "Ask"
-    case last = "Last"
   }
 }
