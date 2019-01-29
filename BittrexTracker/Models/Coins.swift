@@ -21,7 +21,6 @@ struct CoinRequest: Decodable {
   }
 }
 
-
 /// The data structure for the result of the Coin Request
 struct Coin: Decodable {
   let currency: String
