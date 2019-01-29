@@ -3,7 +3,7 @@ A framework to retrieve data from the Bittrex exchange.
 
 ## Version
 
-1.0.2
+1.0.3
 
 ## Getting Started
 
