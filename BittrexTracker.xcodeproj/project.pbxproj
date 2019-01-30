@@ -49,6 +49,14 @@
 		9C3CEE0722026A1500476CCD /* DepositAddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0622026A1500476CCD /* DepositAddressRequest.swift */; };
 		9C3CEE0922026A6500476CCD /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0822026A6500476CCD /* OrderRequest.swift */; };
 		9C3CEE0B22026AB200476CCD /* WithdrawRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0A22026AB200476CCD /* WithdrawRequest.swift */; };
+		9C3CEE0E220270A200476CCD /* OrderBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE04220268F600476CCD /* OrderBookRequest.swift */; };
+		9C3CEE0F220270A600476CCD /* BuyLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */; };
+		9C3CEE10220270A900476CCD /* SellLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */; };
+		9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE002202651100476CCD /* CancelRequest.swift */; };
+		9C3CEE12220270AE00476CCD /* OpenOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */; };
+		9C3CEE13220270B500476CCD /* DepositAddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0622026A1500476CCD /* DepositAddressRequest.swift */; };
+		9C3CEE14220270B800476CCD /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0822026A6500476CCD /* OrderRequest.swift */; };
+		9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0A22026AB200476CCD /* WithdrawRequest.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */; };
@@ -517,26 +525,34 @@
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */,
 				9C3CEDEE2201049A00476CCD /* RequestUrlBuilderTests.swift in Sources */,
+				9C3CEE10220270A900476CCD /* SellLimitRequest.swift in Sources */,
+				9C3CEE14220270B800476CCD /* OrderRequest.swift in Sources */,
 				9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */,
 				9C3CEDF82202459800476CCD /* MarketCollector.swift in Sources */,
+				9C3CEE0E220270A200476CCD /* OrderBookRequest.swift in Sources */,
 				9C3CEDEA2201001700476CCD /* BalancesRequest.swift in Sources */,
 				9C3CEDEB2201001900476CCD /* MarketsRequest.swift in Sources */,
 				9C3CEDE72201001000476CCD /* OrderHistoryRequest.swift in Sources */,
 				9C3CEDF522012D8000476CCD /* AccountCollector.swift in Sources */,
 				9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */,
 				9C8F8FE421F7C9BE0034DF4A /* MarketSummary.swift in Sources */,
+				9C3CEE13220270B500476CCD /* DepositAddressRequest.swift in Sources */,
+				9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */,
+				9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* RequestUrl.swift in Sources */,
 				9C8F8FE021F7C9B50034DF4A /* MarketHistory.swift in Sources */,
 				9C8F8FE321F7C9BC0034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C3CEDE42201000800476CCD /* MarketSummaryRequest.swift in Sources */,
 				9C8F8FDB21F7C9A40034DF4A /* PublicCollector.swift in Sources */,
 				9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */,
+				9C3CEE12220270AE00476CCD /* OpenOrdersRequest.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
 				9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */,
 				9C3CEDE32201000600476CCD /* BalanceRequest.swift in Sources */,
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C3CEDE82201001200476CCD /* MarketHistoryRequest.swift in Sources */,
 				9C3CEDEC2201001C00476CCD /* CoinRequest.swift in Sources */,
+				9C3CEE0F220270A600476CCD /* BuyLimitRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
