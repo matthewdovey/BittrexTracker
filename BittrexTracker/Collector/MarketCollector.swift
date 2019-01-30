@@ -26,23 +26,90 @@ final class MarketCollector {
     self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: "")
   }
   
+  /// Setter to allow the API key to be set for the user's wallet
+  ///
+  /// - Parameter key: user's wallet API key
+  public func setApiKey(key: String) {
+    urlBuilder.setKey(key: key)
+  }
+  
   // TODO: buyLimit - market
-  final func getBuyLimit() {
-    
+  final func getBuyLimit(completion: @escaping (() -> Void)) {
+    let url = URL(string: urlBuilder.buildUrlFor(request: .BuyLimit))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        
+      } else {
+        if data != nil {
+          do {
+            
+          } catch {
+            
+          }
+        } else {
+          
+        }
+      }
+    }
   }
   
   // TODO: sellLimit - market
-  final func getSellLimit() {
-    
+  final func getSellLimit(completion: @escaping (() -> Void)) {
+    let url = URL(string: urlBuilder.buildUrlFor(request: .SellLimit))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        
+      } else {
+        if data != nil {
+          do {
+            
+          } catch {
+            
+          }
+        } else {
+          
+        }
+      }
+    }
   }
   
   // TODO: cancel - market
-  final func cancel() {
-    
+  final func cancel(completion: @escaping (() -> Void)) {
+    let url = URL(string: urlBuilder.buildUrlFor(request: .Cancel))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        
+      } else {
+        if data != nil {
+          do {
+            
+          } catch {
+            
+          }
+        } else {
+          
+        }
+      }
+    }
   }
   
   // TODO: getOpenOrders - market
-  final func getOpenOrders() {
-    
+  final func getOpenOrders(completion: @escaping (() -> Void)) {
+    let url = URL(string: urlBuilder.buildUrlFor(request: .OpenOrders))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        
+      } else {
+        if data != nil {
+          do {
+            
+          } catch {
+            
+          }
+        } else {
+          
+        }
+      }
+    }
   }
 }
