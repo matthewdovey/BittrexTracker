@@ -44,6 +44,8 @@ final class RequestUrlBuilder {
   private let nonceParam = "&nonce="
   private let apiSecretParam = "&apisecret"
   private let signHeader = "apisign"
+  private let marketParam = "?market="
+  private let uuidParam = "&uuid="
   
   // Wallet access properties
   private var apiKey: String
@@ -102,6 +104,14 @@ final class RequestUrlBuilder {
       return baseURL+apiVersion+orderHistoryURL
     case .WithdrawalHistory:
       return baseURL+apiVersion+withdrawalHistoryURL
+    case .BuyLimit:
+      return baseURL+apiVersion+buyLimitURL+apiKeyParam+apiKey+marketParam
+    case .SellLimit:
+      return baseURL+apiVersion+sellLimitURL+apiKeyParam+apiKey+marketParam
+    case .Cancel:
+      return baseURL+apiVersion+cancelURL+apiKeyParam+apiKey+uuidParam
+    case .OpenOrders:
+      return baseURL+apiVersion+openOrdersURL+apiKeyParam+apiKey+marketParam
     }
   }
 }
