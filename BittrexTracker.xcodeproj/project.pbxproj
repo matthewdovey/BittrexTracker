@@ -230,6 +230,29 @@
 			path = Market;
 			sourceTree = "<group>";
 		};
+		9C3CEE0C22026BAF00476CCD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FC821F682B10034DF4A /* Coin.swift */,
+				9C8F8FD021F6831A0034DF4A /* Market.swift */,
+				9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */,
+				9C8F8FD421F683970034DF4A /* Ticker.swift */,
+				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		9C3CEE0D22026BDD00476CCD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FCA21F682EB0034DF4A /* Balance.swift */,
+				9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */,
+				9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */,
+				9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		9C85C05721F7645500E9259D /* CollectorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,15 +325,8 @@
 		9C8F8FC421F6817D0034DF4A /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C8F8FC821F682B10034DF4A /* Coin.swift */,
-				9C8F8FD021F6831A0034DF4A /* Market.swift */,
-				9C8F8FCA21F682EB0034DF4A /* Balance.swift */,
-				9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */,
-				9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */,
-				9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */,
-				9C8F8FD421F683970034DF4A /* Ticker.swift */,
-				9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */,
-				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
+				9C3CEE0C22026BAF00476CCD /* Public */,
+				9C3CEE0D22026BDD00476CCD /* Account */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
