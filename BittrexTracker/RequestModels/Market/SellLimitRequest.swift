@@ -12,6 +12,7 @@ import Foundation
 struct SellLimitRequest: Decodable {
   let success: Bool?
   let message: String?
+  // TODO: add result property
   
   init(success: Bool?, message: String?) {
     self.success = success
