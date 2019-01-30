@@ -41,6 +41,10 @@
 		9C3CEDF522012D8000476CCD /* AccountCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF1220128B600476CCD /* AccountCollector.swift */; };
 		9C3CEDF72202459600476CCD /* MarketCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF62202459600476CCD /* MarketCollector.swift */; };
 		9C3CEDF82202459800476CCD /* MarketCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF62202459600476CCD /* MarketCollector.swift */; };
+		9C3CEDFD220264E100476CCD /* BuyLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */; };
+		9C3CEDFF2202650300476CCD /* SellLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */; };
+		9C3CEE012202651100476CCD /* CancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE002202651100476CCD /* CancelRequest.swift */; };
+		9C3CEE032202652500476CCD /* OpenOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */; };
@@ -111,6 +115,10 @@
 		9C3CEDF1220128B600476CCD /* AccountCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollector.swift; sourceTree = "<group>"; };
 		9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectorTests.swift; sourceTree = "<group>"; };
 		9C3CEDF62202459600476CCD /* MarketCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCollector.swift; sourceTree = "<group>"; };
+		9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLimitRequest.swift; sourceTree = "<group>"; };
+		9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellLimitRequest.swift; sourceTree = "<group>"; };
+		9C3CEE002202651100476CCD /* CancelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelRequest.swift; sourceTree = "<group>"; };
+		9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrdersRequest.swift; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollectorTests.swift; sourceTree = "<group>"; };
@@ -202,6 +210,10 @@
 		9C3CEDFB22025B5500476CCD /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */,
+				9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */,
+				9C3CEE002202651100476CCD /* CancelRequest.swift */,
+				9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -429,7 +441,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3CEE032202652500476CCD /* OpenOrdersRequest.swift in Sources */,
 				9C8F8FD321F6836E0034DF4A /* OrderHistory.swift in Sources */,
+				9C3CEDFF2202650300476CCD /* SellLimitRequest.swift in Sources */,
 				9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C3CEDD02200DF3F00476CCD /* DepositHistoryRequest.swift in Sources */,
 				9C3CEDF72202459600476CCD /* MarketCollector.swift in Sources */,
@@ -441,10 +455,12 @@
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FC721F6826F0034DF4A /* PublicCollector.swift in Sources */,
 				9C3CEDDA2200E0A900476CCD /* MarketSummaryRequest.swift in Sources */,
+				9C3CEE012202651100476CCD /* CancelRequest.swift in Sources */,
 				9C3CEDD82200E08B00476CCD /* WithdrawalHistoryRequest.swift in Sources */,
 				9C3CEDC321FFD45300476CCD /* RequestUrl.swift in Sources */,
 				9C8F8FD121F6831A0034DF4A /* Market.swift in Sources */,
 				9C3CEDDC2200E10200476CCD /* BalanceRequest.swift in Sources */,
+				9C3CEDFD220264E100476CCD /* BuyLimitRequest.swift in Sources */,
 				9C3CEDD62200E03800476CCD /* TickerRequest.swift in Sources */,
 				9C8F8FCB21F682EB0034DF4A /* Balance.swift in Sources */,
 				9C3CEDD42200E01800476CCD /* OrderHistoryRequest.swift in Sources */,
