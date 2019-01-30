@@ -22,11 +22,11 @@ final class RequestUrlBuilder {
   private let marketHistoryUrl = "/public/getmarkethistory?market="
   
   // URL constants (account requests)
+  private let balanceURL = "/account/getbalance"
   private let balancesURL = "/account/getbalances"
   private let orderHistoryURL = "/account/getorderhistory"
   private let depositHistoryURL = "/account/getdeposithistory"
   private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  private let balanceURL = "/account/getbalance"
   
   // Parameter constants
   private let currencyParam = "?currency="
