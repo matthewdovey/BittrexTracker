@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Withdrawal History Request struct to hold request state and result
+/// Withdrawal History Request struct to hold request state, message and result
 struct WithdrawalHistoryRequest: Decodable {
   let success: Bool?
   let message: String?

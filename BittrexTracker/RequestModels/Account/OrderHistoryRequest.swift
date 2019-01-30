@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Order History Request struct to hold request state and result
+/// Order History Request struct to hold request state, message and result
 struct OrderHistoryRequest: Decodable {
   let success: Bool?
   let message: String?

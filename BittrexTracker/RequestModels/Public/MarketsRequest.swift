@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Markets Request struct to hold request state and result
+/// Markets Request struct to hold request state, message and result
 struct MarketsRequest: Decodable {
   let success: Bool?
   let message: String?

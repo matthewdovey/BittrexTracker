@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Ticker Request struct to hold request state and result
+/// Ticker Request struct to hold request state, message and result
 struct TickerRequest: Decodable {
   let success: Bool?
   let message: String?
