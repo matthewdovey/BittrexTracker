@@ -38,19 +38,21 @@ final class MarketCollector {
     let url = URL(string: urlBuilder.buildUrlFor(request: .BuyLimit))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        
+        completion()
       } else {
         if data != nil {
           do {
-            
+            //let buyLimit = try JSONDecoder().decode(, from: data!)
+            completion()
           } catch {
-            
+            completion()
           }
         } else {
-          
+          completion()
         }
       }
     }
+    task.resume()
   }
   
   // TODO: sellLimit - market
@@ -58,19 +60,21 @@ final class MarketCollector {
     let url = URL(string: urlBuilder.buildUrlFor(request: .SellLimit))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        
+        completion()
       } else {
         if data != nil {
           do {
-            
+            //let sellLimit = try JSONDecoder().decode(, from: data!)
+            completion()
           } catch {
-            
+            completion()
           }
         } else {
-          
+          completion()
         }
       }
     }
+    task.resume()
   }
   
   // TODO: cancel - market
@@ -78,19 +82,21 @@ final class MarketCollector {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Cancel))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        
+        completion()
       } else {
         if data != nil {
           do {
-            
+            //let cancel = try JSONDecoder().decode(, from: data!)
+            completion()
           } catch {
-            
+            completion()
           }
         } else {
-          
+          completion()
         }
       }
     }
+    task.resume()
   }
   
   // TODO: getOpenOrders - market
@@ -98,18 +104,20 @@ final class MarketCollector {
     let url = URL(string: urlBuilder.buildUrlFor(request: .OpenOrders))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        
+        completion()
       } else {
         if data != nil {
           do {
-            
+            //let openOrders = try JSONDecoder().decode(, from: data!)
+            completion()
           } catch {
-            
+            completion()
           }
         } else {
-          
+          completion()
         }
       }
     }
+    task.resume()
   }
 }
