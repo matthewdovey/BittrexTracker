@@ -10,17 +10,21 @@ import Foundation
 
 /// Request URL enum to allow for easier selection of required URL
 ///
-/// - Currencies: the currencies request url
-/// - Markets: the markets request url
-/// - MarketSummaries: the market summaries request url
-/// - Ticker: the ticker request url
-/// - MarketSummary: the market summary request url
-/// - MarketHistory: the market history request url
-/// - Balance: the balance request url
-/// - Balances: the balances request url
-/// - OrderHistory: the order history request url
-/// - WithdrawalHistory: the withdrawal history request url
-/// - DepositHistory: the deposit history request url
+/// - Currencies: The currencies request URL
+/// - Markets: The markets request URL
+/// - MarketSummaries: The market summaries request URL
+/// - Ticker: The ticker request URL
+/// - MarketSummary: The market summary request URL
+/// - MarketHistory: The market history request URL
+/// - Balance: The balance request URL
+/// - Balances: The balances request URL
+/// - OrderHistory: The order history request URL
+/// - WithdrawalHistory: The withdrawal history request URL
+/// - DepositHistory: The deposit history request URL
+/// - BuyLimit: The buy limit request URL
+/// - SellLimit: The sell limit request URL
+/// - Cancel: The cancel request URL
+/// - OpenOrders: The open orders request URL
 enum RequestUrl {
   case Currencies
   case Markets
@@ -33,4 +37,8 @@ enum RequestUrl {
   case OrderHistory
   case WithdrawalHistory
   case DepositHistory
+  case BuyLimit
+  case SellLimit
+  case Cancel
+  case OpenOrders
 }
