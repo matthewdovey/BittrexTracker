@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// A class to provide a wrapper around the Bittrex Exchange APIs
+/// A class to provide a wrapper around the Bittrex Exchange public APIs
 final class BittrexCollector {
   
   private var session: URLSession
@@ -24,9 +24,9 @@ final class BittrexCollector {
   /// Initialiser to create the bittrex collector
   ///
   /// - Parameters:
-  ///   - session: URLSession
-  ///   - apiKey:
-  ///   - apiSecret:
+  ///   - session: URLSession object
+  ///   - apiKey: the user's API key
+  ///   - apiSecret: the user's API secret
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)
@@ -34,19 +34,17 @@ final class BittrexCollector {
   
   /// API key property setter
   ///
-  /// - Parameter apiKey: the API key
+  /// - Parameter apiKey: the user's API key
   public func setApiKey(apiKey: String) {
     urlBuilder.setKey(key: apiKey)
   }
   
   /// API secret property setter
   ///
-  /// - Parameter apiSecret: the API secret
+  /// - Parameter apiSecret: the user's API secret
   public func setApiSecret(apiSecret: String) {
     urlBuilder.setSecret(secret: apiSecret)
   }
-  
-  // MARK: public requests
   
   /// Method to return all currencies listed on the exchange
   ///
@@ -192,56 +190,6 @@ final class BittrexCollector {
           }
         } else {
           completion(MarketHistoryRequest(success: false, message: nil, result: nil))
-        }
-      }
-    }
-    task.resume()
-  }
-  
-  /// Method to retrieve all balances for the users wallet
-  ///
-  /// - Parameter completion: optionally returning a BalanceRequest and an error
-  final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .Balances))
-    let task = session.dataTask(with: url!) { (data, response, error) in
-      if error != nil {
-        completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
-      } else {
-        if data != nil {
-          do {
-            let balances = try JSONDecoder().decode(BalancesRequest.self, from: data!)
-            completion(balances)
-          } catch {
-            completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
-          }
-        } else {
-          completion(BalancesRequest(success: false, message: nil, result: nil))
-        }
-      }
-    }
-    task.resume()
-  }
-  
-  /// Method to retrieve the balance of a specified currency from the user's wallet
-  ///
-  /// - Parameters:
-  ///   - currency: the balance for a specific currency
-  ///   - completion: optionally returning a BalanceRequest object and an error
-  final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .Balance)+currency)
-    let task = session.dataTask(with: url!) { (data, response, error) in
-      if error != nil {
-        completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
-      } else {
-        if data != nil {
-          do {
-            let balance = try JSONDecoder().decode(BalanceRequest.self, from: data!)
-            completion(balance)
-          } catch {
-            completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
-          }
-        } else {
-          completion(BalanceRequest(success: false, message: nil, result: nil))
         }
       }
     }

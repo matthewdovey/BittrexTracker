@@ -16,8 +16,6 @@ private let TICKER_DATA_FILE = "ticker_test_data"
 private let SUMMARY_DATA_FILE = "summary_test_data"
 private let SUMMARIES_DATA_FILE = "summaries_test_data"
 private let MARKET_HISTORY_DATA_FILE = "market_history_test_data"
-private let BALANCES_DATA_FILE = "balances_test_data"
-private let BALANCE_DATA_FILE = "balance_test_data"
 private let JSON = "json"
 
 class BittrexCollectorTests: XCTestCase {
@@ -25,7 +23,6 @@ class BittrexCollectorTests: XCTestCase {
   private var collector: BittrexCollector!
   private var session: URLSessionMock!
   private var bundle: Bundle?
-  private var testDataUrl: URL?
   
   override func setUp() {
     session = URLSessionMock()
@@ -162,50 +159,6 @@ class BittrexCollectorTests: XCTestCase {
   func testGetMarketHistoryForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
     collector.getMarketHistoryFor(market: "") { results in
-      XCTAssertFalse(results.success == true)
-    }
-  }
-  
-  // MARK: getBalances tests
-  
-  func testGetBalancesReturnsData() {
-    if let url = bundle?.url(forResource: BALANCES_DATA_FILE, withExtension: JSON) {
-      do {
-        let data = try Data(contentsOf: url, options: .mappedIfSafe)
-        session.data = data
-      } catch {}
-    }
-    collector.getBalances() { results in
-      XCTAssertTrue(results.success == true)
-      XCTAssertFalse(results.result?.isEmpty == true)
-    }
-  }
-  
-  func testGetBalancesReturnsFailure() {
-    session.error = URLError(.cannotParseResponse)
-    collector.getBalances() { results in
-      XCTAssertFalse(results.success == true)
-    }
-  }
-  
-  // MARK: getBalanceFor tests
-  
-  func testGetBalanceForReturnsData() {
-    if let url = bundle?.url(forResource: BALANCE_DATA_FILE, withExtension: JSON) {
-      do {
-        let data = try Data(contentsOf: url, options: .mappedIfSafe)
-        session.data = data
-      } catch {}
-    }
-    collector.getBalanceFor(currency: "") { results in
-      XCTAssertTrue(results.success == true)
-      XCTAssertNotNil(results.result)
-    }
-  }
-  
-  func testGetBalanceForReturnsFailure() {
-    session.error = URLError(.cannotParseResponse)
-    collector.getBalanceFor(currency: "") { results in
       XCTAssertFalse(results.success == true)
     }
   }
