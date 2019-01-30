@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// A class to provide a wrapper around the Bittrex Exchange APIs
+/// A class to provide a wrapper around the Bittrex Exchange public APIs
 final class BittrexCollector {
   
   private var session: URLSession
@@ -24,9 +24,9 @@ final class BittrexCollector {
   /// Initialiser to create the bittrex collector
   ///
   /// - Parameters:
-  ///   - session: URLSession
-  ///   - apiKey:
-  ///   - apiSecret:
+  ///   - session: URLSession object
+  ///   - apiKey: the user's API key
+  ///   - apiSecret: the user's API secret
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)
@@ -34,19 +34,17 @@ final class BittrexCollector {
   
   /// API key property setter
   ///
-  /// - Parameter apiKey: the API key
+  /// - Parameter apiKey: the user's API key
   public func setApiKey(apiKey: String) {
     urlBuilder.setKey(key: apiKey)
   }
   
   /// API secret property setter
   ///
-  /// - Parameter apiSecret: the API secret
+  /// - Parameter apiSecret: the user's API secret
   public func setApiSecret(apiSecret: String) {
     urlBuilder.setSecret(secret: apiSecret)
   }
-  
-  // MARK: public requests
   
   /// Method to return all currencies listed on the exchange
   ///

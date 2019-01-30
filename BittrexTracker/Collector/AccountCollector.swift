@@ -8,13 +8,36 @@
 
 import Foundation
 
+
+/// Class to provide all account related API calls to the Bittrex exchange
 final class AccountCollector {
+  
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
   
+  /// Initialiser to create an instance of the Account Collector class
+  ///
+  /// - Parameters:
+  ///   - session: URLSession object
+  ///   - apiKey: the user's API key
+  ///   - apiSecret: the user's API secret
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)
+  }
+  
+  /// Setter to allow the API key to be set for the user's wallet
+  ///
+  /// - Parameter key: user's wallet API key
+  public func setApiKey(key: String) {
+    urlBuilder.setKey(key: key)
+  }
+  
+  /// Setter to allow the API secret to be set for the user's... TODO: finish docs
+  ///
+  /// - Parameter secret: user's API secret
+  public func setApiSecret(secret: String) {
+    urlBuilder.setSecret(secret: secret)
   }
   
   /// Method to retrieve the balance of a specified currency from the user's wallet
