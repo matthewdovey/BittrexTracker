@@ -1,16 +1,47 @@
 # BittrexTracker
-A framework to retrieve data from the Bittrex exchange.
+A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing the retrieval of public and account data.
+
+## Contents
+
+- [Version](#version)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Built With](#built-with)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
 
 ## Version
 
-1.0.8
+- 1.0.8
 
-## Getting Started
+## Requirements
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+- iOS 10.0+
+- Xcode 10.0+
+- Swift 4.0+
+
+## Installation
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
 
 ## Built With
-Bittrex Developer API v1.1 (https://bittrex.github.io/api/v1-1)
+
+- Bittrex Developer API v1.1 (https://bittrex.github.io/api/v1-1)
+
+## Usage
+
 
 ## Contributing
 
