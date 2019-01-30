@@ -16,6 +16,7 @@ import Foundation
 /// - Ticker: The ticker request URL
 /// - MarketSummary: The market summary request URL
 /// - MarketHistory: The market history request URL
+/// - OrderBook: The order book request URL
 /// - Balance: The balance request URL
 /// - Balances: The balances request URL
 /// - OrderHistory: The order history request URL
@@ -32,6 +33,7 @@ enum RequestUrl {
   case Ticker
   case MarketSummary
   case MarketHistory
+  case OrderBook
   case Balance
   case Balances
   case OrderHistory

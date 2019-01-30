@@ -90,6 +90,8 @@ final class RequestUrlBuilder {
       return baseURL+apiVersion+marketSummaryURL
     case .MarketSummaries:
       return baseURL+apiVersion+marketSummariesURL
+    case .OrderBook:
+      return baseURL+apiVersion+orderbookURL+marketParam
     case .Ticker:
       return baseURL+apiVersion+tickerURL
     case .Balance:
