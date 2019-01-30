@@ -168,18 +168,42 @@
 		9C3CEDC82200D72400476CCD /* RequestModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C3CEDC92200D74B00476CCD /* CoinRequest.swift */,
-				9C3CEDCB2200D76600476CCD /* MarketsRequest.swift */,
-				9C3CEDCD2200DF0D00476CCD /* BalancesRequest.swift */,
-				9C3CEDCF2200DF3F00476CCD /* DepositHistoryRequest.swift */,
-				9C3CEDD12200DF6200476CCD /* MarketHistoryRequest.swift */,
-				9C3CEDD32200E01800476CCD /* OrderHistoryRequest.swift */,
-				9C3CEDD52200E03800476CCD /* TickerRequest.swift */,
-				9C3CEDD72200E08B00476CCD /* WithdrawalHistoryRequest.swift */,
-				9C3CEDD92200E0A900476CCD /* MarketSummaryRequest.swift */,
-				9C3CEDDB2200E10200476CCD /* BalanceRequest.swift */,
+				9C3CEDF9220258A500476CCD /* Public */,
+				9C3CEDFB22025B5500476CCD /* Market */,
+				9C3CEDFA22025B1900476CCD /* Account */,
 			);
 			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		9C3CEDF9220258A500476CCD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CEDC92200D74B00476CCD /* CoinRequest.swift */,
+				9C3CEDCB2200D76600476CCD /* MarketsRequest.swift */,
+				9C3CEDD52200E03800476CCD /* TickerRequest.swift */,
+				9C3CEDD92200E0A900476CCD /* MarketSummaryRequest.swift */,
+				9C3CEDD12200DF6200476CCD /* MarketHistoryRequest.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		9C3CEDFA22025B1900476CCD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CEDDB2200E10200476CCD /* BalanceRequest.swift */,
+				9C3CEDCD2200DF0D00476CCD /* BalancesRequest.swift */,
+				9C3CEDCF2200DF3F00476CCD /* DepositHistoryRequest.swift */,
+				9C3CEDD32200E01800476CCD /* OrderHistoryRequest.swift */,
+				9C3CEDD72200E08B00476CCD /* WithdrawalHistoryRequest.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		9C3CEDFB22025B5500476CCD /* Market */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Market;
 			sourceTree = "<group>";
 		};
 		9C85C05721F7645500E9259D /* CollectorTests */ = {
