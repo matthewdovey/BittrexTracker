@@ -170,6 +170,13 @@ final class BittrexCollector {
     task.resume()
   }
   
+  final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
+    let url = URL(string: urlBuilder.buildUrlFor(request: .OrderBook))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      
+    }
+  }
+  
   /// Method to retrieve the market history for a specified currency
   ///
   /// - Parameters:
