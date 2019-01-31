@@ -10,5 +10,11 @@ import Foundation
 
 /// The data structure for the result of the Deposit Address Request
 struct DepositAddress: Decodable {
+  let currency: String?
+  let address: String?
   
+  private enum CodingKeys: String, CodingKey {
+    case currency = "Currency"
+    case address = "Address"
+  }
 }
