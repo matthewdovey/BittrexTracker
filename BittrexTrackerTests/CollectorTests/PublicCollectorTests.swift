@@ -163,4 +163,6 @@ class BittrexCollectorTests: XCTestCase {
       XCTAssertFalse(results.success == true)
     }
   }
+  
+  //TODO: add tests for OrderBook API method
 }
