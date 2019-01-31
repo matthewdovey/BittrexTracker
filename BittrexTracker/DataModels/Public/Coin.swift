@@ -1,5 +1,5 @@
 //
-//  CoinRequest.swift
+//  Coin.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 21/01/2019.

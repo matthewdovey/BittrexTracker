@@ -1,5 +1,5 @@
 //
-//  BalanceRequest.swift
+//  BalancesRequest.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 29/01/2019.
