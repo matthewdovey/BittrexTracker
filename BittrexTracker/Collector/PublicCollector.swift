@@ -25,9 +25,9 @@ final class PublicCollector {
   /// Initialiser to create the bittrex collector
   ///
   /// - Parameter session: URLSession object
-  init(session: URLSession = .shared) {
+  init(session: URLSession = .shared, builder: RequestUrlBuilder = RequestUrlBuilder()) {
     self.session = session
-    self.urlBuilder = RequestUrlBuilder()
+    self.urlBuilder = builder
   }
   
   /// Method to return all currencies listed on the exchange
