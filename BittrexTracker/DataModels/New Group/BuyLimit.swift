@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The data structure for the result of the Buy Limit request
+/// The data structure for the result of the Buy Limit Request
 struct BuyLimit: Decodable {
   let uuid: String?
   

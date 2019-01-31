@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The data structure for the results of the cancel request
+/// The data structure for the results of the cancel Request
 struct Cancel: Decodable {
   let uuid: String
   

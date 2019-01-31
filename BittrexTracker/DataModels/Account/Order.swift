@@ -1,5 +1,5 @@
 //
-//  OpenOrders.swift
+//  Order.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 31/01/2019.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// The data structure for the results of the Open Orders Request
-struct OpenOrders: Decodable {
+/// The data structure for the result of the Order Request
+struct Order: Decodable {
   let uuid: String?
   let orderUuid: String?
   let exchange: String?
