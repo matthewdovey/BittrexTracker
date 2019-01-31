@@ -19,8 +19,8 @@ final class AccountCollector {
   ///
   /// - Parameters:
   ///   - session: URLSession object
-  ///   - apiKey: the user's API key
-  ///   - apiSecret: the user's API secret
+  ///   - apiKey: The user's API key
+  ///   - apiSecret: The user's API secret
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)

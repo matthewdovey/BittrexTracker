@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Balance Request struct to hold request state and result
+/// Balance Request struct to hold request state, message and result
 struct BalanceRequest: Decodable {
   let success: Bool?
   let message: String?

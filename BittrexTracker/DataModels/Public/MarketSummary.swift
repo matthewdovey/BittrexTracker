@@ -1,5 +1,5 @@
 //
-//  MarketSummaryRequest.swift
+//  MarketSummary.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 21/01/2019.
@@ -10,19 +10,19 @@ import Foundation
 
 /// The data structure for the result of the Market Summary Request
 struct MarketSummary: Decodable {
-  let marketName: String
-  let high: Double
-  let low: Double
-  let volume: Double
-  let last: Double
-  let baseVolume: Double
-  let timeStamp: String
-  let bid: Double
-  let ask: Double
-  let openBuyOrders: Int
-  let openSellOrders: Int
-  let prevDay: Double
-  let created: String
+  let marketName: String?
+  let high: Double?
+  let low: Double?
+  let volume: Double?
+  let last: Double?
+  let baseVolume: Double?
+  let timeStamp: String?
+  let bid: Double?
+  let ask: Double?
+  let openBuyOrders: Int?
+  let openSellOrders: Int?
+  let prevDay: Double?
+  let created: String?
   
   private enum CodingKeys: String, CodingKey {
     case marketName = "MarketName"

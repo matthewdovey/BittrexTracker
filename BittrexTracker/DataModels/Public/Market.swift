@@ -1,5 +1,5 @@
 //
-//  MarketRequest.swift
+//  Market.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 21/01/2019.

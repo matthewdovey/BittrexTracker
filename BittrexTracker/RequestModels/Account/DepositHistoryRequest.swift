@@ -1,5 +1,5 @@
 //
-//  TickerRequest.swift
+//  DepositHistoryRequest.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 29/01/2019.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-/// Ticker Request struct to hold request state and result
-struct TickerRequest: Decodable {
+/// Deposit History Request struct to hold request state, message and result
+struct DepositHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: Ticker?
+  let result: [DepositHistory]?
   
-  init(success: Bool?, message: String?, result: Ticker?) {
+  init(success: Bool?, message: String?, result: [DepositHistory]?) {
     self.success = success
     self.message = message
     self.result = result

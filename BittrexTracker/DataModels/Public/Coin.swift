@@ -1,5 +1,5 @@
 //
-//  CoinRequest.swift
+//  Coin.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 21/01/2019.
@@ -10,12 +10,12 @@ import Foundation
 
 /// The data structure for the result of the Coin Request
 struct Coin: Decodable {
-  let currency: String
-  let currencyLong: String
-  let minConfirmation: Int64
-  let txFee: Double
-  let isActive: Bool
-  let coinType: String
+  let currency: String?
+  let currencyLong: String?
+  let minConfirmation: Int64?
+  let txFee: Double?
+  let isActive: Bool?
+  let coinType: String?
   let baseAddress: String?
   var bittrexSummary: MarketSummary?
   

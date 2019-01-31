@@ -1,5 +1,5 @@
 //
-//  BalanceRequest.swift
+//  BalancesRequest.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 29/01/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Balances Request struct to hold request state and result
+/// Balances Request struct to hold request state, message and result
 struct BalancesRequest: Decodable {
   let success: Bool?
   let message: String?

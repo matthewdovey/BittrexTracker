@@ -1,5 +1,5 @@
 //
-//  MarketSummaryRequest.swift
+//  TickerRequest.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 29/01/2019.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-/// Market Summary Request struct to hold request state and result
-struct MarketSummaryRequest: Decodable {
+/// Ticker Request struct to hold request state, message and result
+struct TickerRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [MarketSummary]?
+  let result: Ticker?
   
-  init(success: Bool?, message: String?, result: [MarketSummary]?) {
+  init(success: Bool?, message: String?, result: Ticker?) {
     self.success = success
     self.message = message
     self.result = result

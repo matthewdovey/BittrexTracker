@@ -39,14 +39,33 @@
 		9C3CEDF2220128B600476CCD /* AccountCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF1220128B600476CCD /* AccountCollector.swift */; };
 		9C3CEDF422012C8A00476CCD /* AccountCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */; };
 		9C3CEDF522012D8000476CCD /* AccountCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF1220128B600476CCD /* AccountCollector.swift */; };
+		9C3CEDF72202459600476CCD /* MarketCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF62202459600476CCD /* MarketCollector.swift */; };
+		9C3CEDF82202459800476CCD /* MarketCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF62202459600476CCD /* MarketCollector.swift */; };
+		9C3CEDFD220264E100476CCD /* BuyLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */; };
+		9C3CEDFF2202650300476CCD /* SellLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */; };
+		9C3CEE012202651100476CCD /* CancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE002202651100476CCD /* CancelRequest.swift */; };
+		9C3CEE032202652500476CCD /* OpenOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */; };
+		9C3CEE05220268F600476CCD /* OrderBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE04220268F600476CCD /* OrderBookRequest.swift */; };
+		9C3CEE0722026A1500476CCD /* DepositAddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0622026A1500476CCD /* DepositAddressRequest.swift */; };
+		9C3CEE0922026A6500476CCD /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0822026A6500476CCD /* OrderRequest.swift */; };
+		9C3CEE0B22026AB200476CCD /* WithdrawRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0A22026AB200476CCD /* WithdrawRequest.swift */; };
+		9C3CEE0E220270A200476CCD /* OrderBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE04220268F600476CCD /* OrderBookRequest.swift */; };
+		9C3CEE0F220270A600476CCD /* BuyLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */; };
+		9C3CEE10220270A900476CCD /* SellLimitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */; };
+		9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE002202651100476CCD /* CancelRequest.swift */; };
+		9C3CEE12220270AE00476CCD /* OpenOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */; };
+		9C3CEE13220270B500476CCD /* DepositAddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0622026A1500476CCD /* DepositAddressRequest.swift */; };
+		9C3CEE14220270B800476CCD /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0822026A6500476CCD /* OrderRequest.swift */; };
+		9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE0A22026AB200476CCD /* WithdrawRequest.swift */; };
+		9C3CEE172202718C00476CCD /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE162202718C00476CCD /* OrderBook.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
-		9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */; };
+		9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* PublicCollectorTests.swift */; };
 		9C85C05B21F7986B00E9259D /* currency_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C85C05A21F7986B00E9259D /* currency_test_data.json */; };
 		9C85C05D21F7A76700E9259D /* currency_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C85C05A21F7986B00E9259D /* currency_test_data.json */; };
 		9C8F8FB421F67E120034DF4A /* BittrexTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F8FAA21F67E120034DF4A /* BittrexTracker.framework */; };
 		9C8F8FBB21F67E120034DF4A /* BittrexTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */; };
+		9C8F8FC721F6826F0034DF4A /* PublicCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* PublicCollector.swift */; };
 		9C8F8FC921F682B10034DF4A /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* Coin.swift */; };
 		9C8F8FCB21F682EB0034DF4A /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* Balance.swift */; };
 		9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */; };
@@ -56,7 +75,7 @@
 		9C8F8FD521F683970034DF4A /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD421F683970034DF4A /* Ticker.swift */; };
 		9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */; };
 		9C8F8FD921F683EC0034DF4A /* MarketSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */; };
-		9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */; };
+		9C8F8FDB21F7C9A40034DF4A /* PublicCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC621F6826F0034DF4A /* PublicCollector.swift */; };
 		9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FC821F682B10034DF4A /* Coin.swift */; };
 		9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FD021F6831A0034DF4A /* Market.swift */; };
 		9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F8FCA21F682EB0034DF4A /* Balance.swift */; };
@@ -108,16 +127,26 @@
 		9C3CEDED2201049A00476CCD /* RequestUrlBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUrlBuilderTests.swift; sourceTree = "<group>"; };
 		9C3CEDF1220128B600476CCD /* AccountCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollector.swift; sourceTree = "<group>"; };
 		9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectorTests.swift; sourceTree = "<group>"; };
+		9C3CEDF62202459600476CCD /* MarketCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCollector.swift; sourceTree = "<group>"; };
+		9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLimitRequest.swift; sourceTree = "<group>"; };
+		9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellLimitRequest.swift; sourceTree = "<group>"; };
+		9C3CEE002202651100476CCD /* CancelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelRequest.swift; sourceTree = "<group>"; };
+		9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrdersRequest.swift; sourceTree = "<group>"; };
+		9C3CEE04220268F600476CCD /* OrderBookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookRequest.swift; sourceTree = "<group>"; };
+		9C3CEE0622026A1500476CCD /* DepositAddressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositAddressRequest.swift; sourceTree = "<group>"; };
+		9C3CEE0822026A6500476CCD /* OrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequest.swift; sourceTree = "<group>"; };
+		9C3CEE0A22026AB200476CCD /* WithdrawRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawRequest.swift; sourceTree = "<group>"; };
+		9C3CEE162202718C00476CCD /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
-		9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollectorTests.swift; sourceTree = "<group>"; };
+		9C85C05821F7647400E9259D /* PublicCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicCollectorTests.swift; sourceTree = "<group>"; };
 		9C85C05A21F7986B00E9259D /* currency_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency_test_data.json; sourceTree = "<group>"; };
 		9C8F8FAA21F67E120034DF4A /* BittrexTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BittrexTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BittrexTracker.h; sourceTree = "<group>"; };
 		9C8F8FAE21F67E120034DF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C8F8FB321F67E120034DF4A /* BittrexTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BittrexTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8F8FBA21F67E120034DF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexCollector.swift; sourceTree = "<group>"; };
+		9C8F8FC621F6826F0034DF4A /* PublicCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicCollector.swift; sourceTree = "<group>"; };
 		9C8F8FC821F682B10034DF4A /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		9C8F8FCA21F682EB0034DF4A /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositHistory.swift; sourceTree = "<group>"; };
@@ -165,24 +194,103 @@
 		9C3CEDC82200D72400476CCD /* RequestModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C3CEDC92200D74B00476CCD /* CoinRequest.swift */,
-				9C3CEDCB2200D76600476CCD /* MarketsRequest.swift */,
-				9C3CEDCD2200DF0D00476CCD /* BalancesRequest.swift */,
-				9C3CEDCF2200DF3F00476CCD /* DepositHistoryRequest.swift */,
-				9C3CEDD12200DF6200476CCD /* MarketHistoryRequest.swift */,
-				9C3CEDD32200E01800476CCD /* OrderHistoryRequest.swift */,
-				9C3CEDD52200E03800476CCD /* TickerRequest.swift */,
-				9C3CEDD72200E08B00476CCD /* WithdrawalHistoryRequest.swift */,
-				9C3CEDD92200E0A900476CCD /* MarketSummaryRequest.swift */,
-				9C3CEDDB2200E10200476CCD /* BalanceRequest.swift */,
+				9C3CEDF9220258A500476CCD /* Public */,
+				9C3CEDFB22025B5500476CCD /* Market */,
+				9C3CEDFA22025B1900476CCD /* Account */,
 			);
 			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		9C3CEDF9220258A500476CCD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CEDC92200D74B00476CCD /* CoinRequest.swift */,
+				9C3CEDCB2200D76600476CCD /* MarketsRequest.swift */,
+				9C3CEDD52200E03800476CCD /* TickerRequest.swift */,
+				9C3CEDD92200E0A900476CCD /* MarketSummaryRequest.swift */,
+				9C3CEDD12200DF6200476CCD /* MarketHistoryRequest.swift */,
+				9C3CEE04220268F600476CCD /* OrderBookRequest.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		9C3CEDFA22025B1900476CCD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CEDDB2200E10200476CCD /* BalanceRequest.swift */,
+				9C3CEDCD2200DF0D00476CCD /* BalancesRequest.swift */,
+				9C3CEDCF2200DF3F00476CCD /* DepositHistoryRequest.swift */,
+				9C3CEDD32200E01800476CCD /* OrderHistoryRequest.swift */,
+				9C3CEDD72200E08B00476CCD /* WithdrawalHistoryRequest.swift */,
+				9C3CEE0622026A1500476CCD /* DepositAddressRequest.swift */,
+				9C3CEE0822026A6500476CCD /* OrderRequest.swift */,
+				9C3CEE0A22026AB200476CCD /* WithdrawRequest.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		9C3CEDFB22025B5500476CCD /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */,
+				9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */,
+				9C3CEE002202651100476CCD /* CancelRequest.swift */,
+				9C3CEE022202652400476CCD /* OpenOrdersRequest.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		9C3CEE0C22026BAF00476CCD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FC821F682B10034DF4A /* Coin.swift */,
+				9C8F8FD021F6831A0034DF4A /* Market.swift */,
+				9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */,
+				9C8F8FD421F683970034DF4A /* Ticker.swift */,
+				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
+				9C3CEE162202718C00476CCD /* OrderBook.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		9C3CEE0D22026BDD00476CCD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FCA21F682EB0034DF4A /* Balance.swift */,
+				9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */,
+				9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */,
+				9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		9C3CEE182202762F00476CCD /* PublicTestData */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F8FE921F90D430034DF4A /* markets_test_data.json */,
+				9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */,
+				9C85C05A21F7986B00E9259D /* currency_test_data.json */,
+				9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */,
+				9C8F8FE621F90D430034DF4A /* summaries_test_data.json */,
+				9C8F8FE821F90D430034DF4A /* summary_test_data.json */,
+				9C8F8FE721F90D430034DF4A /* market_history_test_data.json */,
+			);
+			path = PublicTestData;
+			sourceTree = "<group>";
+		};
+		9C3CEE192202766500476CCD /* AccountTestData */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CEDB821FFB72900476CCD /* balance_test_data.json */,
+				9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */,
+			);
+			path = AccountTestData;
 			sourceTree = "<group>";
 		};
 		9C85C05721F7645500E9259D /* CollectorTests */ = {
 			isa = PBXGroup;
 			children = (
-				9C85C05821F7647400E9259D /* BittrexCollectorTests.swift */,
+				9C85C05821F7647400E9259D /* PublicCollectorTests.swift */,
 				9C3CEDED2201049A00476CCD /* RequestUrlBuilderTests.swift */,
 				9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */,
 			);
@@ -192,15 +300,8 @@
 		9C85C05C21F7987D00E9259D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */,
-				9C3CEDB821FFB72900476CCD /* balance_test_data.json */,
-				9C85C05A21F7986B00E9259D /* currency_test_data.json */,
-				9C8F8FE721F90D430034DF4A /* market_history_test_data.json */,
-				9C8F8FE621F90D430034DF4A /* summaries_test_data.json */,
-				9C8F8FE921F90D430034DF4A /* markets_test_data.json */,
-				9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */,
-				9C8F8FE821F90D430034DF4A /* summary_test_data.json */,
-				9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */,
+				9C3CEE182202762F00476CCD /* PublicTestData */,
+				9C3CEE192202766500476CCD /* AccountTestData */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -251,15 +352,8 @@
 		9C8F8FC421F6817D0034DF4A /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C8F8FC821F682B10034DF4A /* Coin.swift */,
-				9C8F8FD021F6831A0034DF4A /* Market.swift */,
-				9C8F8FCA21F682EB0034DF4A /* Balance.swift */,
-				9C8F8FCC21F682FE0034DF4A /* DepositHistory.swift */,
-				9C8F8FCE21F6830D0034DF4A /* MarketHistory.swift */,
-				9C8F8FD221F6836E0034DF4A /* OrderHistory.swift */,
-				9C8F8FD421F683970034DF4A /* Ticker.swift */,
-				9C8F8FD621F683A90034DF4A /* WithdrawalHistory.swift */,
-				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
+				9C3CEE0C22026BAF00476CCD /* Public */,
+				9C3CEE0D22026BDD00476CCD /* Account */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -267,9 +361,10 @@
 		9C8F8FC521F681A60034DF4A /* Collector */ = {
 			isa = PBXGroup;
 			children = (
-				9C8F8FC621F6826F0034DF4A /* BittrexCollector.swift */,
+				9C8F8FC621F6826F0034DF4A /* PublicCollector.swift */,
 				9C3CEDC421FFD5C100476CCD /* RequestUrlBuilder.swift */,
 				9C3CEDF1220128B600476CCD /* AccountCollector.swift */,
+				9C3CEDF62202459600476CCD /* MarketCollector.swift */,
 			);
 			path = Collector;
 			sourceTree = "<group>";
@@ -401,21 +496,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3CEE032202652500476CCD /* OpenOrdersRequest.swift in Sources */,
 				9C8F8FD321F6836E0034DF4A /* OrderHistory.swift in Sources */,
+				9C3CEDFF2202650300476CCD /* SellLimitRequest.swift in Sources */,
+				9C3CEE0B22026AB200476CCD /* WithdrawRequest.swift in Sources */,
 				9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C3CEDD02200DF3F00476CCD /* DepositHistoryRequest.swift in Sources */,
+				9C3CEDF72202459600476CCD /* MarketCollector.swift in Sources */,
 				9C3CEDC521FFD5C100476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C8F8FD921F683EC0034DF4A /* MarketSummary.swift in Sources */,
 				9C3CEDCA2200D74B00476CCD /* CoinRequest.swift in Sources */,
 				9C8F8FD521F683970034DF4A /* Ticker.swift in Sources */,
 				9C8F8FC921F682B10034DF4A /* Coin.swift in Sources */,
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
-				9C8F8FC721F6826F0034DF4A /* BittrexCollector.swift in Sources */,
+				9C3CEE172202718C00476CCD /* OrderBook.swift in Sources */,
+				9C8F8FC721F6826F0034DF4A /* PublicCollector.swift in Sources */,
+				9C3CEE0922026A6500476CCD /* OrderRequest.swift in Sources */,
 				9C3CEDDA2200E0A900476CCD /* MarketSummaryRequest.swift in Sources */,
+				9C3CEE012202651100476CCD /* CancelRequest.swift in Sources */,
 				9C3CEDD82200E08B00476CCD /* WithdrawalHistoryRequest.swift in Sources */,
 				9C3CEDC321FFD45300476CCD /* RequestUrl.swift in Sources */,
 				9C8F8FD121F6831A0034DF4A /* Market.swift in Sources */,
 				9C3CEDDC2200E10200476CCD /* BalanceRequest.swift in Sources */,
+				9C3CEE0722026A1500476CCD /* DepositAddressRequest.swift in Sources */,
+				9C3CEDFD220264E100476CCD /* BuyLimitRequest.swift in Sources */,
 				9C3CEDD62200E03800476CCD /* TickerRequest.swift in Sources */,
 				9C8F8FCB21F682EB0034DF4A /* Balance.swift in Sources */,
 				9C3CEDD42200E01800476CCD /* OrderHistoryRequest.swift in Sources */,
@@ -424,6 +528,7 @@
 				9C3CEDCC2200D76600476CCD /* MarketsRequest.swift in Sources */,
 				9C3CEDCE2200DF0D00476CCD /* BalancesRequest.swift in Sources */,
 				9C8F8FCF21F6830D0034DF4A /* MarketHistory.swift in Sources */,
+				9C3CEE05220268F600476CCD /* OrderBookRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,25 +545,34 @@
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */,
 				9C3CEDEE2201049A00476CCD /* RequestUrlBuilderTests.swift in Sources */,
+				9C3CEE10220270A900476CCD /* SellLimitRequest.swift in Sources */,
+				9C3CEE14220270B800476CCD /* OrderRequest.swift in Sources */,
 				9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */,
+				9C3CEDF82202459800476CCD /* MarketCollector.swift in Sources */,
+				9C3CEE0E220270A200476CCD /* OrderBookRequest.swift in Sources */,
 				9C3CEDEA2201001700476CCD /* BalancesRequest.swift in Sources */,
 				9C3CEDEB2201001900476CCD /* MarketsRequest.swift in Sources */,
 				9C3CEDE72201001000476CCD /* OrderHistoryRequest.swift in Sources */,
 				9C3CEDF522012D8000476CCD /* AccountCollector.swift in Sources */,
-				9C85C05921F7647400E9259D /* BittrexCollectorTests.swift in Sources */,
+				9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */,
 				9C8F8FE421F7C9BE0034DF4A /* MarketSummary.swift in Sources */,
+				9C3CEE13220270B500476CCD /* DepositAddressRequest.swift in Sources */,
+				9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */,
+				9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* RequestUrl.swift in Sources */,
 				9C8F8FE021F7C9B50034DF4A /* MarketHistory.swift in Sources */,
 				9C8F8FE321F7C9BC0034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C3CEDE42201000800476CCD /* MarketSummaryRequest.swift in Sources */,
-				9C8F8FDB21F7C9A40034DF4A /* BittrexCollector.swift in Sources */,
+				9C8F8FDB21F7C9A40034DF4A /* PublicCollector.swift in Sources */,
 				9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */,
+				9C3CEE12220270AE00476CCD /* OpenOrdersRequest.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
 				9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */,
 				9C3CEDE32201000600476CCD /* BalanceRequest.swift in Sources */,
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C3CEDE82201001200476CCD /* MarketHistoryRequest.swift in Sources */,
 				9C3CEDEC2201001C00476CCD /* CoinRequest.swift in Sources */,
+				9C3CEE0F220270A600476CCD /* BuyLimitRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

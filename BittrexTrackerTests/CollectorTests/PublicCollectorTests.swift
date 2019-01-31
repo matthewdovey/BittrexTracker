@@ -1,5 +1,5 @@
 //
-//  BittrexCollectorTests.swift
+//  PublicCollectorTests.swift
 //  BittrexTrackerTests
 //
 //  Created by Matthew  Dovey on 22/01/2019.
@@ -16,17 +16,18 @@ private let TICKER_DATA_FILE = "ticker_test_data"
 private let SUMMARY_DATA_FILE = "summary_test_data"
 private let SUMMARIES_DATA_FILE = "summaries_test_data"
 private let MARKET_HISTORY_DATA_FILE = "market_history_test_data"
+private let ORDERBOOK_DATA_FILE = "orderbook_test_data"
 private let JSON = "json"
 
-class BittrexCollectorTests: XCTestCase {
+class PublicCollectorTests: XCTestCase {
   
-  private var collector: BittrexCollector!
+  private var collector: PublicCollector!
   private var session: URLSessionMock!
   private var bundle: Bundle?
   
   override func setUp() {
     session = URLSessionMock()
-    collector = BittrexCollector(session: session, apiKey: "", apiSecret: "")
+    collector = PublicCollector(session: session)
     bundle = Bundle(identifier: BUNDLE_IDENTIFIER)
   }
   
@@ -162,4 +163,6 @@ class BittrexCollectorTests: XCTestCase {
       XCTAssertFalse(results.success == true)
     }
   }
+  
+  //TODO: add tests for OrderBook API method
 }
