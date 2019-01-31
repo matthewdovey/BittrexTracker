@@ -59,4 +59,4 @@ This version will be increased by 0.1.0 per release and 0.0.1 per pull request t
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
