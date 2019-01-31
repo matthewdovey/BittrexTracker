@@ -1,3 +1,5 @@
+[![Build Status](https://app.bitrise.io/app/46856f20d6dfcc3a/status.svg?token=SpGStajcN4PUkVFN7zUSiQ&branch=master)](https://app.bitrise.io/app/46856f20d6dfcc3a)
+
 # BittrexTracker
 A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing the retrieval of public and account data.
 
