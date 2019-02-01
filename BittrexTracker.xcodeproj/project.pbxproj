@@ -399,9 +399,9 @@
 			isa = PBXGroup;
 			children = (
 				9C8F8FC621F6826F0034DF4A /* PublicCollector.swift */,
-				9C3CEDC421FFD5C100476CCD /* RequestUrlBuilder.swift */,
 				9C3CEDF1220128B600476CCD /* AccountCollector.swift */,
 				9C3CEDF62202459600476CCD /* MarketCollector.swift */,
+				9C3CEDC421FFD5C100476CCD /* RequestUrlBuilder.swift */,
 			);
 			path = Collector;
 			sourceTree = "<group>";
