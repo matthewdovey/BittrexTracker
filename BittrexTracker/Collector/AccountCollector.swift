@@ -44,7 +44,7 @@ final class AccountCollector {
   ///
   /// - Parameters:
   ///   - currency: the balance for a specific currency
-  ///   - completion: optionally returning a BalanceRequest object and an error
+  ///   - completion: Escaping BalanceRequest object
   final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Balance)+currency)
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -68,7 +68,7 @@ final class AccountCollector {
   
   /// Method to retrieve all balances for the users wallet
   ///
-  /// - Parameter completion: optionally returning a BalanceRequest and an error
+  /// - Parameter completion: Escaping BalancesRequest object
   final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Balances))
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -90,24 +90,37 @@ final class AccountCollector {
     task.resume()
   }
   
+  /// Method to retrieve deposit address for a specific currency
+  ///
+  /// - Parameters:
+  ///   - currency: The specific currency
+  ///   - completion: Escaping DepositAddressRequest object
   final func getDepositAdress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .DepositAddress))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion(DepositAddressRequest(success: false, message: String(describing: error)))
+        completion(DepositAddressRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
             let depositAddress = try JSONDecoder().decode(DepositAddressRequest.self, from: data!)
             completion(depositAddress)
           } catch {
-            completion(DepositAddressRequest(success: false, message: String(describing: error)))
+            completion(DepositAddressRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion(DepositAddressRequest(success: false, message: nil))
+          completion(DepositAddressRequest(success: false, message: nil, result: nil))
         }
       }
     }
     task.resume()
   }
+  
+  final func withdraw(currency: String,
+                      quantity: Float,
+                      address: String,
+                      completion: @escaping ((Withdraw) -> Void)) {
+    //let url = URL(string: urlBuilder.buildUrlFor(request: ))
+  }
+  
 }
