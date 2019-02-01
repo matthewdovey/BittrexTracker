@@ -122,5 +122,4 @@ final class AccountCollector {
                       completion: @escaping ((Withdraw) -> Void)) {
     //let url = URL(string: urlBuilder.buildUrlFor(request: ))
   }
-  
 }
