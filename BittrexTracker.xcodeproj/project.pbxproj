@@ -65,6 +65,13 @@
 		9C3CEE252203A35E00476CCD /* DepositAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE242203A35E00476CCD /* DepositAddress.swift */; };
 		9C3CEE272203A37200476CCD /* Withdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE262203A37200476CCD /* Withdraw.swift */; };
 		9C3CEE292203A38E00476CCD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE282203A38E00476CCD /* Order.swift */; };
+		9C3CEE2A2203C34500476CCD /* BuyLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE1C22039F4A00476CCD /* BuyLimit.swift */; };
+		9C3CEE2B2203C34800476CCD /* SellLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE1E22039F5900476CCD /* SellLimit.swift */; };
+		9C3CEE2C2203C34B00476CCD /* Cancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE2022039F6500476CCD /* Cancel.swift */; };
+		9C3CEE2D2203C34D00476CCD /* OpenOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE2222039F7600476CCD /* OpenOrders.swift */; };
+		9C3CEE2E2203C43200476CCD /* DepositAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE242203A35E00476CCD /* DepositAddress.swift */; };
+		9C3CEE2F2203C43500476CCD /* Withdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE262203A37200476CCD /* Withdraw.swift */; };
+		9C3CEE302203C43700476CCD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE282203A38E00476CCD /* Order.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* PublicCollectorTests.swift */; };
@@ -577,6 +584,7 @@
 				9C3CEDE92201001400476CCD /* DepositHistoryRequest.swift in Sources */,
 				9C3CEDE52201000B00476CCD /* WithdrawalHistoryRequest.swift in Sources */,
 				9C3CEDE62201000D00476CCD /* TickerRequest.swift in Sources */,
+				9C3CEE2F2203C43500476CCD /* Withdraw.swift in Sources */,
 				9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */,
 				9C3CEDF422012C8A00476CCD /* AccountCollectorTests.swift in Sources */,
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
@@ -598,16 +606,22 @@
 				9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* RequestUrl.swift in Sources */,
 				9C8F8FE021F7C9B50034DF4A /* MarketHistory.swift in Sources */,
+				9C3CEE302203C43700476CCD /* Order.swift in Sources */,
 				9C8F8FE321F7C9BC0034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C3CEDE42201000800476CCD /* MarketSummaryRequest.swift in Sources */,
 				9C8F8FDB21F7C9A40034DF4A /* PublicCollector.swift in Sources */,
+				9C3CEE2A2203C34500476CCD /* BuyLimit.swift in Sources */,
 				9C8F8FE121F7C9B70034DF4A /* OrderHistory.swift in Sources */,
 				9C3CEE12220270AE00476CCD /* OpenOrdersRequest.swift in Sources */,
 				9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */,
 				9C8F8FDC21F7C9AC0034DF4A /* Coin.swift in Sources */,
+				9C3CEE2E2203C43200476CCD /* DepositAddress.swift in Sources */,
+				9C3CEE2B2203C34800476CCD /* SellLimit.swift in Sources */,
+				9C3CEE2D2203C34D00476CCD /* OpenOrders.swift in Sources */,
 				9C3CEDE32201000600476CCD /* BalanceRequest.swift in Sources */,
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C3CEDE82201001200476CCD /* MarketHistoryRequest.swift in Sources */,
+				9C3CEE2C2203C34B00476CCD /* Cancel.swift in Sources */,
 				9C3CEDEC2201001C00476CCD /* CoinRequest.swift in Sources */,
 				9C3CEE0F220270A600476CCD /* BuyLimitRequest.swift in Sources */,
 			);

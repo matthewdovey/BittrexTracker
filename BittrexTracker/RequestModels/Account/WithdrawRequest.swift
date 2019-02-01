@@ -12,10 +12,11 @@ import Foundation
 struct WithdrawRequest: Decodable {
   let success: Bool?
   let message: String?
-  // TODO: add result property
+  let result: Withdraw?
   
-  init(success: Bool?, message: String?) {
+  init(success: Bool?, message: String?, result: Withdraw) {
     self.success = success
     self.message = message
+    self.result = result
   }
 }

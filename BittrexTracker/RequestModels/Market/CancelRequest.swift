@@ -12,10 +12,11 @@ import Foundation
 struct CancelRequest: Decodable {
   let success: Bool?
   let message: String?
-  // TODO: add result property
+  let result: Cancel?
   
-  init(success: Bool?, message: String?) {
+  init(success: Bool?, message: String?, result: Cancel) {
     self.success = success
     self.message = message
+    self.result = result
   }
 }

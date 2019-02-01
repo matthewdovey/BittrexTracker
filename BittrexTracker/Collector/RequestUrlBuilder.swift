@@ -24,18 +24,19 @@ final class RequestUrlBuilder {
   private let orderbookURL = "/public/getorderbook"
   private let marketHistoryUrl = "/public/getmarkethistory?market="
   
-  // URL constants (account requests)
-  private let balanceURL = "/account/getbalance"
-  private let balancesURL = "/account/getbalances"
-  private let orderHistoryURL = "/account/getorderhistory"
-  private let depositHistoryURL = "/account/getdeposithistory"
-  private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  
   // URL constants (market requests)
   private let buyLimitURL = "/market/buylimit"
   private let sellLimitURL = "/market/selllimit"
   private let cancelURL = "/market/cancel"
   private let openOrdersURL = "/market/getopenorders"
+  
+  // URL constants (account requests)
+  private let balanceURL = "/account/getbalance"
+  private let balancesURL = "/account/getbalances"
+  private let depositAddressUrl = "/account/getDepositAddress"
+  private let orderHistoryURL = "/account/getorderhistory"
+  private let depositHistoryURL = "/account/getdeposithistory"
+  private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
   
   // Parameter constants
   private let currencyParam = "?currency="
@@ -98,6 +99,8 @@ final class RequestUrlBuilder {
       return baseURL+apiVersion+balanceURL+apiKeyParam+apiKey+andCurrencyParam
     case .Balances:
       return baseURL+apiVersion+balancesURL+apiKeyParam+apiKey
+    case .DepositAddress:
+      return baseURL+apiVersion+depositAddressUrl+apiKeyParam+apiKey+andCurrencyParam
     case .MarketHistory:
       return baseURL+apiVersion+marketHistoryUrl
     case .DepositHistory:

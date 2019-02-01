@@ -89,4 +89,25 @@ final class AccountCollector {
     }
     task.resume()
   }
+  
+  final func getDepositAdress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
+    let url = URL(string: urlBuilder.buildUrlFor(request: .DepositAddress))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(DepositAddressRequest(success: false, message: String(describing: error)))
+      } else {
+        if data != nil {
+          do {
+            let depositAddress = try JSONDecoder().decode(DepositAddressRequest.self, from: data!)
+            completion(depositAddress)
+          } catch {
+            completion(DepositAddressRequest(success: false, message: String(describing: error)))
+          }
+        } else {
+          completion(DepositAddressRequest(success: false, message: nil))
+        }
+      }
+    }
+    task.resume()
+  }
 }

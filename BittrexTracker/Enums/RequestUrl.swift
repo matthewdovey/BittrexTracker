@@ -19,6 +19,7 @@ import Foundation
 /// - OrderBook: The order book request URL
 /// - Balance: The balance request URL
 /// - Balances: The balances request URL
+/// - DepositAddress: The deposit address request URL
 /// - OrderHistory: The order history request URL
 /// - WithdrawalHistory: The withdrawal history request URL
 /// - DepositHistory: The deposit history request URL
@@ -36,6 +37,7 @@ enum RequestUrl {
   case OrderBook
   case Balance
   case Balances
+  case DepositAddress
   case OrderHistory
   case WithdrawalHistory
   case DepositHistory

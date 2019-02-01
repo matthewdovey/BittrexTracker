@@ -12,10 +12,11 @@ import Foundation
 struct BuyLimitRequest: Decodable {
   let success: Bool?
   let message: String?
-  // TODO: add result property
+  let result: BuyLimit?
   
-  init(success: Bool?, message: String?) {
+  init(success: Bool?, message: String?, result: BuyLimit) {
     self.success = success
     self.message = message
+    self.result = result
   }
 }
