@@ -14,7 +14,7 @@ struct DepositAddressRequest: Decodable {
   let message: String?
   let result: [DepositAddress]?
   
-  init(success: Bool?, message: String?, result: [DepositAddress]) {
+  init(success: Bool?, message: String?, result: [DepositAddress]?) {
     self.success = success
     self.message = message
     self.result = result

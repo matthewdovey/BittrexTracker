@@ -14,7 +14,7 @@ struct SellLimitRequest: Decodable {
   let message: String?
   let result: SellLimit?
   
-  init(success: Bool?, message: String?, result: SellLimit) {
+  init(success: Bool?, message: String?, result: SellLimit?) {
     self.success = success
     self.message = message
     self.result = result

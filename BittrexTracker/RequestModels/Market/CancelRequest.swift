@@ -14,7 +14,7 @@ struct CancelRequest: Decodable {
   let message: String?
   let result: Cancel?
   
-  init(success: Bool?, message: String?, result: Cancel) {
+  init(success: Bool?, message: String?, result: Cancel?) {
     self.success = success
     self.message = message
     self.result = result

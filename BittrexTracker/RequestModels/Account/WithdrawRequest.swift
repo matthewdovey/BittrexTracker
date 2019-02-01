@@ -14,7 +14,7 @@ struct WithdrawRequest: Decodable {
   let message: String?
   let result: Withdraw?
   
-  init(success: Bool?, message: String?, result: Withdraw) {
+  init(success: Bool?, message: String?, result: Withdraw?) {
     self.success = success
     self.message = message
     self.result = result

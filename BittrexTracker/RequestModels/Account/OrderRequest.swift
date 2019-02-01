@@ -14,7 +14,7 @@ struct OrderRequest: Decodable {
   let message: String?
   let result: [Order]?
   
-  init(success: Bool?, message: String?, result: [Order]) {
+  init(success: Bool?, message: String?, result: [Order]?) {
     self.success = success
     self.message = message
     self.result = result
