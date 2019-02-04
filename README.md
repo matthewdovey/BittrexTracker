@@ -47,7 +47,7 @@ $ brew install carthage
 
 ## Contributing
 
-Feel free to put in pull requests :D
+Feel free to contribute with pull requests and to create issues / feature requests following the [contributing file](CONTRIBUTING.md)
 
 ## Versioning
 
