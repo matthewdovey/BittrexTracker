@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The data structure for the result of the Order Book Request
 struct OrderBook {
   let buy: [String : Float]?
   let sell: [String : Float]?

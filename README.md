@@ -1,5 +1,7 @@
+[![Build Status](https://app.bitrise.io/app/46856f20d6dfcc3a/status.svg?token=SpGStajcN4PUkVFN7zUSiQ&branch=master)](https://app.bitrise.io/app/46856f20d6dfcc3a) ![GitHub release](https://img.shields.io/github/release/matthewdovey/bittrextracker.svg?style=flat) ![GitHub release](https://img.shields.io/github/last-commit/matthewdovey/bittrextracker.svg?style=flat)
+ 
 # BittrexTracker
-A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing the retrieval of public and account data.
+A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing the retrieval of public, market and account data.
 
 ## Contents
 
@@ -15,7 +17,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Version
 
-- 1.0.9
+- 1.1.0
 
 ## Requirements
 
@@ -57,4 +59,4 @@ This version will be increased by 0.1.0 per release and 0.0.1 per pull request t
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

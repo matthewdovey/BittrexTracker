@@ -24,18 +24,21 @@ final class RequestUrlBuilder {
   private let orderbookURL = "/public/getorderbook"
   private let marketHistoryUrl = "/public/getmarkethistory?market="
   
-  // URL constants (account requests)
-  private let balanceURL = "/account/getbalance"
-  private let balancesURL = "/account/getbalances"
-  private let orderHistoryURL = "/account/getorderhistory"
-  private let depositHistoryURL = "/account/getdeposithistory"
-  private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  
   // URL constants (market requests)
   private let buyLimitURL = "/market/buylimit"
   private let sellLimitURL = "/market/selllimit"
   private let cancelURL = "/market/cancel"
   private let openOrdersURL = "/market/getopenorders"
+  
+  // URL constants (account requests)
+  private let balancesURL = "/account/getbalances"
+  private let balanceURL = "/account/getbalance"
+  private let depositAddressUrl = "/account/getDepositAddress"
+  private let withdrawURL = "/account/withdraw"
+  private let orderURL = "/account/getorder"
+  private let orderHistoryURL = "/account/getorderhistory"
+  private let depositHistoryURL = "/account/getdeposithistory"
+  private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
   
   // Parameter constants
   private let currencyParam = "?currency="
@@ -82,30 +85,20 @@ final class RequestUrlBuilder {
   /// - Returns: Request URL to be used with the Bittrex API
   public func buildUrlFor(request: RequestUrl) -> String {
     switch request {
-    case .Currencies:
-      return baseURL+apiVersion+currenciesURL
     case .Markets:
       return baseURL+apiVersion+marketsURL
-    case .MarketSummary:
-      return baseURL+apiVersion+marketSummaryURL
-    case .MarketSummaries:
-      return baseURL+apiVersion+marketSummariesURL
-    case .OrderBook:
-      return baseURL+apiVersion+orderbookURL+marketParam
+    case .Currencies:
+      return baseURL+apiVersion+currenciesURL
     case .Ticker:
       return baseURL+apiVersion+tickerURL
-    case .Balance:
-      return baseURL+apiVersion+balanceURL+apiKeyParam+apiKey+andCurrencyParam
-    case .Balances:
-      return baseURL+apiVersion+balancesURL+apiKeyParam+apiKey
+    case .MarketSummaries:
+      return baseURL+apiVersion+marketSummariesURL
+    case .MarketSummary:
+      return baseURL+apiVersion+marketSummaryURL
+    case .OrderBook:
+      return baseURL+apiVersion+orderbookURL+marketParam
     case .MarketHistory:
       return baseURL+apiVersion+marketHistoryUrl
-    case .DepositHistory:
-      return baseURL+apiVersion+depositHistoryURL+currencyParam
-    case .OrderHistory:
-      return baseURL+apiVersion+orderHistoryURL
-    case .WithdrawalHistory:
-      return baseURL+apiVersion+withdrawalHistoryURL
     case .BuyLimit:
       return baseURL+apiVersion+buyLimitURL+apiKeyParam+apiKey+marketParam
     case .SellLimit:
@@ -114,6 +107,22 @@ final class RequestUrlBuilder {
       return baseURL+apiVersion+cancelURL+apiKeyParam+apiKey+uuidParam
     case .OpenOrders:
       return baseURL+apiVersion+openOrdersURL+apiKeyParam+apiKey+marketParam
+    case .Balances:
+      return baseURL+apiVersion+balancesURL+apiKeyParam+apiKey
+    case .Balance:
+      return baseURL+apiVersion+balanceURL+apiKeyParam+apiKey+andCurrencyParam
+    case .DepositAddress:
+      return baseURL+apiVersion+depositAddressUrl+apiKeyParam+apiKey+andCurrencyParam
+    case .Withdraw:
+      return baseURL+apiVersion+withdrawURL+apiKeyParam+apiKey+andCurrencyParam
+    case .Order:
+      return baseURL+apiVersion+orderURL+uuidParam
+    case .DepositHistory:
+      return baseURL+apiVersion+depositHistoryURL+currencyParam
+    case .OrderHistory:
+      return baseURL+apiVersion+orderHistoryURL
+    case .WithdrawalHistory:
+      return baseURL+apiVersion+withdrawalHistoryURL
     }
   }
 }

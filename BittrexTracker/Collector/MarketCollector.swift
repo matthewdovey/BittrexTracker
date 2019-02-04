@@ -33,88 +33,97 @@ final class MarketCollector {
     urlBuilder.setKey(key: key)
   }
   
-  // TODO: buyLimit - market
-  final func getBuyLimit(completion: @escaping (() -> Void)) {
+  /// Method to place a buy order in a specific market
+  ///
+  /// - Parameter completion: Escaping BuyLimitRequest object
+  final func getBuyLimit(completion: @escaping ((BuyLimitRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .BuyLimit))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion()
+        completion(BuyLimitRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-            //let buyLimit = try JSONDecoder().decode(, from: data!)
-            completion()
+            let buyLimit = try JSONDecoder().decode(BuyLimitRequest.self, from: data!)
+            completion(buyLimit)
           } catch {
-            completion()
+            completion(BuyLimitRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion()
+          completion(BuyLimitRequest(success: false, message: nil, result: nil))
         }
       }
     }
     task.resume()
   }
   
-  // TODO: sellLimit - market
-  final func getSellLimit(completion: @escaping (() -> Void)) {
+  
+  /// Method to place a sell order in a specific market
+  ///
+  /// - Parameter completion: Escaping SellLimitRequest object
+  final func getSellLimit(completion: @escaping ((SellLimitRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .SellLimit))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion()
+        completion(SellLimitRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-            //let sellLimit = try JSONDecoder().decode(, from: data!)
-            completion()
+            let sellLimit = try JSONDecoder().decode(SellLimitRequest.self, from: data!)
+            completion(sellLimit)
           } catch {
-            completion()
+            completion(SellLimitRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion()
+          completion(SellLimitRequest(success: false, message: nil, result: nil))
         }
       }
     }
     task.resume()
   }
   
-  // TODO: cancel - market
-  final func cancel(completion: @escaping (() -> Void)) {
+  /// Method to cancel a buy or sell order
+  ///
+  /// - Parameter completion: Escaping CancelRequest object
+  final func cancel(completion: @escaping ((CancelRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Cancel))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion()
+        completion(CancelRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-            //let cancel = try JSONDecoder().decode(, from: data!)
-            completion()
+            let cancel = try JSONDecoder().decode(CancelRequest.self, from: data!)
+            completion(cancel)
           } catch {
-            completion()
+            completion(CancelRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion()
+          completion(CancelRequest(success: false, message: nil, result: nil))
         }
       }
     }
     task.resume()
   }
   
-  // TODO: getOpenOrders - market
-  final func getOpenOrders(completion: @escaping (() -> Void)) {
+  /// Method to return all orders that the user has open
+  ///
+  /// - Parameter completion: Escaping OpenOrdersRequest object
+  final func getOpenOrders(completion: @escaping ((OpenOrdersRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .OpenOrders))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion()
+        completion(OpenOrdersRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-            //let openOrders = try JSONDecoder().decode(, from: data!)
-            completion()
+            let openOrders = try JSONDecoder().decode(OpenOrdersRequest.self, from: data!)
+            completion(openOrders)
           } catch {
-            completion()
+            completion(OpenOrdersRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion()
+          completion(OpenOrdersRequest(success: false, message: nil, result: nil))
         }
       }
     }
