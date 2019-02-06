@@ -25,7 +25,7 @@ public final class PublicCollector {
   /// Initialiser to create the bittrex collector
   ///
   /// - Parameter session: URLSession object
-  init(session: URLSession = .shared) {
+  public init(session: URLSession = .shared) {
     self.session = session
     self.urlBuilder = RequestUrlBuilder()
   }
@@ -33,7 +33,7 @@ public final class PublicCollector {
   /// Method to return all currencies listed on the exchange
   ///
   /// - Parameter completion: Escaping CoinRequest object
-  final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
+  public final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Currencies))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -57,7 +57,7 @@ public final class PublicCollector {
   /// Method to return all markets for currencies
   ///
   /// - Parameter completion: Escaping MarketsRequest object
-  final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
+  public final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Markets))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -83,7 +83,7 @@ public final class PublicCollector {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerRequest object
-  final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
+  public final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Ticker)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
