@@ -9,7 +9,7 @@
 import Foundation
 
 /// Market History Request struct to hold request state, message and result
-struct MarketHistoryRequest: Decodable {
+public struct MarketHistoryRequest: Decodable {
   let success: Bool?
   let message: String?
   let result: [MarketHistory]?

@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the result of the Ticker Request
-struct Ticker: Decodable {
+public struct Ticker: Decodable {
   let bid: Float?
   let ask: Float?
   let last: Float?

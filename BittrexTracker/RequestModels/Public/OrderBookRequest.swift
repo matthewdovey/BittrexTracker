@@ -9,7 +9,7 @@
 import Foundation
 
 /// Order Book Request struct to hold request state, message and result
-struct OrderBookRequest: Decodable {
+public struct OrderBookRequest: Decodable {
   let success: Bool?
   let message: String?
   // TODO: setup result property

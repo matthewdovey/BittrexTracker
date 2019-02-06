@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the result of the Market Summary Request
-struct MarketSummary: Decodable {
+public struct MarketSummary: Decodable {
   let marketName: String?
   let high: Double?
   let low: Double?

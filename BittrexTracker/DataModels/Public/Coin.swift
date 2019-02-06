@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the result of the Coin Request
-struct Coin: Decodable {
+public struct Coin: Decodable {
   let currency: String?
   let currencyLong: String?
   let minConfirmation: Int64?
