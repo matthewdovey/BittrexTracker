@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the result of the Markets Request
-struct Market: Decodable {
+public struct Market: Decodable {
   let baseCurrency: String?
   let marketCurrencyLong: String?
   let baseCurrencyLong: String?

@@ -9,10 +9,10 @@
 import Foundation
 
 /// Market Summary Request struct to hold request state, message and result
-struct MarketSummaryRequest: Decodable {
-  let success: Bool?
-  let message: String?
-  let result: [MarketSummary]?
+public struct MarketSummaryRequest: Decodable {
+  public let success: Bool?
+  public let message: String?
+  public let result: [MarketSummary]?
   
   init(success: Bool?, message: String?, result: [MarketSummary]?) {
     self.success = success
