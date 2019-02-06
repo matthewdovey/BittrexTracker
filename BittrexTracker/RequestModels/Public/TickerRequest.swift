@@ -10,9 +10,9 @@ import Foundation
 
 /// Ticker Request struct to hold request state, message and result
 public struct TickerRequest: Decodable {
-  let success: Bool?
-  let message: String?
-  let result: Ticker?
+  public let success: Bool?
+  public let message: String?
+  public let result: Ticker?
   
   init(success: Bool?, message: String?, result: Ticker?) {
     self.success = success
