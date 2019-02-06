@@ -10,7 +10,7 @@ import Foundation
 
 
 /// Class to provide all account related API calls to the Bittrex exchange
-final class AccountCollector {
+public final class AccountCollector {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
