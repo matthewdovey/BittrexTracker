@@ -6,6 +6,8 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 ## Contents
 
 - [Version](#version)
+- [Current Support](#current-support)
+- [Future Support](#future-support)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Built With](#built-with)
@@ -18,6 +20,15 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 ## Version
 
 - 1.2.1
+
+## Current Support
+
+- Bittrex public APIs
+
+## Future Support
+
+- Bittrex Market APIs
+- Bittrex Account APIs
 
 ## Requirements
 
@@ -52,6 +63,11 @@ Run carthage update to build the framework and drag the built BittrexTracker.fra
 
 ## Usage
 
+Import the framework into the class you wish to use it in:
+
+```bash
+#import BittrexTracker
+```
 
 ## Contributing
 
