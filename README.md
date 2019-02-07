@@ -32,7 +32,7 @@ Bittrex Public APIs:
 - getMarketSummary
 - getOrderBook
 - getMarketHistory
-'''
+```
 
 ## Future Support
 
