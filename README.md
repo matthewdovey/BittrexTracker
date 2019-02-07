@@ -21,9 +21,10 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 - 1.2.1
 
-## Current Support
+## Supported API
 
-- Bittrex public APIs
+- Bittrex public APIs:
+```Bash
 
 ## Future Support
 
@@ -65,8 +66,31 @@ Run carthage update to build the framework and drag the built BittrexTracker.fra
 
 Import the framework into the class you wish to use it in:
 
-```bash
+```swift
 #import BittrexTracker
+```
+
+Call the desired API:
+
+```swift
+let publicAPI = PublicCollector()
+publicAPI.getMarkets() { (response) in
+    switch response.success{
+        case True:
+            print(response.data)
+        case False:
+            print(response.message)
+    }
+}
+
+publicAPI.getCurrencies() { (response) in
+    switch response.success{
+        case True:
+            print(response.data)
+        case False:
+            print(response.message)
+    }
+}
 ```
 
 ## Contributing
