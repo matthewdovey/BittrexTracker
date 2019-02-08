@@ -9,7 +9,7 @@
 import Foundation
 
 /// Class to provide all market related API calls to the Bittrex exchange
-final class MarketCollector {
+public final class MarketCollector {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder

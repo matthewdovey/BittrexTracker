@@ -6,6 +6,8 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 ## Contents
 
 - [Version](#version)
+- [Current Support](#current-support)
+- [Future Support](#future-support)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Built With](#built-with)
@@ -17,7 +19,25 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Version
 
-- 1.1.0
+- 1.2.1
+
+## Supported API
+
+Bittrex Public APIs:
+```swift
+- getMarkets
+- getCurrencies
+- getTicker
+- getMarketSummaries
+- getMarketSummary
+- getOrderBook
+- getMarketHistory
+```
+
+## Future Support
+
+- Bittrex Market APIs (in progress)
+- Bittrex Account APIs (in progress)
 
 ## Requirements
 
@@ -38,16 +58,52 @@ $ brew update
 $ brew install carthage
 ```
 
+To integrate SnapKit into your Xcode project using Carthage, specify it in your Cartfile:
+
+```bash
+github "matthewdovey/BittrexTracker"
+```
+
+Run carthage update to build the framework and drag the built BittrexTracker.framework into your Xcode project.
+
 ## Built With
 
 - Bittrex Developer API v1.1 (https://bittrex.github.io/api/v1-1)
 
 ## Usage
 
+Import the framework into the class you wish to use it in:
+
+```swift
+#import BittrexTracker
+```
+
+Call the desired API:
+
+```swift
+let publicAPI = PublicCollector()
+publicAPI.getMarkets() { (response) in
+    switch response.success{
+        case True:
+            print(response.data)
+        case False:
+            print(response.message)
+    }
+}
+
+publicAPI.getCurrencies() { (response) in
+    switch response.success{
+        case True:
+            print(response.data)
+        case False:
+            print(response.message)
+    }
+}
+```
 
 ## Contributing
 
-Feel free to put in pull requests :D
+Feel free to contribute with pull requests and to create issues / feature requests following the [contributing file](CONTRIBUTING.md)
 
 ## Versioning
 

@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the result of the Market History Request
-struct MarketHistory: Decodable {
+public struct MarketHistory: Decodable {
   let id: String?
   let timeStamp: String?
   let quantity: Double?
