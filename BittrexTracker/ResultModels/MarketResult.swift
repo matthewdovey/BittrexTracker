@@ -12,7 +12,7 @@ public struct MarketResult {
   public let outcome: Outcome
   public let data: [Market]
   
-  init(outcome: Outcome, data: [Coin]) {
+  init(outcome: Outcome, data: [Market]) {
     self.outcome = outcome
     self.data = data
   }
