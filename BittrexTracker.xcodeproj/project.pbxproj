@@ -343,6 +343,16 @@
 		9C3EE68822106CF900DF1BA3 /* ResultModels */ = {
 			isa = PBXGroup;
 			children = (
+				9C3EE6952210F18C00DF1BA3 /* Public */,
+				9C3EE6962210F1A900DF1BA3 /* Market */,
+				9C3EE6972210F1B100DF1BA3 /* Account */,
+			);
+			path = ResultModels;
+			sourceTree = "<group>";
+		};
+		9C3EE6952210F18C00DF1BA3 /* Public */ = {
+			isa = PBXGroup;
+			children = (
 				9C3EE68922106E9B00DF1BA3 /* CoinResult.swift */,
 				9C3EE68B22106FCB00DF1BA3 /* MarketResult.swift */,
 				9C3EE68D22106FDC00DF1BA3 /* TickerResult.swift */,
@@ -350,7 +360,21 @@
 				9C3EE6912210703600DF1BA3 /* MarketHistoryResult.swift */,
 				9C3EE6932210704300DF1BA3 /* OrderBookResult.swift */,
 			);
-			path = ResultModels;
+			path = Public;
+			sourceTree = "<group>";
+		};
+		9C3EE6962210F1A900DF1BA3 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		9C3EE6972210F1B100DF1BA3 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		9C85C05721F7645500E9259D /* CollectorTests */ = {
