@@ -27,7 +27,7 @@ public final class PublicCollector {
   /// Method to return all currencies listed on the exchange
   ///
   /// - Parameter completion: Escaping CoinRequest object
-  public final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
+  final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Currencies))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -51,7 +51,7 @@ public final class PublicCollector {
   /// Method to return all markets for currencies
   ///
   /// - Parameter completion: Escaping MarketsRequest object
-  public final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
+  final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Markets))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -77,7 +77,7 @@ public final class PublicCollector {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerRequest object
-  public final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
+  final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .Ticker)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -101,7 +101,7 @@ public final class PublicCollector {
   /// Method to return all market summaires
   ///
   /// - Parameter completion: Escaping MarketSummaryRequest object
-  public final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
+  final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .MarketSummaries))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -127,7 +127,7 @@ public final class PublicCollector {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketSummaryRequest object
-  public final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
+  final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .MarketSummary)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -154,7 +154,7 @@ public final class PublicCollector {
   ///   - market: The market to retrieve data for
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookRequest object
-  public final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
+  final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .OrderBook))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
@@ -180,7 +180,7 @@ public final class PublicCollector {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketHistoryRequest object
-  public final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
+  final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrlFor(request: .MarketHistory)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
