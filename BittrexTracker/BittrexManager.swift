@@ -25,14 +25,14 @@ final class BittrexManager {
   /// Method to return all currencies listed on the exchange
   ///
   /// - Parameter completion: Escaping CoinRequest object
-  public final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
+  public final func getCurrencies(completion: @escaping ((CoinResult) -> Void)) {
 
   }
 
   /// Method to return all markets for currencies
   ///
   /// - Parameter completion: Escaping MarketsRequest object
-  public final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
+  public final func getMarkets(completion: @escaping ((MarketResult) -> Void)) {
 
   }
 
@@ -41,14 +41,14 @@ final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerRequest object
-  public final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
+  public final func getTickerFor(market: String, completion: @escaping ((TickerResult) -> Void)) {
 
   }
 
   /// Method to return all market summaires
   ///
   /// - Parameter completion: Escaping MarketSummaryRequest object
-  public final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
+  public final func getMarketSummaries(completion: @escaping ((MarketSummaryResult) -> Void)) {
 
   }
 
@@ -57,7 +57,7 @@ final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketSummaryRequest object
-  public final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
+  public final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryResult) -> Void)) {
 
   }
 
@@ -67,7 +67,7 @@ final class BittrexManager {
   ///   - market: The market to retrieve data for
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookRequest object
-  public final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
+  public final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookResult) -> Void)) {
 
   }
 
@@ -76,7 +76,7 @@ final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketHistoryRequest object
-  public final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
+  public final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryResult) -> Void)) {
     
   }
 }
