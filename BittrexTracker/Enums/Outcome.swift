@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Result {
+public enum Outcome {
   case success
-  case failure
+  case failure(String)
 }
