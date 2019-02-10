@@ -73,6 +73,12 @@
 		9C3CEE2E2203C43200476CCD /* DepositAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE242203A35E00476CCD /* DepositAddress.swift */; };
 		9C3CEE2F2203C43500476CCD /* Withdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE262203A37200476CCD /* Withdraw.swift */; };
 		9C3CEE302203C43700476CCD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE282203A38E00476CCD /* Order.swift */; };
+		9C3EE68A22106E9B00DF1BA3 /* CoinResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE68922106E9B00DF1BA3 /* CoinResult.swift */; };
+		9C3EE68C22106FCB00DF1BA3 /* MarketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE68B22106FCB00DF1BA3 /* MarketResult.swift */; };
+		9C3EE68E22106FDC00DF1BA3 /* TickerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE68D22106FDC00DF1BA3 /* TickerResult.swift */; };
+		9C3EE6902210700600DF1BA3 /* MarketSummaryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE68F2210700600DF1BA3 /* MarketSummaryResult.swift */; };
+		9C3EE6922210703600DF1BA3 /* MarketHistoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6912210703600DF1BA3 /* MarketHistoryResult.swift */; };
+		9C3EE6942210704300DF1BA3 /* OrderBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6932210704300DF1BA3 /* OrderBookResult.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* PublicCollectorTests.swift */; };
@@ -161,6 +167,12 @@
 		9C3CEE242203A35E00476CCD /* DepositAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositAddress.swift; sourceTree = "<group>"; };
 		9C3CEE262203A37200476CCD /* Withdraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withdraw.swift; sourceTree = "<group>"; };
 		9C3CEE282203A38E00476CCD /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		9C3EE68922106E9B00DF1BA3 /* CoinResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResult.swift; sourceTree = "<group>"; };
+		9C3EE68B22106FCB00DF1BA3 /* MarketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketResult.swift; sourceTree = "<group>"; };
+		9C3EE68D22106FDC00DF1BA3 /* TickerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerResult.swift; sourceTree = "<group>"; };
+		9C3EE68F2210700600DF1BA3 /* MarketSummaryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSummaryResult.swift; sourceTree = "<group>"; };
+		9C3EE6912210703600DF1BA3 /* MarketHistoryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketHistoryResult.swift; sourceTree = "<group>"; };
+		9C3EE6932210704300DF1BA3 /* OrderBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookResult.swift; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		9C85C05821F7647400E9259D /* PublicCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicCollectorTests.swift; sourceTree = "<group>"; };
@@ -331,6 +343,12 @@
 		9C3EE68822106CF900DF1BA3 /* ResultModels */ = {
 			isa = PBXGroup;
 			children = (
+				9C3EE68922106E9B00DF1BA3 /* CoinResult.swift */,
+				9C3EE68B22106FCB00DF1BA3 /* MarketResult.swift */,
+				9C3EE68D22106FDC00DF1BA3 /* TickerResult.swift */,
+				9C3EE68F2210700600DF1BA3 /* MarketSummaryResult.swift */,
+				9C3EE6912210703600DF1BA3 /* MarketHistoryResult.swift */,
+				9C3EE6932210704300DF1BA3 /* OrderBookResult.swift */,
 			);
 			path = ResultModels;
 			sourceTree = "<group>";
@@ -556,6 +574,7 @@
 				9C3CEE2322039F7600476CCD /* OpenOrders.swift in Sources */,
 				9C3CEE0B22026AB200476CCD /* WithdrawRequest.swift in Sources */,
 				9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */,
+				9C3EE68C22106FCB00DF1BA3 /* MarketResult.swift in Sources */,
 				9C3CEE252203A35E00476CCD /* DepositAddress.swift in Sources */,
 				9C3CEDD02200DF3F00476CCD /* DepositHistoryRequest.swift in Sources */,
 				9C3CEDF72202459600476CCD /* MarketCollector.swift in Sources */,
@@ -565,7 +584,10 @@
 				9C8F8FD521F683970034DF4A /* Ticker.swift in Sources */,
 				9C8F8FC921F682B10034DF4A /* Coin.swift in Sources */,
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
+				9C3EE6922210703600DF1BA3 /* MarketHistoryResult.swift in Sources */,
+				9C3EE6902210700600DF1BA3 /* MarketSummaryResult.swift in Sources */,
 				9CC44A0C220DF17100EBCB9D /* Outcome.swift in Sources */,
+				9C3EE6942210704300DF1BA3 /* OrderBookResult.swift in Sources */,
 				9C3CEE172202718C00476CCD /* OrderBook.swift in Sources */,
 				9C8F8FC721F6826F0034DF4A /* PublicCollector.swift in Sources */,
 				9C3CEE0922026A6500476CCD /* OrderRequest.swift in Sources */,
@@ -586,8 +608,10 @@
 				9C3CEDD22200DF6200476CCD /* MarketHistoryRequest.swift in Sources */,
 				9C3CEDF2220128B600476CCD /* AccountCollector.swift in Sources */,
 				9C3CEDCC2200D76600476CCD /* MarketsRequest.swift in Sources */,
+				9C3EE68E22106FDC00DF1BA3 /* TickerResult.swift in Sources */,
 				9C3CEDCE2200DF0D00476CCD /* BalancesRequest.swift in Sources */,
 				9C8F8FCF21F6830D0034DF4A /* MarketHistory.swift in Sources */,
+				9C3EE68A22106E9B00DF1BA3 /* CoinResult.swift in Sources */,
 				9C3CEE05220268F600476CCD /* OrderBookRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

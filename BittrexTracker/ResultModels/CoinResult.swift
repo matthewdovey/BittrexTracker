@@ -1,5 +1,5 @@
 //
-//  OrderBookResult.swift
+//  Result.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 10/02/2019.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct OrderBookResult {
+public struct CoinResult {
   public let outcome: Outcome
-  public let data: [OrderBook]
+  public let data: [Coin]
   
-  init(outcome: Outcome, data: [OrderBook]) {
+  init(outcome: Outcome, data: [Coin]) {
     self.outcome = outcome
     self.data = data
   }

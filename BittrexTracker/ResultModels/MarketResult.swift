@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public struct MarketResult {
+  public let outcome: Outcome
+  public let data: [Market]
+  
+  init(outcome: Outcome, data: [Coin]) {
+    self.outcome = outcome
+    self.data = data
+  }
+}
