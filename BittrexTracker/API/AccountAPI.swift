@@ -8,14 +8,13 @@
 
 import Foundation
 
-
 /// Class to provide all account related API calls to the Bittrex exchange
 public final class AccountAPI {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
   
-  /// Initialiser to create an instance of the Account Collector class
+  /// Initialiser to create an instance of the Account API class
   ///
   /// - Parameters:
   ///   - session: URLSession object

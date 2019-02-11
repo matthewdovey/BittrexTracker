@@ -14,7 +14,7 @@ public final class PublicAPI {
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
   
-  /// Initialiser to create the bittrex collector
+  /// Initialiser to create the Bittrex public API wrapper
   ///
   /// - Parameter:
   ///   - session: URLSession object
