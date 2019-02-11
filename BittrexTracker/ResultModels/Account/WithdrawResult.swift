@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Withdraw Result struct to hold Outcome and the data
 public struct WithdrawResult {
   public let outcome: Outcome
   public let data: [Withdraw]

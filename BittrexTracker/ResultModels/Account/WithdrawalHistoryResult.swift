@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Withdrawal History Result struct to hold Outcome and the data
 public struct WithdrawalHistoryResult {
   public let outcome: Outcome
   public let data: [WithdrawalHistory]

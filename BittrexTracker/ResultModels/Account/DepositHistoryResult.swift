@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Deposit History Result struct to hold Outcome and the data
 public struct DepositHistoryResult {
   public let outcome: Outcome
   public let data: [DepositHistory]

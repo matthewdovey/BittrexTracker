@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Cancel Result struct to hold Outcome and the data
 public struct CancelResult {
   public let outcome: Outcome
   public let data: [Cancel]

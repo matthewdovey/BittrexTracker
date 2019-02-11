@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Deposit Address Result struct to hold Outcome and the data
 public struct DepositAddressResult {
   public let outcome: Outcome
   public let data: [DepositAddress]

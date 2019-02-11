@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Coin Result struct to hold Outcome and the data
 public struct CoinResult {
   public let outcome: Outcome
   public let data: [Coin]

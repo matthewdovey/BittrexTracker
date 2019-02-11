@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Balance Result struct to hold Outcome and the data
 public struct BalanceResult {
   public let outcome: Outcome
   public let data: [Balance]

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Market Result struct to hold Outcome and the data
 public struct MarketResult {
   public let outcome: Outcome
   public let data: [Market]

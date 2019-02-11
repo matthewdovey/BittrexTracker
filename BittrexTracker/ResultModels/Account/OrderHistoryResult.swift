@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Order History Result struct to hold Outcome and the data
 public struct OrderHistoryResult {
   public let outcome: Outcome
   public let data: [OrderHistory]

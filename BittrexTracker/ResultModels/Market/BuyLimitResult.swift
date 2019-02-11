@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Buy Limit Result struct to hold Outcome and the data
 public struct BuyLimitResult {
   public let outcome: Outcome
   public let data: [BuyLimit]
