@@ -5,7 +5,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Contents
 
-- [Version](#version)
+- [Development Version](#Development-version)
 - [Current Support](#current-support)
 - [Future Support](#future-support)
 - [Requirements](#requirements)
@@ -17,7 +17,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 - [Authors](#authors)
 - [License](#license)
 
-## Version
+## Development Version
 
 - 1.2.5
 
