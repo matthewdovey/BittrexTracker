@@ -11,8 +11,8 @@ import Foundation
 /// Class to provide access to all Bittrex API wrappers
 final class BittrexManager {
 
-  private let publicCollector: PublicCollector
-  private let marketCollector: MarketCollector
+  private let publicApi: PublicAPI
+  private let marketApi: MarketAPI
   private let session: URLSession
   private let urlBuilder: RequestUrlBuilder
 
@@ -20,20 +20,22 @@ final class BittrexManager {
   public init() {
     session = URLSession.shared
     urlBuilder = RequestUrlBuilder()
-    publicCollector = PublicCollector(session: session, builder: urlBuilder)
-    marketCollector = MarketCollector(session: session, apiKey: "")
+    publicApi = PublicAPI(session: session, builder: urlBuilder)
+    marketApi = MarketAPI(session: session, apiKey: "")
   }
 
   /// Setter to allow user to add API key
   public func setApiKey(key: String) {
-    marketCollector.setApiKey(key: key)
+    marketApi.setApiKey(key: key)
   }
+
+  // MARK: Public API calls
 
   /// Method to return all currencies listed on the exchange
   ///
   /// - Parameter completion: Escaping CoinResult object
   public final func getCurrencies(completion: @escaping ((CoinResult) -> Void)) {
-    publicCollector.getCurrencies { (request) in
+    publicApi.getCurrencies { (request) in
       if request.success == true, let data = request.result {
         completion(CoinResult(outcome: .success, data: data))
       } else {
@@ -47,7 +49,7 @@ final class BittrexManager {
   ///
   /// - Parameter completion: Escaping MarketsResult object
   public final func getMarkets(completion: @escaping ((MarketResult) -> Void)) {
-    publicCollector.getMarkets { (request) in
+    publicApi.getMarkets { (request) in
       if request.success == true, let data = request.result {
         completion(MarketResult(outcome: .success, data: data))
       } else {
@@ -63,7 +65,7 @@ final class BittrexManager {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerResult object
   public final func getTickerFor(market: String, completion: @escaping ((TickerResult) -> Void)) {
-    publicCollector.getTickerFor(market: market, completion: { (request) in
+    publicApi.getTickerFor(market: market, completion: { (request) in
       if request.success == true, let data = request.result {
         completion(TickerResult(outcome: .success, data: [data]))
       } else {
@@ -77,7 +79,7 @@ final class BittrexManager {
   ///
   /// - Parameter completion: Escaping MarketSummaryResult object
   public final func getMarketSummaries(completion: @escaping ((MarketSummaryResult) -> Void)) {
-    publicCollector.getMarketSummaries { (request) in
+    publicApi.getMarketSummaries { (request) in
       if request.success == true, let data = request.result {
         completion(MarketSummaryResult(outcome: .success, data: data))
       } else {
@@ -93,7 +95,7 @@ final class BittrexManager {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketSummaryResult object
   public final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryResult) -> Void)) {
-    publicCollector.getSummaryForMarket(market: market, completion: { (request) in
+    publicApi.getSummaryForMarket(market: market, completion: { (request) in
       if request.success == true, let data = request.result {
         completion(MarketSummaryResult(outcome: .success, data: data))
       } else {
@@ -110,7 +112,7 @@ final class BittrexManager {
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookResult object
   public final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookResult) -> Void)) {
-    publicCollector.getOrderBook(market: market, type: type, completion: { (request) in
+    publicApi.getOrderBook(market: market, type: type, completion: { (request) in
       // TODO: setup order book request object to have a result property
       if request.success == true/*, let data = request.result*/ {
         completion(OrderBookResult(outcome: .success, data: []))
@@ -127,7 +129,7 @@ final class BittrexManager {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketHistoryResult object
   public final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryResult) -> Void)) {
-    publicCollector.getMarketHistoryFor(market: market, completion: { (request) in
+    publicApi.getMarketHistoryFor(market: market, completion: { (request) in
       if request.success == true, let data = request.result {
         completion(MarketHistoryResult(outcome: .success, data: data))
       } else {
@@ -137,11 +139,13 @@ final class BittrexManager {
     })
   }
 
+  // MARK: Market API calls
+
   /// Method to place a buy order in a specific market
   ///
   /// - Parameter completion: Escaping BuyLimitResult object
   final func getBuyLimit(completion: @escaping ((BuyLimitResult) -> Void)) {
-    marketCollector.getBuyLimit { (request) in
+    marketApi.getBuyLimit { (request) in
       if request.success == true, let data = request.result {
         completion(BuyLimitResult(outcome: .success, data: [data]))
       } else {
@@ -156,7 +160,7 @@ final class BittrexManager {
   ///
   /// - Parameter completion: Escaping SellLimitResult object
   final func getSellLimit(completion: @escaping ((SellLimitResult) -> Void)) {
-    marketCollector.getSellLimit { (request) in
+    marketApi.getSellLimit { (request) in
       if request.success == true, let data = request.result {
         completion(SellLimitResult(outcome: .success, data: [data]))
       } else {
@@ -170,7 +174,7 @@ final class BittrexManager {
   ///
   /// - Parameter completion: Escaping CancelResult object
   final func cancel(completion: @escaping ((CancelResult) -> Void)) {
-    marketCollector.cancel { (request) in
+    marketApi.cancel { (request) in
       if request.success == true, let data = request.result {
         completion(CancelResult(outcome: .success, data: [data]))
       } else {
@@ -184,7 +188,7 @@ final class BittrexManager {
   ///
   /// - Parameter completion: Escaping OpenOrdersResult object
   final func getOpenOrders(completion: @escaping ((OpenOrdersResult) -> Void)) {
-    marketCollector.getOpenOrders { (request) in
+    marketApi.getOpenOrders { (request) in
       if request.success == true, let data = request.result {
         completion(OpenOrdersResult(outcome: .success, data: data))
       } else {
