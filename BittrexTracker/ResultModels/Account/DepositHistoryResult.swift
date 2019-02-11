@@ -1,5 +1,5 @@
 //
-//  DepositHistory.swift
+//  DepositHistoryResult.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 11/02/2019.
@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public struct DepositHistoryResult {
+  public let outcome: Outcome
+  public let data: [DepositHistory]
+  
+  init(outcome: Outcome, data: [DepositHistory]) {
+    self.outcome = outcome
+    self.data = data
+  }
+}
