@@ -147,6 +147,7 @@
 		9C8F8FF421F90D940034DF4A /* orderbook_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE521F90D400034DF4A /* orderbook_test_data.json */; };
 		9C8F8FF521F90D990034DF4A /* summary_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FE821F90D430034DF4A /* summary_test_data.json */; };
 		9C8F8FF621F90DA30034DF4A /* ticker_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */; };
+		9CA5E99D2211B59B004048EE /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE162202718C00476CCD /* OrderBook.swift */; };
 		9CC44A0C220DF17100EBCB9D /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC44A0B220DF17100EBCB9D /* Outcome.swift */; };
 /* End PBXBuildFile section */
 
@@ -737,6 +738,7 @@
 				9C3EE6EE2210FAF800DF1BA3 /* OrderResult.swift in Sources */,
 				9C3CEE13220270B500476CCD /* DepositAddressRequest.swift in Sources */,
 				9C3EE6E92210FAEA00DF1BA3 /* BalanceResult.swift in Sources */,
+				9CA5E99D2211B59B004048EE /* OrderBook.swift in Sources */,
 				9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */,
 				9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */,
 				9C3EE6EF2210FAFB00DF1BA3 /* WithdrawResult.swift in Sources */,
