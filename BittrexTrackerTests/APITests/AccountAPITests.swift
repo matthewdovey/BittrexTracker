@@ -1,5 +1,5 @@
 //
-//  AccountCollectorTests.swift
+//  AccountAPITests.swift
 //  BittrexTrackerTests
 //
 //  Created by Matthew Dovey on 30/01/2019.
@@ -14,15 +14,15 @@ private let BALANCES_DATA_FILE = "balances_test_data"
 private let BALANCE_DATA_FILE = "balance_test_data"
 private let JSON = "json"
 
-class AccountCollectorTests: XCTestCase {
+class AccountAPITests: XCTestCase {
   
-  private var collector: AccountCollector!
+  private var api: AccountAPI!
   private var session: URLSessionMock!
   private var bundle: Bundle?
   
   override func setUp() {
     session = URLSessionMock()
-    collector = AccountCollector(session: session, apiKey: "", apiSecret: "")
+    api = AccountAPI(session: session, apiKey: "", apiSecret: "")
     bundle = Bundle(identifier: BUNDLE_IDENTIFIER)
   }
 
@@ -35,7 +35,7 @@ class AccountCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getBalances() { results in
+    api.getBalances() { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -43,7 +43,7 @@ class AccountCollectorTests: XCTestCase {
 
   func testGetBalancesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getBalances() { results in
+    api.getBalances() { results in
       XCTAssertFalse(results.success == true)
     }
   }
@@ -57,7 +57,7 @@ class AccountCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getBalanceFor(currency: "") { results in
+    api.getBalanceFor(currency: "") { results in
       XCTAssertTrue(results.success == true)
       XCTAssertNotNil(results.result)
     }
@@ -65,7 +65,7 @@ class AccountCollectorTests: XCTestCase {
 
   func testGetBalanceForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getBalanceFor(currency: "") { results in
+    api.getBalanceFor(currency: "") { results in
       XCTAssertFalse(results.success == true)
     }
   }

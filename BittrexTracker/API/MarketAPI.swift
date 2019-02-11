@@ -1,5 +1,5 @@
 //
-//  MarketCollector.swift
+//  MarketAPI.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 30/01/2019.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Class to provide all market related API calls to the Bittrex exchange
-public final class MarketCollector {
+public final class MarketAPI {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder

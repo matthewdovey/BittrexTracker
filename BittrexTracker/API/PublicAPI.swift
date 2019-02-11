@@ -1,5 +1,5 @@
 //
-//  PublicCollector.swift
+//  PublicAPI.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 21/01/2019.
@@ -9,12 +9,12 @@
 import Foundation
 
 /// A class to provide a wrapper around the Bittrex Exchange public APIs
-public final class PublicCollector {
+public final class PublicAPI {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
   
-  /// Initialiser to create the bittrex collector
+  /// Initialiser to create the Bittrex public API wrapper
   ///
   /// - Parameter:
   ///   - session: URLSession object
