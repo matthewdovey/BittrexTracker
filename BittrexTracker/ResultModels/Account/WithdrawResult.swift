@@ -1,5 +1,5 @@
 //
-//  WithdrawalHistoryResult.swift
+//  WithdrawResult.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 11/02/2019.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct WithdrawalHistoryResult {
+public struct WithdrawResult {
   public let outcome: Outcome
-  public let data: [WithdrawalHistory]
+  public let data: [Withdraw]
 
-  init(outcome: Outcome, data: [WithdrawalHistory]) {
+  init(outcome: Outcome, data: [Withdraw]) {
     self.outcome = outcome
     self.data = data
   }

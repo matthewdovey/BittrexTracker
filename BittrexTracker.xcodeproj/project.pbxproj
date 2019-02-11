@@ -100,14 +100,14 @@
 		9C3EE6E22210FA7300DF1BA3 /* OpenOrdersResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6A42210F2A600DF1BA3 /* OpenOrdersResult.swift */; };
 		9C3EE6E42210FAD100DF1BA3 /* DepositAddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E32210FAD100DF1BA3 /* DepositAddressResult.swift */; };
 		9C3EE6E62210FADE00DF1BA3 /* OrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E52210FADE00DF1BA3 /* OrderResult.swift */; };
-		9C3EE6E82210FAE800DF1BA3 /* WithdrawalResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E72210FAE800DF1BA3 /* WithdrawalResult.swift */; };
+		9C3EE6E82210FAE800DF1BA3 /* WithdrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E72210FAE800DF1BA3 /* WithdrawResult.swift */; };
 		9C3EE6E92210FAEA00DF1BA3 /* BalanceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6D72210FA0800DF1BA3 /* BalanceResult.swift */; };
 		9C3EE6EA2210FAEC00DF1BA3 /* DepositHistoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6D92210FA1A00DF1BA3 /* DepositHistoryResult.swift */; };
 		9C3EE6EB2210FAEF00DF1BA3 /* OrderHistoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6DB2210FA3000DF1BA3 /* OrderHistoryResult.swift */; };
 		9C3EE6EC2210FAF200DF1BA3 /* WithdrawalHistoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6DD2210FA6500DF1BA3 /* WithdrawalHistoryResult.swift */; };
 		9C3EE6ED2210FAF500DF1BA3 /* DepositAddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E32210FAD100DF1BA3 /* DepositAddressResult.swift */; };
 		9C3EE6EE2210FAF800DF1BA3 /* OrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E52210FADE00DF1BA3 /* OrderResult.swift */; };
-		9C3EE6EF2210FAFB00DF1BA3 /* WithdrawalResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E72210FAE800DF1BA3 /* WithdrawalResult.swift */; };
+		9C3EE6EF2210FAFB00DF1BA3 /* WithdrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E72210FAE800DF1BA3 /* WithdrawResult.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
 		9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* PublicCollectorTests.swift */; };
@@ -212,7 +212,7 @@
 		9C3EE6DD2210FA6500DF1BA3 /* WithdrawalHistoryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalHistoryResult.swift; sourceTree = "<group>"; };
 		9C3EE6E32210FAD100DF1BA3 /* DepositAddressResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositAddressResult.swift; sourceTree = "<group>"; };
 		9C3EE6E52210FADE00DF1BA3 /* OrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResult.swift; sourceTree = "<group>"; };
-		9C3EE6E72210FAE800DF1BA3 /* WithdrawalResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalResult.swift; sourceTree = "<group>"; };
+		9C3EE6E72210FAE800DF1BA3 /* WithdrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawResult.swift; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		9C85C05821F7647400E9259D /* PublicCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicCollectorTests.swift; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 				9C3EE6DD2210FA6500DF1BA3 /* WithdrawalHistoryResult.swift */,
 				9C3EE6E32210FAD100DF1BA3 /* DepositAddressResult.swift */,
 				9C3EE6E52210FADE00DF1BA3 /* OrderResult.swift */,
-				9C3EE6E72210FAE800DF1BA3 /* WithdrawalResult.swift */,
+				9C3EE6E72210FAE800DF1BA3 /* WithdrawResult.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -665,7 +665,7 @@
 				9C8F8FC921F682B10034DF4A /* Coin.swift in Sources */,
 				9C8F8FCD21F682FE0034DF4A /* DepositHistory.swift in Sources */,
 				9C3EE6922210703600DF1BA3 /* MarketHistoryResult.swift in Sources */,
-				9C3EE6E82210FAE800DF1BA3 /* WithdrawalResult.swift in Sources */,
+				9C3EE6E82210FAE800DF1BA3 /* WithdrawResult.swift in Sources */,
 				9C3EE6902210700600DF1BA3 /* MarketSummaryResult.swift in Sources */,
 				9CC44A0C220DF17100EBCB9D /* Outcome.swift in Sources */,
 				9C3EE6D82210FA0800DF1BA3 /* BalanceResult.swift in Sources */,
@@ -739,7 +739,7 @@
 				9C3EE6E92210FAEA00DF1BA3 /* BalanceResult.swift in Sources */,
 				9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */,
 				9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */,
-				9C3EE6EF2210FAFB00DF1BA3 /* WithdrawalResult.swift in Sources */,
+				9C3EE6EF2210FAFB00DF1BA3 /* WithdrawResult.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* RequestUrl.swift in Sources */,
 				9C8F8FE021F7C9B50034DF4A /* MarketHistory.swift in Sources */,
 				9C3CEE302203C43700476CCD /* Order.swift in Sources */,

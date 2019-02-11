@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public struct DepositAddressResult {
+  public let outcome: Outcome
+  public let data: [DepositAddress]
+
+  init(outcome: Outcome, data: [DepositAddress]) {
+    self.outcome = outcome
+    self.data = data
+  }
+}
