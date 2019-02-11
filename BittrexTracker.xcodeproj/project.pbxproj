@@ -38,7 +38,7 @@
 		9C3CEDEC2201001C00476CCD /* CoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDC92200D74B00476CCD /* CoinRequest.swift */; };
 		9C3CEDEE2201049A00476CCD /* RequestUrlBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDED2201049A00476CCD /* RequestUrlBuilderTests.swift */; };
 		9C3CEDF2220128B600476CCD /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF1220128B600476CCD /* AccountAPI.swift */; };
-		9C3CEDF422012C8A00476CCD /* AccountCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */; };
+		9C3CEDF422012C8A00476CCD /* AccountAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF322012C8900476CCD /* AccountAPITests.swift */; };
 		9C3CEDF522012D8000476CCD /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF1220128B600476CCD /* AccountAPI.swift */; };
 		9C3CEDF72202459600476CCD /* MarketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF62202459600476CCD /* MarketAPI.swift */; };
 		9C3CEDF82202459800476CCD /* MarketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEDF62202459600476CCD /* MarketAPI.swift */; };
@@ -110,7 +110,7 @@
 		9C3EE6EF2210FAFB00DF1BA3 /* WithdrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EE6E72210FAE800DF1BA3 /* WithdrawResult.swift */; };
 		9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05321F759C100E9259D /* URLSessionMock.swift */; };
 		9C85C05621F75D4D00E9259D /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */; };
-		9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* PublicCollectorTests.swift */; };
+		9C85C05921F7647400E9259D /* PublicAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85C05821F7647400E9259D /* PublicAPITests.swift */; };
 		9C85C05B21F7986B00E9259D /* currency_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C85C05A21F7986B00E9259D /* currency_test_data.json */; };
 		9C85C05D21F7A76700E9259D /* currency_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C85C05A21F7986B00E9259D /* currency_test_data.json */; };
 		9C8F8FB421F67E120034DF4A /* BittrexTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F8FAA21F67E120034DF4A /* BittrexTracker.framework */; };
@@ -179,7 +179,7 @@
 		9C3CEDDB2200E10200476CCD /* BalanceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRequest.swift; sourceTree = "<group>"; };
 		9C3CEDED2201049A00476CCD /* RequestUrlBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUrlBuilderTests.swift; sourceTree = "<group>"; };
 		9C3CEDF1220128B600476CCD /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
-		9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectorTests.swift; sourceTree = "<group>"; };
+		9C3CEDF322012C8900476CCD /* AccountAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPITests.swift; sourceTree = "<group>"; };
 		9C3CEDF62202459600476CCD /* MarketAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAPI.swift; sourceTree = "<group>"; };
 		9C3CEDFC220264E100476CCD /* BuyLimitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLimitRequest.swift; sourceTree = "<group>"; };
 		9C3CEDFE2202650300476CCD /* SellLimitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellLimitRequest.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		9C3EE6E72210FAE800DF1BA3 /* WithdrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawResult.swift; sourceTree = "<group>"; };
 		9C85C05321F759C100E9259D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
-		9C85C05821F7647400E9259D /* PublicCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicCollectorTests.swift; sourceTree = "<group>"; };
+		9C85C05821F7647400E9259D /* PublicAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAPITests.swift; sourceTree = "<group>"; };
 		9C85C05A21F7986B00E9259D /* currency_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency_test_data.json; sourceTree = "<group>"; };
 		9C8F8FAA21F67E120034DF4A /* BittrexTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BittrexTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8F8FAD21F67E120034DF4A /* BittrexTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BittrexTracker.h; sourceTree = "<group>"; };
@@ -429,14 +429,14 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
-		9C85C05721F7645500E9259D /* CollectorTests */ = {
+		9C85C05721F7645500E9259D /* APITests */ = {
 			isa = PBXGroup;
 			children = (
-				9C85C05821F7647400E9259D /* PublicCollectorTests.swift */,
+				9C85C05821F7647400E9259D /* PublicAPITests.swift */,
 				9C3CEDED2201049A00476CCD /* RequestUrlBuilderTests.swift */,
-				9C3CEDF322012C8900476CCD /* AccountCollectorTests.swift */,
+				9C3CEDF322012C8900476CCD /* AccountAPITests.swift */,
 			);
-			path = CollectorTests;
+			path = APITests;
 			sourceTree = "<group>";
 		};
 		9C85C05C21F7987D00E9259D /* Resources */ = {
@@ -485,7 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				9C85C05C21F7987D00E9259D /* Resources */,
-				9C85C05721F7645500E9259D /* CollectorTests */,
+				9C85C05721F7645500E9259D /* APITests */,
 				9C8F8FBA21F67E120034DF4A /* Info.plist */,
 				9C85C05321F759C100E9259D /* URLSessionMock.swift */,
 				9C85C05521F75D4D00E9259D /* URLSessionDataTaskMock.swift */,
@@ -715,7 +715,7 @@
 				9C3CEE2F2203C43500476CCD /* Withdraw.swift in Sources */,
 				9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */,
 				9C3EE6EB2210FAEF00DF1BA3 /* OrderHistoryResult.swift in Sources */,
-				9C3CEDF422012C8A00476CCD /* AccountCollectorTests.swift in Sources */,
+				9C3CEDF422012C8A00476CCD /* AccountAPITests.swift in Sources */,
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */,
 				9C3CEDEE2201049A00476CCD /* RequestUrlBuilderTests.swift in Sources */,
@@ -732,7 +732,7 @@
 				9C3CEDEB2201001900476CCD /* MarketsRequest.swift in Sources */,
 				9C3CEDE72201001000476CCD /* OrderHistoryRequest.swift in Sources */,
 				9C3CEDF522012D8000476CCD /* AccountAPI.swift in Sources */,
-				9C85C05921F7647400E9259D /* PublicCollectorTests.swift in Sources */,
+				9C85C05921F7647400E9259D /* PublicAPITests.swift in Sources */,
 				9C3EE69D2210F23E00DF1BA3 /* MarketSummaryResult.swift in Sources */,
 				9C8F8FE421F7C9BE0034DF4A /* MarketSummary.swift in Sources */,
 				9C3EE6EE2210FAF800DF1BA3 /* OrderResult.swift in Sources */,

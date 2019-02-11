@@ -1,5 +1,5 @@
 //
-//  PublicCollectorTests.swift
+//  PublicAPITests.swift
 //  BittrexTrackerTests
 //
 //  Created by Matthew  Dovey on 22/01/2019.
@@ -19,7 +19,7 @@ private let MARKET_HISTORY_DATA_FILE = "market_history_test_data"
 private let ORDERBOOK_DATA_FILE = "orderbook_test_data"
 private let JSON = "json"
 
-class PublicCollectorTests: XCTestCase {
+class PublicAPITests: XCTestCase {
   
   private var api: PublicAPI!
   private var session: URLSessionMock!

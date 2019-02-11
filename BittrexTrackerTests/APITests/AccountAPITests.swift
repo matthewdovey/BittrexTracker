@@ -1,5 +1,5 @@
 //
-//  AccountCollectorTests.swift
+//  AccountAPITests.swift
 //  BittrexTrackerTests
 //
 //  Created by Matthew Dovey on 30/01/2019.
@@ -14,7 +14,7 @@ private let BALANCES_DATA_FILE = "balances_test_data"
 private let BALANCE_DATA_FILE = "balance_test_data"
 private let JSON = "json"
 
-class AccountCollectorTests: XCTestCase {
+class AccountAPITests: XCTestCase {
   
   private var api: AccountAPI!
   private var session: URLSessionMock!
