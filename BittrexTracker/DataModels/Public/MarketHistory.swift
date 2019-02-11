@@ -10,13 +10,13 @@ import Foundation
 
 /// The data structure for the result of the Market History Request
 public struct MarketHistory: Decodable {
-  let id: String?
-  let timeStamp: String?
-  let quantity: Double?
-  let price: Double?
-  let total: Double?
-  let fillType: String?
-  let orderType: String?
+  public let id: String?
+  public let timeStamp: String?
+  public let quantity: Double?
+  public let price: Double?
+  public let total: Double?
+  public let fillType: String?
+  public let orderType: String?
   
   private enum CodingKeys: String, CodingKey {
     case id = "ID"

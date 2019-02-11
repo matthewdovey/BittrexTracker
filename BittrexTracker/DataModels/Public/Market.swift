@@ -10,13 +10,13 @@ import Foundation
 
 /// The data structure for the result of the Markets Request
 public struct Market: Decodable {
-  let baseCurrency: String?
-  let marketCurrencyLong: String?
-  let baseCurrencyLong: String?
-  let minTradeSize: Double?
-  let marketName: String?
-  let isActive: Bool?
-  let created: String?
+  public let baseCurrency: String?
+  public let marketCurrencyLong: String?
+  public let baseCurrencyLong: String?
+  public let minTradeSize: Double?
+  public let marketName: String?
+  public let isActive: Bool?
+  public let created: String?
   
   private enum CodingKeys : String, CodingKey {
     case baseCurrency = "BaseCurrency"

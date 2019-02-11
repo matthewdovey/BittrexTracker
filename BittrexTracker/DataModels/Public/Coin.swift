@@ -10,14 +10,14 @@ import Foundation
 
 /// The data structure for the result of the Coin Request
 public struct Coin: Decodable {
-  let currency: String?
-  let currencyLong: String?
-  let minConfirmation: Int64?
-  let txFee: Double?
-  let isActive: Bool?
-  let coinType: String?
-  let baseAddress: String?
-  var bittrexSummary: MarketSummary?
+  public let currency: String?
+  public let currencyLong: String?
+  public let minConfirmation: Int64?
+  public let txFee: Double?
+  public let isActive: Bool?
+  public let coinType: String?
+  public let baseAddress: String?
+  public var bittrexSummary: MarketSummary?
   
   private enum CodingKeys: String, CodingKey {
     case currency = "Currency"

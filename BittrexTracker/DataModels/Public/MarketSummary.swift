@@ -10,19 +10,19 @@ import Foundation
 
 /// The data structure for the result of the Market Summary Request
 public struct MarketSummary: Decodable {
-  let marketName: String?
-  let high: Double?
-  let low: Double?
-  let volume: Double?
-  let last: Double?
-  let baseVolume: Double?
-  let timeStamp: String?
-  let bid: Double?
-  let ask: Double?
-  let openBuyOrders: Int?
-  let openSellOrders: Int?
-  let prevDay: Double?
-  let created: String?
+  public let marketName: String?
+  public let high: Double?
+  public let low: Double?
+  public let volume: Double?
+  public let last: Double?
+  public let baseVolume: Double?
+  public let timeStamp: String?
+  public let bid: Double?
+  public let ask: Double?
+  public let openBuyOrders: Int?
+  public let openSellOrders: Int?
+  public let prevDay: Double?
+  public let created: String?
   
   private enum CodingKeys: String, CodingKey {
     case marketName = "MarketName"
