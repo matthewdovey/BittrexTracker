@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  Outcome.swift
 //  BittrexTracker
 //
 //  Created by Matthew  Dovey on 08/02/2019.

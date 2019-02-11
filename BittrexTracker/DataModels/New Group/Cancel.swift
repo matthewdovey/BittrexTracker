@@ -10,7 +10,7 @@ import Foundation
 
 /// The data structure for the results of the cancel Request
 struct Cancel: Decodable {
-  let uuid: String
+  public let uuid: String
   
   private enum CodingKeys: String, CodingKey {
     case uuid = "UUID"

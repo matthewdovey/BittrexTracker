@@ -10,7 +10,7 @@ import Foundation
 
 /// The data structure for the result of the Sell Limit Request
 struct SellLimit: Decodable {
-  let uuid: String?
+  public let uuid: String?
   
   private enum CodingKeys: String, CodingKey {
     case uuid = "UUID"
