@@ -21,13 +21,13 @@ private let JSON = "json"
 
 class PublicCollectorTests: XCTestCase {
   
-  private var collector: PublicCollector!
+  private var api: PublicAPI!
   private var session: URLSessionMock!
   private var bundle: Bundle?
   
   override func setUp() {
     session = URLSessionMock()
-    collector = PublicCollector(session: session)
+    api = PublicAPI(session: session)
     bundle = Bundle(identifier: BUNDLE_IDENTIFIER)
   }
   
@@ -40,7 +40,7 @@ class PublicCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getCurrencies() { results in
+    api.getCurrencies() { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -48,7 +48,7 @@ class PublicCollectorTests: XCTestCase {
   
   func testGetCurrenciesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getCurrencies() { results in
+    api.getCurrencies() { results in
       XCTAssertFalse(results.success == true)
     }
   }
@@ -62,7 +62,7 @@ class PublicCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getMarkets() { results in
+    api.getMarkets() { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -70,7 +70,7 @@ class PublicCollectorTests: XCTestCase {
   
   func testGetMarketsReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getMarkets() { results in
+    api.getMarkets() { results in
       XCTAssertTrue(results.success == false)
     }
   }
@@ -84,7 +84,7 @@ class PublicCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getTickerFor(market: "btc-ltc") { results in
+    api.getTickerFor(market: "btc-ltc") { results in
       XCTAssertTrue(results.success == true)
       XCTAssertNotNil(results.result)
     }
@@ -92,7 +92,7 @@ class PublicCollectorTests: XCTestCase {
   
   func testGetTickerForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getTickerFor(market: "") { result in
+    api.getTickerFor(market: "") { result in
       XCTAssertFalse(result.success == true)
     }
   }
@@ -107,7 +107,7 @@ class PublicCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getMarketSummaries() { results in
+    api.getMarketSummaries() { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -115,7 +115,7 @@ class PublicCollectorTests: XCTestCase {
   
   func testGetMarketSummariesReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getMarketSummaries() { results in
+    api.getMarketSummaries() { results in
       XCTAssertFalse(results.success == true)
     }
   }
@@ -129,7 +129,7 @@ class PublicCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getSummaryForMarket(market: "") { results in
+    api.getSummaryForMarket(market: "") { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -137,7 +137,7 @@ class PublicCollectorTests: XCTestCase {
   
   func testGetSummaryForMarketReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getSummaryForMarket(market: "") { results in
+    api.getSummaryForMarket(market: "") { results in
       XCTAssertFalse(results.success == true)
     }
   }
@@ -151,7 +151,7 @@ class PublicCollectorTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    collector.getMarketHistoryFor(market: "") { results in
+    api.getMarketHistoryFor(market: "") { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -159,7 +159,7 @@ class PublicCollectorTests: XCTestCase {
   
   func testGetMarketHistoryForReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    collector.getMarketHistoryFor(market: "") { results in
+    api.getMarketHistoryFor(market: "") { results in
       XCTAssertFalse(results.success == true)
     }
   }
