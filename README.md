@@ -58,7 +58,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate SnapKit into your Xcode project using Carthage, specify it in your Cartfile:
+To integrate BittrexTracker into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```bash
 github "matthewdovey/BittrexTracker"
