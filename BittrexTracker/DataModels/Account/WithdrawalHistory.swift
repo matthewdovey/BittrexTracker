@@ -9,18 +9,18 @@
 import Foundation
 
 /// The data structure for the result of the Withdrawal History Request
-struct WithdrawalHistory: Decodable {
-  let paymentUuid: String?
-  let currency: String?
-  let amount: Double?
-  let address: String?
-  let opened: String?
-  let authorized: Bool?
-  let pendingPayments: Bool?
-  let txCost: Double?
-  let txId: String?
-  let canceled: Bool?
-  let invalidAddress: Bool?
+public struct WithdrawalHistory: Decodable {
+  public let paymentUuid: String?
+  public let currency: String?
+  public let amount: Double?
+  public let address: String?
+  public let opened: String?
+  public let authorized: Bool?
+  public let pendingPayments: Bool?
+  public let txCost: Double?
+  public let txId: String?
+  public let canceled: Bool?
+  public let invalidAddress: Bool?
   
   private enum CodingKeys: String, CodingKey {
     case paymentUuid = "PaymentUUID"

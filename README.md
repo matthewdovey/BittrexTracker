@@ -19,7 +19,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Version
 
-- 1.2.2
+- 1.2.3
 
 ## Supported API
 
@@ -58,7 +58,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate SnapKit into your Xcode project using Carthage, specify it in your Cartfile:
+To integrate BittrexTracker into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```bash
 github "matthewdovey/BittrexTracker"

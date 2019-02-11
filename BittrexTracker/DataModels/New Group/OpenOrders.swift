@@ -9,22 +9,22 @@
 import Foundation
 
 /// The data structure for the results of the Open Orders Request
-struct OpenOrders: Decodable {
-  let uuid: String?
-  let orderUuid: String?
-  let exchange: String?
-  let orderType: String?
-  let quantity: Float?
-  let quantityRemaining: Float?
-  let limit: Float?
-  let commissionPaid: Float?
-  let price: Float?
-  let pricePerUnit: Float?
-  let opened: String?
-  let closed: String?
-  let cancelInitiated: String?
-  let immediateOrCancel: String?
-  let isConditional: String?
+public struct OpenOrders: Decodable {
+  public let uuid: String?
+  public let orderUuid: String?
+  public let exchange: String?
+  public let orderType: String?
+  public let quantity: Float?
+  public let quantityRemaining: Float?
+  public let limit: Float?
+  public let commissionPaid: Float?
+  public let price: Float?
+  public let pricePerUnit: Float?
+  public let opened: String?
+  public let closed: String?
+  public let cancelInitiated: String?
+  public let immediateOrCancel: String?
+  public let isConditional: String?
   
   private enum CodingKeys: String, CodingKey {
     case uuid = "UUID"

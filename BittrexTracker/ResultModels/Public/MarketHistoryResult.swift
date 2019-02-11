@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  MarketHistoryResult.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 10/02/2019.
@@ -8,11 +8,12 @@
 
 import Foundation
 
-public struct CoinResult {
+/// Market History struct to hold Outcome and the data
+public struct MarketHistoryResult {
   public let outcome: Outcome
-  public let data: [Coin]
+  public let data: [MarketHistory]
   
-  init(outcome: Outcome, data: [Coin]) {
+  init(outcome: Outcome, data: [MarketHistory]) {
     self.outcome = outcome
     self.data = data
   }

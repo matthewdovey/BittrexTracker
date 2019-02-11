@@ -1,5 +1,5 @@
 //
-//  Market Result.swift
+//  BuyLimitResult.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 10/02/2019.
@@ -8,11 +8,12 @@
 
 import Foundation
 
-public struct MarketResult {
+/// Buy Limit Result struct to hold Outcome and the data
+public struct BuyLimitResult {
   public let outcome: Outcome
-  public let data: [Market]
+  public let data: [BuyLimit]
   
-  init(outcome: Outcome, data: [Market]) {
+  init(outcome: Outcome, data: [BuyLimit]) {
     self.outcome = outcome
     self.data = data
   }

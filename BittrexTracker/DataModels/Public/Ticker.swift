@@ -10,9 +10,9 @@ import Foundation
 
 /// The data structure for the result of the Ticker Request
 public struct Ticker: Decodable {
-  let bid: Float?
-  let ask: Float?
-  let last: Float?
+  public let bid: Float?
+  public let ask: Float?
+  public let last: Float?
   
   private enum CodingKeys: String, CodingKey {
     case bid = "Bid"
