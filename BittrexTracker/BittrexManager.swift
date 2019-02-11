@@ -12,6 +12,7 @@ import Foundation
 final class BittrexManager {
 
   private let publicCollector: PublicCollector
+  private let marketCollector: MarketCollector
   private let session: URLSession
   private let urlBuilder: RequestUrlBuilder
 
@@ -20,6 +21,12 @@ final class BittrexManager {
     session = URLSession.shared
     urlBuilder = RequestUrlBuilder()
     publicCollector = PublicCollector(session: session, builder: urlBuilder)
+    marketCollector = MarketCollector(session: session, apiKey: "")
+  }
+
+  /// Setter to allow user to add API key
+  public func setApiKey(key: String) {
+    marketCollector.setApiKey(key: key)
   }
 
   /// Method to return all currencies listed on the exchange
@@ -128,5 +135,62 @@ final class BittrexManager {
         completion(MarketHistoryResult(outcome: .failure(message), data: []))
       }
     })
+  }
+
+  /// Method to place a buy order in a specific market
+  ///
+  /// - Parameter completion: Escaping BuyLimitResult object
+  final func getBuyLimit(completion: @escaping ((BuyLimitResult) -> Void)) {
+    marketCollector.getBuyLimit { (request) in
+      if request.success == true, let data = request.result {
+        completion(BuyLimitResult(outcome: .success, data: [data]))
+      } else {
+        let message = request.message ?? "unknown"
+        completion(BuyLimitResult(outcome: .failure(message), data: []))
+      }
+    }
+  }
+
+
+  /// Method to place a sell order in a specific market
+  ///
+  /// - Parameter completion: Escaping SellLimitResult object
+  final func getSellLimit(completion: @escaping ((SellLimitResult) -> Void)) {
+    marketCollector.getSellLimit { (request) in
+      if request.success == true, let data = request.result {
+        completion(SellLimitResult(outcome: .success, data: [data]))
+      } else {
+        let message = request.message ?? "unknown"
+        completion(SellLimitResult(outcome: .failure(message), data: []))
+      }
+    }
+  }
+
+  /// Method to cancel a buy or sell order
+  ///
+  /// - Parameter completion: Escaping CancelResult object
+  final func cancel(completion: @escaping ((CancelResult) -> Void)) {
+    marketCollector.cancel { (request) in
+      if request.success == true, let data = request.result {
+        completion(CancelResult(outcome: .success, data: [data]))
+      } else {
+        let message = request.message ?? "unknown"
+        completion(CancelResult(outcome: .failure(message), data: []))
+      }
+    }
+  }
+
+  /// Method to return all orders that the user has open
+  ///
+  /// - Parameter completion: Escaping OpenOrdersResult object
+  final func getOpenOrders(completion: @escaping ((OpenOrdersResult) -> Void)) {
+    marketCollector.getOpenOrders { (request) in
+      if request.success == true, let data = request.result {
+        completion(OpenOrdersResult(outcome: .success, data: data))
+      } else {
+        let message = request.message ?? "unknown"
+        completion(OpenOrdersResult(outcome: .failure(message), data: []))
+      }
+    }
   }
 }
