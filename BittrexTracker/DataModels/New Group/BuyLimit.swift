@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the result of the Buy Limit Request
-struct BuyLimit: Decodable {
+public struct BuyLimit: Decodable {
   public let uuid: String?
   
   private enum CodingKeys: String, CodingKey {

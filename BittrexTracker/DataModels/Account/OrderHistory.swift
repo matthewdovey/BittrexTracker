@@ -9,21 +9,21 @@
 import Foundation
 
 /// The data structure for the result of the Order History Request
-struct OrderHistory: Decodable {
-  let orderUuid: String?
-  let exchange: String?
-  let timeStamp: String?
-  let orderType: String?
-  let limit: Double?
-  let quantity: Double?
-  let quantityRemaining: Double?
-  let commission: Double?
-  let price: Double?
-  let pricePerUnit: Double?
-  let isConditional: Bool?
-  let condition: String?
-  let conditionTarget: String?
-  let immediateOrCancel: Bool?
+public struct OrderHistory: Decodable {
+  public let orderUuid: String?
+  public let exchange: String?
+  public let timeStamp: String?
+  public let orderType: String?
+  public let limit: Double?
+  public let quantity: Double?
+  public let quantityRemaining: Double?
+  public let commission: Double?
+  public let price: Double?
+  public let pricePerUnit: Double?
+  public let isConditional: Bool?
+  public let condition: String?
+  public let conditionTarget: String?
+  public let immediateOrCancel: Bool?
   
   private enum CodingKeys: String, CodingKey {
     case orderUuid = "OrderUuid"

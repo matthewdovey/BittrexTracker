@@ -9,14 +9,14 @@
 import Foundation
 
 /// The data structure for the result of the Balance Request
-struct Balance: Decodable {
-  let currency: String?
-  let balance: Double?
-  let available: Double?
-  let pending: Double?
-  let cryptoAddress: String?
-  let requested: Bool?
-  let uuid: String?
+public struct Balance: Decodable {
+  public let currency: String?
+  public let balance: Double?
+  public let available: Double?
+  public let pending: Double?
+  public let cryptoAddress: String?
+  public let requested: Bool?
+  public let uuid: String?
   
   private enum CodingKeys: String, CodingKey {
     case currency = "Currency"

@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the results of the Open Orders Request
-struct OpenOrders: Decodable {
+public struct OpenOrders: Decodable {
   public let uuid: String?
   public let orderUuid: String?
   public let exchange: String?

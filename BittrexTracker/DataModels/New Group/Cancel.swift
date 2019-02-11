@@ -9,7 +9,7 @@
 import Foundation
 
 /// The data structure for the results of the cancel Request
-struct Cancel: Decodable {
+public struct Cancel: Decodable {
   public let uuid: String
   
   private enum CodingKeys: String, CodingKey {
