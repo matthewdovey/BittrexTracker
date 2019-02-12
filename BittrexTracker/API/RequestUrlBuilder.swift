@@ -83,45 +83,45 @@ final class RequestUrlBuilder {
   ///
   /// - Parameter request: Request URL enum to define the URL to return
   /// - Returns: Request URL to be used with the Bittrex API
-  public func buildUrl(for request: RequestUrl) -> String {
+  public func buildUrl(for request: Request) -> String {
     switch request {
-    case .Markets:
+    case .markets:
       return baseURL+apiVersion+marketsURL
-    case .Currencies:
+    case .currencies:
       return baseURL+apiVersion+currenciesURL
-    case .Ticker:
+    case .ticker:
       return baseURL+apiVersion+tickerURL
-    case .MarketSummaries:
+    case .marketSummaries:
       return baseURL+apiVersion+marketSummariesURL
-    case .MarketSummary:
+    case .marketSummary:
       return baseURL+apiVersion+marketSummaryURL
-    case .OrderBook:
+    case .orderBook:
       return baseURL+apiVersion+orderbookURL+marketParam
-    case .MarketHistory:
+    case .marketHistory:
       return baseURL+apiVersion+marketHistoryUrl
-    case .BuyLimit:
+    case .buyLimit:
       return baseURL+apiVersion+buyLimitURL+apiKeyParam+apiKey+marketParam
-    case .SellLimit:
+    case .sellLimit:
       return baseURL+apiVersion+sellLimitURL+apiKeyParam+apiKey+marketParam
-    case .Cancel:
+    case .cancel:
       return baseURL+apiVersion+cancelURL+apiKeyParam+apiKey+uuidParam
-    case .OpenOrders:
+    case .openOrders:
       return baseURL+apiVersion+openOrdersURL+apiKeyParam+apiKey+marketParam
-    case .Balances:
+    case .balances:
       return baseURL+apiVersion+balancesURL+apiKeyParam+apiKey
-    case .Balance:
+    case .balance:
       return baseURL+apiVersion+balanceURL+apiKeyParam+apiKey+andCurrencyParam
-    case .DepositAddress:
+    case .depositAddress:
       return baseURL+apiVersion+depositAddressUrl+apiKeyParam+apiKey+andCurrencyParam
-    case .Withdraw:
+    case .withdraw:
       return baseURL+apiVersion+withdrawURL+apiKeyParam+apiKey+andCurrencyParam
-    case .Order:
+    case .order:
       return baseURL+apiVersion+orderURL+uuidParam
-    case .DepositHistory:
+    case .depositHistory:
       return baseURL+apiVersion+depositHistoryURL+currencyParam
-    case .OrderHistory:
+    case .orderHistory:
       return baseURL+apiVersion+orderHistoryURL
-    case .WithdrawalHistory:
+    case .withdrawalHistory:
       return baseURL+apiVersion+withdrawalHistoryURL
     }
   }

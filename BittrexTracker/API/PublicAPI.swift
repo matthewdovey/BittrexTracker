@@ -28,7 +28,7 @@ public final class PublicAPI {
   ///
   /// - Parameter completion: Escaping CoinRequest object
   final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .Currencies))
+    let url = URL(string: urlBuilder.buildUrl(for: .currencies))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(CoinRequest(success: false, message: String(describing: error), result: nil))
@@ -52,7 +52,7 @@ public final class PublicAPI {
   ///
   /// - Parameter completion: Escaping MarketsRequest object
   final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .Markets))
+    let url = URL(string: urlBuilder.buildUrl(for: .markets))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketsRequest(success: false, message: String(describing: error), result: nil))
@@ -78,7 +78,7 @@ public final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerRequest object
   final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .Ticker)+market)
+    let url = URL(string: urlBuilder.buildUrl(for: .ticker)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(TickerRequest(success: false, message: String(describing: error), result: nil))
@@ -102,7 +102,7 @@ public final class PublicAPI {
   ///
   /// - Parameter completion: Escaping MarketSummaryRequest object
   final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .MarketSummaries))
+    let url = URL(string: urlBuilder.buildUrl(for: .marketSummaries))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
@@ -128,7 +128,7 @@ public final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketSummaryRequest object
   final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .MarketSummary)+market)
+    let url = URL(string: urlBuilder.buildUrl(for: .marketSummary)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
@@ -155,7 +155,7 @@ public final class PublicAPI {
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookRequest object
   final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .OrderBook))
+    let url = URL(string: urlBuilder.buildUrl(for: .orderBook))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(OrderBookRequest(success: false, message: String(describing: error)))
@@ -181,7 +181,7 @@ public final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketHistoryRequest object
   final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .MarketHistory)+market)
+    let url = URL(string: urlBuilder.buildUrl(for: .marketHistory)+market)
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketHistoryRequest(success: false, message: String(describing: error), result: nil))

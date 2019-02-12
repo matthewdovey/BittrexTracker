@@ -1,5 +1,5 @@
 //
-//  RequestUrl.swift
+//  Request.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 29/01/2019.
@@ -29,24 +29,24 @@ import Foundation
 /// - OrderHistory: The order history request URL
 /// - WithdrawalHistory: The withdrawal history request URL
 /// - DepositHistory: The deposit history request URL
-enum RequestUrl {
-  case Markets
-  case Currencies
-  case Ticker
-  case MarketSummaries
-  case MarketSummary
-  case OrderBook
-  case MarketHistory
-  case BuyLimit
-  case SellLimit
-  case Cancel
-  case OpenOrders
-  case Balances
-  case Balance
-  case DepositAddress
-  case Withdraw
-  case Order
-  case OrderHistory
-  case WithdrawalHistory
-  case DepositHistory
+enum Request {
+  case markets
+  case currencies
+  case ticker
+  case marketSummaries
+  case marketSummary
+  case orderBook
+  case marketHistory
+  case buyLimit
+  case sellLimit
+  case cancel
+  case openOrders
+  case balances
+  case balance
+  case depositAddress
+  case withdraw
+  case order
+  case orderHistory
+  case withdrawalHistory
+  case depositHistory
 }
