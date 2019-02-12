@@ -83,7 +83,7 @@ final class RequestUrlBuilder {
   ///
   /// - Parameter request: Request URL enum to define the URL to return
   /// - Returns: Request URL to be used with the Bittrex API
-  public func buildUrlFor(request: RequestUrl) -> String {
+  public func buildUrl(for request: RequestUrl) -> String {
     switch request {
     case .Markets:
       return baseURL+apiVersion+marketsURL

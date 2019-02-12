@@ -20,49 +20,49 @@ class RequestUrlBuilderTests: XCTestCase {
   // MARK: public URL tests
   
   func testCurrenciesUrl() {
-    let currenciesUrl = urlBuilder.buildUrlFor(request: .Currencies)
+    let currenciesUrl = urlBuilder.buildUrl(for: .Currencies)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getcurrencies"
     XCTAssertEqual(currenciesUrl, actualUrl)
   }
   
   func testMarketsUrl() {
-    let marketUrl = urlBuilder.buildUrlFor(request: .Markets)
+    let marketUrl = urlBuilder.buildUrl(for: .Markets)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarkets"
     XCTAssertEqual(marketUrl, actualUrl)
   }
 
   func testTickerUrl() {
-    let ticketUrl = urlBuilder.buildUrlFor(request: .Ticker)
+    let ticketUrl = urlBuilder.buildUrl(for: .Ticker)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getticker?market="
     XCTAssertEqual(ticketUrl, actualUrl)
   }
   
   func testMarketSummariesUrl() {
-    let marketSummariesUrl = urlBuilder.buildUrlFor(request: .MarketSummaries)
+    let marketSummariesUrl = urlBuilder.buildUrl(for: .MarketSummaries)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarketsummaries"
     XCTAssertEqual(marketSummariesUrl, actualUrl)
   }
   
   func testMarketSummaryUrl() {
-    let marketSummaryUrl = urlBuilder.buildUrlFor(request: .MarketSummary)
+    let marketSummaryUrl = urlBuilder.buildUrl(for: .MarketSummary)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarketsummary?market="
     XCTAssertEqual(marketSummaryUrl, actualUrl)
   }
   
   func testMarketHistoryUrl() {
-    let marketHistoryUrl = urlBuilder.buildUrlFor(request: .MarketHistory)
+    let marketHistoryUrl = urlBuilder.buildUrl(for: .MarketHistory)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarkethistory?market="
     XCTAssertEqual(marketHistoryUrl, actualUrl)
   }
 
   func testOrderBookUrl() {
-
+    let orderBookUrl = urlBuilder.buildUrl(for: .OrderBook)
   }
 
   // MARK: market URL tests
 
   func testBuyLimitUrl() {
-
+    
   }
 
   func testSellLimitUrl() {

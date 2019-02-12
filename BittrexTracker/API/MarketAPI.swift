@@ -37,7 +37,7 @@ public final class MarketAPI {
   ///
   /// - Parameter completion: Escaping BuyLimitRequest object
   final func getBuyLimit(completion: @escaping ((BuyLimitRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .BuyLimit))
+    let url = URL(string: urlBuilder.buildUrl(for: .BuyLimit))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(BuyLimitRequest(success: false, message: String(describing: error), result: nil))
@@ -62,7 +62,7 @@ public final class MarketAPI {
   ///
   /// - Parameter completion: Escaping SellLimitRequest object
   final func getSellLimit(completion: @escaping ((SellLimitRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .SellLimit))
+    let url = URL(string: urlBuilder.buildUrl(for: .SellLimit))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(SellLimitRequest(success: false, message: String(describing: error), result: nil))
@@ -86,7 +86,7 @@ public final class MarketAPI {
   ///
   /// - Parameter completion: Escaping CancelRequest object
   final func cancel(completion: @escaping ((CancelRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .Cancel))
+    let url = URL(string: urlBuilder.buildUrl(for: .Cancel))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(CancelRequest(success: false, message: String(describing: error), result: nil))
@@ -110,7 +110,7 @@ public final class MarketAPI {
   ///
   /// - Parameter completion: Escaping OpenOrdersRequest object
   final func getOpenOrders(completion: @escaping ((OpenOrdersRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .OpenOrders))
+    let url = URL(string: urlBuilder.buildUrl(for: .OpenOrders))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(OpenOrdersRequest(success: false, message: String(describing: error), result: nil))
