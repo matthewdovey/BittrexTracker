@@ -83,4 +83,36 @@ class RequestUrlBuilderTests: XCTestCase {
     let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory?currency="
     XCTAssertEqual(depositHistoryUrl, actualUrl)
   }
+
+  func testOrderBookUrl() {
+
+  }
+
+  func testBuyLimitUrl() {
+
+  }
+
+  func testSellLimitUrl() {
+
+  }
+
+  func testCancelUrl() {
+
+  }
+
+  func testOpenOrdersUrl() {
+
+  }
+
+  func testDepositAddressUrl() {
+
+  }
+
+  func testWithdrawUrl() {
+
+  }
+
+  func testOrderUrl() {
+
+  }
 }
