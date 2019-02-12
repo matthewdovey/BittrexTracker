@@ -16,6 +16,8 @@ class RequestUrlBuilderTests: XCTestCase {
   override func setUp() {
     urlBuilder = RequestUrlBuilder(key: "testKey", secret: "testSecret")
   }
+
+  // MARK: public URL tests
   
   func testCurrenciesUrl() {
     let currenciesUrl = urlBuilder.buildUrlFor(request: .Currencies)
@@ -28,17 +30,17 @@ class RequestUrlBuilderTests: XCTestCase {
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarkets"
     XCTAssertEqual(marketUrl, actualUrl)
   }
+
+  func testTickerUrl() {
+    let ticketUrl = urlBuilder.buildUrlFor(request: .Ticker)
+    let actualUrl = "https://bittrex.com/api/v1.1/public/getticker?market="
+    XCTAssertEqual(ticketUrl, actualUrl)
+  }
   
   func testMarketSummariesUrl() {
     let marketSummariesUrl = urlBuilder.buildUrlFor(request: .MarketSummaries)
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarketsummaries"
     XCTAssertEqual(marketSummariesUrl, actualUrl)
-  }
-  
-  func testTickerUrl() {
-    let ticketUrl = urlBuilder.buildUrlFor(request: .Ticker)
-    let actualUrl = "https://bittrex.com/api/v1.1/public/getticker?market="
-    XCTAssertEqual(ticketUrl, actualUrl)
   }
   
   func testMarketSummaryUrl() {
@@ -52,41 +54,12 @@ class RequestUrlBuilderTests: XCTestCase {
     let actualUrl = "https://bittrex.com/api/v1.1/public/getmarkethistory?market="
     XCTAssertEqual(marketHistoryUrl, actualUrl)
   }
-  
-  func testBalanceUrl() {
-    let balanceUrl = urlBuilder.buildUrlFor(request: .Balance)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalance?apikey=testKey&currency="
-    XCTAssertEqual(balanceUrl, actualUrl)
-  }
-  
-  func testBalancesUrl() {
-    let balancesUrl = urlBuilder.buildUrlFor(request: .Balances)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalances?apikey=testKey"
-    XCTAssertEqual(balancesUrl, actualUrl)
-  }
-  
-  func testOrderHistoryUrl() {
-    let orderHistoryUrl = urlBuilder.buildUrlFor(request: .OrderHistory)
-    print(orderHistoryUrl)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getorderhistory"
-    XCTAssertEqual(orderHistoryUrl, actualUrl)
-  }
-
-  func testWithdrawalHistoryUrl() {
-    let withdrawalHistoryUrl = urlBuilder.buildUrlFor(request: .WithdrawalHistory)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getwithdrawalhistory"
-    XCTAssertEqual(withdrawalHistoryUrl, actualUrl)
-  }
-  
-  func testDepositHistoryUrl() {
-    let depositHistoryUrl = urlBuilder.buildUrlFor(request: .DepositHistory)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory?currency="
-    XCTAssertEqual(depositHistoryUrl, actualUrl)
-  }
 
   func testOrderBookUrl() {
 
   }
+
+  // MARK: market URL tests
 
   func testBuyLimitUrl() {
 
@@ -104,15 +77,48 @@ class RequestUrlBuilderTests: XCTestCase {
 
   }
 
+  // MARK: account URL tests
+  
+  func testBalanceUrl() {
+    let balanceUrl = urlBuilder.buildUrlFor(request: .Balance)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalance?apikey=testKey&currency="
+    XCTAssertEqual(balanceUrl, actualUrl)
+  }
+  
+  func testBalancesUrl() {
+    let balancesUrl = urlBuilder.buildUrlFor(request: .Balances)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalances?apikey=testKey"
+    XCTAssertEqual(balancesUrl, actualUrl)
+  }
+
+  func testDepositHistoryUrl() {
+    let depositHistoryUrl = urlBuilder.buildUrlFor(request: .DepositHistory)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory?currency="
+    XCTAssertEqual(depositHistoryUrl, actualUrl)
+  }
+  
+  func testOrderHistoryUrl() {
+    let orderHistoryUrl = urlBuilder.buildUrlFor(request: .OrderHistory)
+    print(orderHistoryUrl)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getorderhistory"
+    XCTAssertEqual(orderHistoryUrl, actualUrl)
+  }
+
+  func testWithdrawalHistoryUrl() {
+    let withdrawalHistoryUrl = urlBuilder.buildUrlFor(request: .WithdrawalHistory)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getwithdrawalhistory"
+    XCTAssertEqual(withdrawalHistoryUrl, actualUrl)
+  }
+
   func testDepositAddressUrl() {
 
   }
 
-  func testWithdrawUrl() {
+  func testOrderUrl() {
 
   }
 
-  func testOrderUrl() {
+  func testWithdrawUrl() {
 
   }
 }
