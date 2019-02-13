@@ -128,19 +128,19 @@ final class RequestUrlBuilder {
     case .order:
       let url = baseURL+apiVersion+orderURL
       return replacePlaceholders(for: url, with: parameters)
-    case .depositHistory:
+    case .depositHistories:
       let url = baseURL+apiVersion+depositHistoryURL
       return replacePlaceholders(for: url, with: parameters)
-    case .depositHistories:
+    case .depositHistory:
       let url = baseURL+apiVersion+depositHistoryForURL
       return replacePlaceholders(for: url, with: parameters)
     case .orderHistory:
       let url = baseURL+apiVersion+orderHistoryURL
       return replacePlaceholders(for: url, with: parameters)
-    case .withdrawalHistory:
+    case .withdrawalHistories:
       let url = baseURL+apiVersion+withdrawalHistoryURL
       return replacePlaceholders(for: url, with: parameters)
-    case .withdrawalHistories:
+    case .withdrawalHistory:
       let url = baseURL+apiVersion+withdrawalHistoryForURL
       return replacePlaceholders(for: url, with: parameters)
     }
