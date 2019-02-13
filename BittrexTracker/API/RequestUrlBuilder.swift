@@ -18,37 +18,30 @@ final class RequestUrlBuilder {
   // URL constants (public requests)
   private let marketsURL = "/public/getmarkets"
   private let currenciesURL = "/public/getcurrencies"
-  private let tickerURL = "/public/getticker?market="
-  private let marketSummaryURL = "/public/getmarketsummary?market="
+  private let tickerURL = "/public/getticker?market=MARKET"
+  private let marketSummaryURL = "/public/getmarketsummary?market=MARKET"
   private let marketSummariesURL = "/public/getmarketsummaries"
-  private let orderbookURL = "/public/getorderbook"
-  private let marketHistoryUrl = "/public/getmarkethistory?market="
+  private let orderbookURL = "/public/getorderbook?market=MARKET&type=TYPE"
+  private let marketHistoryUrl = "/public/getmarkethistory?market=MARKET"
   
   // URL constants (market requests)
-  private let buyLimitURL = "/market/buylimit"
-  private let sellLimitURL = "/market/selllimit"
-  private let cancelURL = "/market/cancel"
-  private let openOrdersURL = "/market/getopenorders"
+  private let buyLimitURL = "/market/buylimit?apikey=API_KEY&market=MARKET&quantity=QUANTITY&rate=RATE"
+  private let sellLimitURL = "/market/selllimit?apikey=API_KEY&market=MARKET&quantity=QUANTITY&rate=RATE"
+  private let cancelURL = "/market/cancel?apikey=API_KEY&uuid=UUID"
+  private let openOrdersURL = "/market/getopenorders?apikey=API_KEY&market=MARKET"
   
   // URL constants (account requests)
-  private let balancesURL = "/account/getbalances"
-  private let balanceURL = "/account/getbalance"
-  private let depositAddressUrl = "/account/getDepositAddress"
-  private let withdrawURL = "/account/withdraw"
-  private let orderURL = "/account/getorder"
+  private let balancesURL = "/account/getbalances?apikey=API_KEY"
+  private let balanceURL = "/account/getbalance?apikey=API_KEY&currency=CURRENCY"
+  private let depositAddressUrl = "/account/getDepositAddress?apikey=API_KEY&currency=CURRENCY"
+  private let withdrawURL = "/account/withdraw?apikey=API_KEY&currency=CURRENCY&quantity=QUANTITY&address=ADDRESS"
+  private let orderURL = "/account/getorder&uuid=UUID"
   private let orderHistoryURL = "/account/getorderhistory"
-  private let depositHistoryURL = "/account/getdeposithistory"
+  private let orderHistoryForURL = "/account/getorderhistory?market=MARKET"
   private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  
-  // Parameter constants
-  private let currencyParam = "?currency="
-  private let andCurrencyParam = "&currency="
-  private let apiKeyParam = "?apikey="
-  private let nonceParam = "&nonce="
-  private let apiSecretParam = "&apisecret"
-  private let signHeader = "apisign"
-  private let marketParam = "?market="
-  private let uuidParam = "&uuid="
+  private let withdrawalHistoryForURL = "/account/getwithdrawalhistory?currency=CURRENCY"
+  private let depositHistoryURL = "/account/getdeposithistory"
+  private let depositHistoryForURL = "/account/getdeposithistory?currency=CURRENCY"
   
   // Wallet access properties
   private var apiKey: String
@@ -78,51 +71,80 @@ final class RequestUrlBuilder {
   public func setSecret(secret: String) {
     self.apiSecret = secret
   }
-  
+
   /// Method to take a request URL enum and pass the correlating url string
   ///
-  /// - Parameter request: Request URL enum to define the URL to return
+  /// - Parameters:
+  ///   - request: Request URL enum to define the URL to return
+  ///   - withParameters: The parameters to replace with URL placeholders
   /// - Returns: Request URL to be used with the Bittrex API
-  public func buildUrl(for request: Request) -> String {
+  public func buildUrl(for request: Request, withParameters parameters: [Placeholder : String]) -> String {
     switch request {
     case .markets:
-      return baseURL+apiVersion+marketsURL
+      let url = baseURL+apiVersion+marketsURL
+      return replacePlaceholders(for: url, with: parameters)
     case .currencies:
-      return baseURL+apiVersion+currenciesURL
+      let url = baseURL+apiVersion+currenciesURL
+      return replacePlaceholders(for: url, with: parameters)
     case .ticker:
-      return baseURL+apiVersion+tickerURL
+      let url = baseURL+apiVersion+tickerURL
+      return replacePlaceholders(for: url, with: parameters)
     case .marketSummaries:
-      return baseURL+apiVersion+marketSummariesURL
+      let url = baseURL+apiVersion+marketSummariesURL
+      return replacePlaceholders(for: url, with: parameters)
     case .marketSummary:
-      return baseURL+apiVersion+marketSummaryURL
+      let url = baseURL+apiVersion+marketSummaryURL
+      return replacePlaceholders(for: url, with: parameters)
     case .orderBook:
-      return baseURL+apiVersion+orderbookURL+marketParam
+      let url = baseURL+apiVersion+orderbookURL
+      return replacePlaceholders(for: url, with: parameters)
     case .marketHistory:
-      return baseURL+apiVersion+marketHistoryUrl
+      let url = baseURL+apiVersion+marketHistoryUrl
+      return replacePlaceholders(for: url, with: parameters)
     case .buyLimit:
-      return baseURL+apiVersion+buyLimitURL+apiKeyParam+apiKey+marketParam
+      let url = baseURL+apiVersion+buyLimitURL
+      return replacePlaceholders(for: url, with: parameters)
     case .sellLimit:
-      return baseURL+apiVersion+sellLimitURL+apiKeyParam+apiKey+marketParam
+      let url = baseURL+apiVersion+sellLimitURL
+      return replacePlaceholders(for: url, with: parameters)
     case .cancel:
-      return baseURL+apiVersion+cancelURL+apiKeyParam+apiKey+uuidParam
+      let url = baseURL+apiVersion+cancelURL
+      return replacePlaceholders(for: url, with: parameters)
     case .openOrders:
-      return baseURL+apiVersion+openOrdersURL+apiKeyParam+apiKey+marketParam
+      let url = baseURL+apiVersion+openOrdersURL
+      return replacePlaceholders(for: url, with: parameters)
     case .balances:
-      return baseURL+apiVersion+balancesURL+apiKeyParam+apiKey
+      let url = baseURL+apiVersion+balancesURL
+      return replacePlaceholders(for: url, with: parameters)
     case .balance:
-      return baseURL+apiVersion+balanceURL+apiKeyParam+apiKey+andCurrencyParam
+      let url = baseURL+apiVersion+balanceURL
+      return replacePlaceholders(for: url, with: parameters)
     case .depositAddress:
-      return baseURL+apiVersion+depositAddressUrl+apiKeyParam+apiKey+andCurrencyParam
+      let url = baseURL+apiVersion+depositAddressUrl
+      return replacePlaceholders(for: url, with: parameters)
     case .withdraw:
-      return baseURL+apiVersion+withdrawURL+apiKeyParam+apiKey+andCurrencyParam
+      let url = baseURL+apiVersion+withdrawURL
+      return replacePlaceholders(for: url, with: parameters)
     case .order:
-      return baseURL+apiVersion+orderURL+uuidParam
+      let url = baseURL+apiVersion+orderURL
+      return replacePlaceholders(for: url, with: parameters)
     case .depositHistory:
-      return baseURL+apiVersion+depositHistoryURL+currencyParam
+      let url = baseURL+apiVersion+depositHistoryURL
+      return replacePlaceholders(for: url, with: parameters)
     case .orderHistory:
-      return baseURL+apiVersion+orderHistoryURL
+      let url = baseURL+apiVersion+orderHistoryURL
+      return replacePlaceholders(for: url, with: parameters)
     case .withdrawalHistory:
-      return baseURL+apiVersion+withdrawalHistoryURL
+      let url = baseURL+apiVersion+withdrawalHistoryURL
+      return replacePlaceholders(for: url, with: parameters)
     }
+  }
+
+  private func replacePlaceholders(for url: String, with parameters: [Placeholder : String]) -> String {
+    var finalisedURL = url
+    parameters.forEach { parameter in
+      finalisedURL = finalisedURL.replacingOccurrences(of: parameter.key.rawValue, with: parameter.value)
+    }
+    return finalisedURL
   }
 }
