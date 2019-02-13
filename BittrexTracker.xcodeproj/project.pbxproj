@@ -150,6 +150,7 @@
 		9CA5E99D2211B59B004048EE /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE162202718C00476CCD /* OrderBook.swift */; };
 		9CC44A0C220DF17100EBCB9D /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC44A0B220DF17100EBCB9D /* Outcome.swift */; };
 		9CE9EFF62214514E009C7010 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9EFF52214514E009C7010 /* Placeholder.swift */; };
+		9CE9EFF7221457DD009C7010 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9EFF52214514E009C7010 /* Placeholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -726,6 +727,7 @@
 				9C3CEE10220270A900476CCD /* SellLimitRequest.swift in Sources */,
 				9C3CEE14220270B800476CCD /* OrderRequest.swift in Sources */,
 				9C8F8FDE21F7C9B10034DF4A /* Balance.swift in Sources */,
+				9CE9EFF7221457DD009C7010 /* Placeholder.swift in Sources */,
 				9C3EE69C2210F23C00DF1BA3 /* TickerResult.swift in Sources */,
 				9C3EE6A62210F2CC00DF1BA3 /* Outcome.swift in Sources */,
 				9C3CEDF82202459800476CCD /* MarketAPI.swift in Sources */,
