@@ -33,7 +33,7 @@ final class RequestUrlBuilder {
   // URL constants (account requests)
   private let balancesURL = "/account/getbalances?apikey=API_KEY"
   private let balanceURL = "/account/getbalance?apikey=API_KEY&currency=CURRENCY"
-  private let depositAddressUrl = "/account/getDepositAddress?apikey=API_KEY&currency=CURRENCY"
+  private let depositAddressUrl = "/account/getdepositaddress?apikey=API_KEY&currency=CURRENCY"
   private let withdrawURL = "/account/withdraw?apikey=API_KEY&currency=CURRENCY&quantity=QUANTITY&address=ADDRESS"
   private let orderURL = "/account/getorder&uuid=UUID"
   private let orderHistoryURL = "/account/getorderhistory"
