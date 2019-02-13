@@ -27,7 +27,9 @@ import Foundation
 /// - Withdraw: The withdraw request URL
 /// - Order: The order request URL
 /// - OrderHistory: The order history request URL
+/// - WithdrawalHistories: The withdrawal histories request URL.
 /// - WithdrawalHistory: The withdrawal history request URL
+/// - DepositHistories: The deposit histories request URL
 /// - DepositHistory: The deposit history request URL
 enum Request {
   case markets
@@ -47,6 +49,8 @@ enum Request {
   case withdraw
   case order
   case orderHistory
+  case withdrawalHistories
   case withdrawalHistory
+  case depositHistories
   case depositHistory
 }
