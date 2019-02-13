@@ -149,6 +149,7 @@
 		9C8F8FF621F90DA30034DF4A /* ticker_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */; };
 		9CA5E99D2211B59B004048EE /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CEE162202718C00476CCD /* OrderBook.swift */; };
 		9CC44A0C220DF17100EBCB9D /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC44A0B220DF17100EBCB9D /* Outcome.swift */; };
+		9CE9EFF62214514E009C7010 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9EFF52214514E009C7010 /* Placeholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,7 @@
 		9C8F8FE921F90D430034DF4A /* markets_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = markets_test_data.json; sourceTree = "<group>"; };
 		9C8F8FEA21F90D430034DF4A /* ticker_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticker_test_data.json; sourceTree = "<group>"; };
 		9CC44A0B220DF17100EBCB9D /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
+		9CE9EFF52214514E009C7010 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 			children = (
 				9C3CEDC221FFD45300476CCD /* Request.swift */,
 				9CC44A0B220DF17100EBCB9D /* Outcome.swift */,
+				9CE9EFF52214514E009C7010 /* Placeholder.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				9C3CEE0B22026AB200476CCD /* WithdrawRequest.swift in Sources */,
 				9C8F8FD721F683A90034DF4A /* WithdrawalHistory.swift in Sources */,
 				9C3EE68C22106FCB00DF1BA3 /* MarketResult.swift in Sources */,
+				9CE9EFF62214514E009C7010 /* Placeholder.swift in Sources */,
 				9C3CEE252203A35E00476CCD /* DepositAddress.swift in Sources */,
 				9C3CEDD02200DF3F00476CCD /* DepositHistoryRequest.swift in Sources */,
 				9C3EE6E62210FADE00DF1BA3 /* OrderResult.swift in Sources */,
