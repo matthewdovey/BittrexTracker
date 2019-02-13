@@ -28,7 +28,7 @@ public final class PublicAPI {
   ///
   /// - Parameter completion: Escaping CoinRequest object
   final func getCurrencies(completion: @escaping ((CoinRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .currencies))
+    let url = URL(string: urlBuilder.buildUrl(for: .currencies, withParameters: [:]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(CoinRequest(success: false, message: String(describing: error), result: nil))
@@ -52,7 +52,7 @@ public final class PublicAPI {
   ///
   /// - Parameter completion: Escaping MarketsRequest object
   final func getMarkets(completion: @escaping ((MarketsRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .markets))
+    let url = URL(string: urlBuilder.buildUrl(for: .markets, withParameters: [:]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketsRequest(success: false, message: String(describing: error), result: nil))
@@ -78,7 +78,7 @@ public final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerRequest object
   final func getTickerFor(market: String, completion: @escaping ((TickerRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .ticker)+market)
+    let url = URL(string: urlBuilder.buildUrl(for: .ticker, withParameters: [Placeholder.market : market]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(TickerRequest(success: false, message: String(describing: error), result: nil))
@@ -102,7 +102,7 @@ public final class PublicAPI {
   ///
   /// - Parameter completion: Escaping MarketSummaryRequest object
   final func getMarketSummaries(completion: @escaping ((MarketSummaryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .marketSummaries))
+    let url = URL(string: urlBuilder.buildUrl(for: .marketSummaries, withParameters: [:]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
@@ -128,7 +128,7 @@ public final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketSummaryRequest object
   final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .marketSummary)+market)
+    let url = URL(string: urlBuilder.buildUrl(for: .marketSummary, withParameters: [Placeholder.market : market]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketSummaryRequest(success: false, message: String(describing: error), result: nil))
@@ -155,7 +155,7 @@ public final class PublicAPI {
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookRequest object
   final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .orderBook))
+    let url = URL(string: urlBuilder.buildUrl(for: .orderBook, withParameters: [Placeholder.market : market, Placeholder.type : type]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(OrderBookRequest(success: false, message: String(describing: error)))
@@ -181,7 +181,7 @@ public final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketHistoryRequest object
   final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .marketHistory)+market)
+    let url = URL(string: urlBuilder.buildUrl(for: .marketHistory, withParameters: [Placeholder.market : market]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(MarketHistoryRequest(success: false, message: String(describing: error), result: nil))
