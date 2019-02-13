@@ -9,12 +9,14 @@
 import XCTest
 @testable import BittrexTracker
 
+private let API_KEY = "testKey"
+
 class RequestUrlBuilderTests: XCTestCase {
   
   private var urlBuilder: RequestUrlBuilder!
   
   override func setUp() {
-    urlBuilder = RequestUrlBuilder(key: "testKey", secret: "testSecret")
+    urlBuilder = RequestUrlBuilder(key: API_KEY, secret: "testSecret")
   }
 
   // MARK: public URL tests
@@ -57,37 +59,47 @@ class RequestUrlBuilderTests: XCTestCase {
 
   func testOrderBookUrl() {
     let orderBookUrl = urlBuilder.buildUrl(for: .orderBook)
+    let actualUrl = "https://bittrex.com/api/v1.1/public/getorderbook?market=&type=both"
+    XCTAssertEqual(orderBookUrl, actualUrl)
   }
 
   // MARK: market URL tests
 
   func testBuyLimitUrl() {
     let buyLimitUrl = urlBuilder.buildUrl(for: .buyLimit)
+    let actualUrl = "https://bittrex.com/api/v1.1/market/buylimit?apikey=\(API_KEY)&market=&quantity=&rate="
+    XCTAssertEqual(buyLimitUrl, actualUrl)
   }
 
   func testSellLimitUrl() {
-
+    let sellLimitUrl = urlBuilder.buildUrl(for: .sellLimit)
+    let actualUrl = "https://bittrex.com/api/v1.1/market/selllimit?apikey=\(API_KEY)&market=&quantity=&rate="
+    XCTAssertEqual(sellLimitUrl, actualUrl)
   }
 
   func testCancelUrl() {
-
+    let cancelUrl = urlBuilder.buildUrl(for: .cancel)
+    let actualUrl = "https://bittrex.com/api/v1.1/market/cancel?apikey=\(API_KEY)&uuid="
+    XCTAssertEqual(cancelUrl, actualUrl)
   }
 
   func testOpenOrdersUrl() {
-
+    let openOrdersUrl = urlBuilder.buildUrl(for: .openOrders)
+    let actualUrl = "https://bittrex.com/api/v1.1/market/getopenorders?apikey=\(API_KEY)&market="
+    XCTAssertEqual(openOrdersUrl, actualUrl)
   }
 
   // MARK: account URL tests
   
   func testBalanceUrl() {
     let balanceUrl = urlBuilder.buildUrl(for: .balance)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalance?apikey=testKey&currency="
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalance?apikey=\(API_KEY)testKey&currency="
     XCTAssertEqual(balanceUrl, actualUrl)
   }
   
   func testBalancesUrl() {
     let balancesUrl = urlBuilder.buildUrl(for: .balances)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalances?apikey=testKey"
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getbalances?apikey=\(API_KEY)testKey"
     XCTAssertEqual(balancesUrl, actualUrl)
   }
 
@@ -111,14 +123,20 @@ class RequestUrlBuilderTests: XCTestCase {
   }
 
   func testDepositAddressUrl() {
-
+    let depositAddressUrl = urlBuilder.buildUrl(for: .depositAddress)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getdepositaddress?apikey=\(API_KEY)&currency="
+    XCTAssertEqual(depositAddressUrl, actualUrl)
   }
 
   func testOrderUrl() {
-
+    let orderUrl = urlBuilder.buildUrl(for: .order)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getorder&uuid=0cb4c4e4-bdc7-4e13-8c13-430e587d2cc1"
+    XCTAssertEqual(orderUrl, actualUrl)
   }
 
   func testWithdrawUrl() {
-
+    let withdrawalUrl = urlBuilder.buildUrl(for: .withdraw)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/withdraw?apikey=\(API_KEY)&currency=EAC&quantity=20.40&address=EAC_ADDRESS"
+    XCTAssertEqual(withdrawalUrl, actualUrl)
   }
 }
