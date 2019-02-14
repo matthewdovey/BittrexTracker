@@ -45,7 +45,8 @@ public final class AccountAPI {
   ///   - currency: the balance for a specific currency
   ///   - completion: Escaping BalanceRequest object
   final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .Balance)+currency)
+    let parameters = [Placeholder.currency : currency]
+    let url = URL(string: urlBuilder.buildUrl(for: .balance, withParameters: parameters))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
@@ -69,7 +70,7 @@ public final class AccountAPI {
   ///
   /// - Parameter completion: Escaping BalancesRequest object
   final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .Balances))
+    let url = URL(string: urlBuilder.buildUrl(for: .balances, withParameters: [:]))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
@@ -95,7 +96,8 @@ public final class AccountAPI {
   ///   - currency: The specific currency
   ///   - completion: Escaping DepositAddressRequest object
   final func getDepositAdress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrlFor(request: .DepositAddress))
+    let parameters = [Placeholder.currency : currency]
+    let url = URL(string: urlBuilder.buildUrl(for: .depositAddress, withParameters: parameters))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
         completion(DepositAddressRequest(success: false, message: String(describing: error), result: nil))
