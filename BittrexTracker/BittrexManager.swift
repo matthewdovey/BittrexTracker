@@ -9,7 +9,7 @@
 import Foundation
 
 /// Class to provide access to all Bittrex API wrappers
-final class BittrexManager {
+public final class BittrexManager {
 
   private let publicApi: PublicAPI
   private let marketApi: MarketAPI
