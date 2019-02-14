@@ -9,7 +9,7 @@
 import Foundation
 
 /// A class to provide a wrapper around the Bittrex Exchange public APIs
-public final class PublicAPI {
+final class PublicAPI {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
