@@ -18,7 +18,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Development Version
 
-- 1.2.8
+- 1.2.9
 
 ## Supported API
 
@@ -86,26 +86,27 @@ Import the framework into the class you wish to use it in:
 #import BittrexTracker
 ```
 
-Call the desired API:
+Call the desired API on the created manager object and access the data or error encapsulated in the result:
 
 ```swift
-let publicAPI = PublicCollector()
-publicAPI.getMarkets() { (response) in
-    switch response.success{
-        case True:
-            print(response.data)
-        case False:
-            print(response.message)
-    }
+let bittrexManager = BittrexManager()
+
+bittrexManager.getCurrencies { result in
+  switch result {
+  case .success(let data):
+    print(data)
+  case .failure(let error):
+    print(error)
+  }
 }
 
-publicAPI.getCurrencies() { (response) in
-    switch response.success{
-        case True:
-            print(response.data)
-        case False:
-            print(response.message)
-    }
+bittrexManager.getMarkets { result in
+  switch result {
+  case .success(let data):
+    print(data)
+  case .failure(let error):
+    print(error)
+  }
 }
 ```
 
