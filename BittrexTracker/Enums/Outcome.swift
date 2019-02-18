@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// Outcome unum to provide the result of the request
+/// Outcome enum to provide the result of the request
 ///
-/// - success: Denoting successful request
-/// - failure: Denoting failure with error message
-public enum Outcome {
-  case success
-  case failure(String)
+/// - success: Denoting successful request encapsulating the data
+/// - failure: Denoting failure encapsulating an error message
+public enum Outcome<T, String> {
+  case success(data: T)
+  case failure(error: String)
 }
