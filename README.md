@@ -18,7 +18,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Development Version
 
-- 1.2.8
+- 1.2.9
 
 ## Supported API
 
