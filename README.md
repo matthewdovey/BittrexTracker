@@ -24,7 +24,6 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 ## Supported API
 
 Bittrex Public APIs:
-```swift
 [x] getMarkets
 [] - getCurrencies
 [x] - getTicker
@@ -32,7 +31,6 @@ Bittrex Public APIs:
 - getMarketSummary
 - getOrderBook
 - getMarketHistory
-```
 
 ## Future Support
 
