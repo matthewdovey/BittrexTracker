@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let UNKNOWN_MESSAGE = "unknown"
+
 /// Class to provide access to all Bittrex API wrappers
 public final class BittrexManager {
 
@@ -34,13 +36,13 @@ public final class BittrexManager {
   /// Method to return all currencies listed on the exchange
   ///
   /// - Parameter completion: Escaping CoinResult object
-  public final func getCurrencies(completion: @escaping ((CoinResult) -> Void)) {
+  public final func getCurrencies(completion: @escaping ((Outcome<[Coin], String>) -> Void)) {
     publicApi.getCurrencies { (request) in
       if request.success == true, let data = request.result {
-        completion(CoinResult(outcome: .success, data: data))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(CoinResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
@@ -48,13 +50,13 @@ public final class BittrexManager {
   /// Method to return all markets for currencies
   ///
   /// - Parameter completion: Escaping MarketsResult object
-  public final func getMarkets(completion: @escaping ((MarketResult) -> Void)) {
+  public final func getMarkets(completion: @escaping ((Outcome<[Market], String>) -> Void)) {
     publicApi.getMarkets { (request) in
       if request.success == true, let data = request.result {
-        completion(MarketResult(outcome: .success, data: data))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(MarketResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
@@ -64,13 +66,13 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping TickerResult object
-  public final func getTickerFor(market: String, completion: @escaping ((TickerResult) -> Void)) {
+  public final func getTickerFor(market: String, completion: @escaping ((Outcome<Ticker, String>) -> Void)) {
     publicApi.getTickerFor(market: market, completion: { (request) in
       if request.success == true, let data = request.result {
-        completion(TickerResult(outcome: .success, data: [data]))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(TickerResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     })
   }
@@ -78,13 +80,13 @@ public final class BittrexManager {
   /// Method to return all market summaires
   ///
   /// - Parameter completion: Escaping MarketSummaryResult object
-  public final func getMarketSummaries(completion: @escaping ((MarketSummaryResult) -> Void)) {
+  public final func getMarketSummaries(completion: @escaping ((Outcome<[MarketSummary], String>) -> Void)) {
     publicApi.getMarketSummaries { (request) in
       if request.success == true, let data = request.result {
-        completion(MarketSummaryResult(outcome: .success, data: data))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(MarketSummaryResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
@@ -94,13 +96,13 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketSummaryResult object
-  public final func getSummaryForMarket(market: String, completion: @escaping ((MarketSummaryResult) -> Void)) {
+  public final func getSummaryForMarket(market: String, completion: @escaping ((Outcome<[MarketSummary], String>) -> Void)) {
     publicApi.getSummaryForMarket(market: market, completion: { (request) in
       if request.success == true, let data = request.result {
-        completion(MarketSummaryResult(outcome: .success, data: data))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(MarketSummaryResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     })
   }
@@ -111,14 +113,14 @@ public final class BittrexManager {
   ///   - market: The market to retrieve data for
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookResult object
-  public final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookResult) -> Void)) {
+  public final func getOrderBook(market: String, type: String, completion: @escaping ((Outcome<[OrderBook], String>) -> Void)) {
     publicApi.getOrderBook(market: market, type: type, completion: { (request) in
       // TODO: setup order book request object to have a result property
-      if request.success == true/*, let data = request.result*/ {
-        completion(OrderBookResult(outcome: .success, data: []))
+      if request.success == true {
+
       } else {
-        let message = request.message ?? "unknown"
-        completion(OrderBookResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     })
   }
@@ -128,13 +130,13 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve data for
   ///   - completion: Escaping MarketHistoryResult object
-  public final func getMarketHistoryFor(market: String, completion: @escaping ((MarketHistoryResult) -> Void)) {
+  public final func getMarketHistoryFor(market: String, completion: @escaping ((Outcome<[MarketHistory], String>) -> Void)) {
     publicApi.getMarketHistoryFor(market: market, completion: { (request) in
       if request.success == true, let data = request.result {
-        completion(MarketHistoryResult(outcome: .success, data: data))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(MarketHistoryResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     })
   }
@@ -144,13 +146,13 @@ public final class BittrexManager {
   /// Method to place a buy order in a specific market
   ///
   /// - Parameter completion: Escaping BuyLimitResult object
-  final func getBuyLimit(completion: @escaping ((BuyLimitResult) -> Void)) {
+  final func getBuyLimit(completion: @escaping ((Outcome<BuyLimit, String>) -> Void)) {
     marketApi.getBuyLimit { (request) in
       if request.success == true, let data = request.result {
-        completion(BuyLimitResult(outcome: .success, data: [data]))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(BuyLimitResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
@@ -159,13 +161,13 @@ public final class BittrexManager {
   /// Method to place a sell order in a specific market
   ///
   /// - Parameter completion: Escaping SellLimitResult object
-  final func getSellLimit(completion: @escaping ((SellLimitResult) -> Void)) {
+  final func getSellLimit(completion: @escaping ((Outcome<SellLimit, String>) -> Void)) {
     marketApi.getSellLimit { (request) in
       if request.success == true, let data = request.result {
-        completion(SellLimitResult(outcome: .success, data: [data]))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(SellLimitResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
@@ -173,13 +175,13 @@ public final class BittrexManager {
   /// Method to cancel a buy or sell order
   ///
   /// - Parameter completion: Escaping CancelResult object
-  final func cancel(completion: @escaping ((CancelResult) -> Void)) {
+  final func cancel(completion: @escaping ((Outcome<Cancel, String>) -> Void)) {
     marketApi.cancel { (request) in
       if request.success == true, let data = request.result {
-        completion(CancelResult(outcome: .success, data: [data]))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(CancelResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
@@ -187,13 +189,13 @@ public final class BittrexManager {
   /// Method to return all orders that the user has open
   ///
   /// - Parameter completion: Escaping OpenOrdersResult object
-  final func getOpenOrders(completion: @escaping ((OpenOrdersResult) -> Void)) {
+  final func getOpenOrders(completion: @escaping ((Outcome<[OpenOrders], String>) -> Void)) {
     marketApi.getOpenOrders { (request) in
       if request.success == true, let data = request.result {
-        completion(OpenOrdersResult(outcome: .success, data: data))
+        completion(.success(data: data))
       } else {
-        let message = request.message ?? "unknown"
-        completion(OpenOrdersResult(outcome: .failure(message), data: []))
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
       }
     }
   }
