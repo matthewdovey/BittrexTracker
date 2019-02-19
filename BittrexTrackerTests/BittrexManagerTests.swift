@@ -53,7 +53,14 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetCurrenciesReturnsFailure() {
-    
+    bittrexManager.getCurrencies { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
   
   func testGetMarketsReturnSuccess() {
@@ -74,7 +81,14 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetMarketsReturnsFailure() {
-    
+    bittrexManager.getMarkets { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
   
   func testGetTickerReturnsSuccess() {
@@ -95,7 +109,14 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetTickerReturnsFailure() {
-    
+    bittrexManager.getTickerFor(market: MARKET) { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
   
   func testGetMarketSummariesReturnsSuccess() {
@@ -116,7 +137,14 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetMarketSummariesReturnsFailure() {
-    
+    bittrexManager.getMarketSummaries { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
   
   func testGetMarketSummaryForReturnsSuccess() {
@@ -137,7 +165,14 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetMarketSummaryForReturnsFailure() {
-    
+    bittrexManager.getSummaryForMarket(market: MARKET) { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
   
   func testGetOrderBookReturnsSuccess() {
@@ -158,7 +193,14 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetOrderBookReturnsFailure() {
-    
+    bittrexManager.getOrderBook(market: MARKET, type: TYPE) { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
   
   func testGetMarketHistoryReturnsSuccess() {
@@ -179,6 +221,13 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetMarketHistoryReturnsFailure() {
-    
+    bittrexManager.getMarketHistoryFor(market: MARKET) { result in
+      switch result {
+      case .success(_):
+        XCTAssert(false)
+      case .failure(_):
+        XCTAssert(true)
+      }
+    }
   }
 }
