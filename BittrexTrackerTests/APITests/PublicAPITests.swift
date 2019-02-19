@@ -164,5 +164,23 @@ class PublicAPITests: XCTestCase {
     }
   }
   
-  //TODO: add tests for OrderBook API method
+  func testGetOrderBookReturnsData() {
+    if let url = bundle?.url(forResource: ORDERBOOK_DATA_FILE, withExtension: JSON) {
+      do {
+        let data = try Data(contentsOf: url, options: .mappedIfSafe)
+        session.data = data
+      } catch {}
+    }
+    api.getOrderBook(market: "", type: "") { results in
+      XCTAssertTrue(results.success == true)
+      XCTAssertFalse(results.result?.isEmpty == true)
+    }
+  }
+  
+  func testGetOrderBookReturnsFailure() {
+    session.error = URLError(.cannotParseResponse)
+    api.getOrderBook(market: "", type: "") { results in
+      XCTAssertFalse(results.success == true)
+    }
+  }
 }
