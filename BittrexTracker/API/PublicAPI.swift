@@ -161,17 +161,17 @@ final class PublicAPI {
     let url = URL(string: urlBuilder.buildUrl(for: .orderBook, withParameters: parameters))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
-        completion(OrderBookRequest(success: false, message: String(describing: error)))
+        completion(OrderBookRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
             let orderBook = try JSONDecoder().decode(OrderBookRequest.self, from: data!)
             completion(orderBook)
           } catch {
-            completion(OrderBookRequest(success: false, message: String(describing: error)))
+            completion(OrderBookRequest(success: false, message: String(describing: error), result: nil))
           }
         } else {
-          completion(OrderBookRequest(success: false, message: nil))
+          completion(OrderBookRequest(success: false, message: nil, result: nil))
         }
       }
     }

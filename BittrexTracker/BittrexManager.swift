@@ -115,8 +115,8 @@ public final class BittrexManager {
   ///   - completion: Escaping Outcome object
   public final func getOrderBook(market: String, type: String, completion: @escaping ((Outcome<[OrderBook], String>) -> Void)) {
     publicApi.getOrderBook(market: market, type: type, completion: { (request) in
-      if request.success == true {
-        // TODO: setup order book request object to have a result property
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
       } else {
         let message = request.message ?? UNKNOWN_MESSAGE
         completion(.failure(error: message))
