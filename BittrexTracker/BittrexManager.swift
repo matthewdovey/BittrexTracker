@@ -19,8 +19,8 @@ public final class BittrexManager {
   private let urlBuilder: RequestUrlBuilder
 
   /// Initialiser to create all collectors and their required dependencies
-  public init() {
-    session = URLSession.shared
+  public init(session: URLSession = .shared) {
+    self.session = session
     urlBuilder = RequestUrlBuilder()
     publicApi = PublicAPI(session: session, builder: urlBuilder)
     marketApi = MarketAPI(session: session, apiKey: "")
