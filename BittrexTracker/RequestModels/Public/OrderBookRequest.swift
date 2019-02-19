@@ -12,10 +12,11 @@ import Foundation
 struct OrderBookRequest: Decodable {
   let success: Bool?
   let message: String?
-  // TODO: setup result property
+  let result: [OrderBook]
   
-  init(success: Bool?, message: String?) {
+  init(success: Bool?, message: String?, result: [OrderBook]) {
     self.success = success
     self.message = message
+    self.result = result
   }
 }
