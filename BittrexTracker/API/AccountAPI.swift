@@ -95,7 +95,7 @@ final class AccountAPI {
   /// - Parameters:
   ///   - currency: The specific currency
   ///   - completion: Escaping DepositAddressRequest object
-  final func getDepositAdress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
+  final func getDepositAddress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency]
     let url = URL(string: urlBuilder.buildUrl(for: .depositAddress, withParameters: parameters))
     let task = session.dataTask(with: url!) { (data, response, error) in
