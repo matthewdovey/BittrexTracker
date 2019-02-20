@@ -120,7 +120,27 @@ final class AccountAPI {
   final func withdraw(currency: String,
                       quantity: Float,
                       address: String,
-                      completion: @escaping ((Withdraw) -> Void)) {
-    //let url = URL(string: urlBuilder.buildUrlFor(request: ))
+                      completion: @escaping ((WithdrawRequest) -> Void)) {
+    let parameters: [Placeholder : String] = [.currency : currency,
+                                              .quantity : String(quantity),
+                                              .address : address]
+    let url = URL(string: urlBuilder.buildUrl(for: .withdraw, withParameters: parameters))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(WithdrawRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let withdrawRequest = try JSONDecoder().decode(WithdrawRequest.self, from: data!)
+            completion(withdrawRequest)
+          } catch {
+            completion(WithdrawRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(WithdrawRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
   }
 }
