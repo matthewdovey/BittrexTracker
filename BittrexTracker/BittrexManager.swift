@@ -15,6 +15,7 @@ public final class BittrexManager {
 
   private let publicApi: PublicAPI
   private let marketApi: MarketAPI
+  private let accountApi: AccountAPI
   private let session: URLSession
   private let urlBuilder: RequestUrlBuilder
 
@@ -24,6 +25,7 @@ public final class BittrexManager {
     urlBuilder = RequestUrlBuilder()
     publicApi = PublicAPI(session: session, builder: urlBuilder)
     marketApi = MarketAPI(session: session, apiKey: "")
+    accountApi = AccountAPI(session: session, apiKey: "", apiSecret: "")
   }
 
   /// Setter to allow user to add API key
@@ -190,6 +192,58 @@ public final class BittrexManager {
   /// - Parameter completion: Escaping Outcome object
   final func getOpenOrders(completion: @escaping ((Outcome<[OpenOrders], String>) -> Void)) {
     marketApi.getOpenOrders { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  // MARK: Account API calls
+  
+  final func getBalanceFor(currency: String, completion: @escaping ((Outcome<Balance, String>) -> Void)) {
+    accountApi.getBalanceFor(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  final func getBalances(completion: @escaping ((Outcome<[Balance], String>) -> Void)) {
+    accountApi.getBalances { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  final func getDepositAddress(currency: String, completion: @escaping ((Outcome<[DepositAddress], String>) -> Void)) {
+    accountApi.getDepositAddress(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  final func withdraw(currency: String,
+                      quantity: Float,
+                      address: String,
+                      completion: @escaping ((Outcome<Withdraw, String>) -> Void)) {
+    accountApi.withdraw(currency: currency,
+                        quantity: quantity,
+                        address: address)
+    { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
       } else {
