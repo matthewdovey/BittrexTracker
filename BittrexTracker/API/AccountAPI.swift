@@ -188,6 +188,27 @@ final class AccountAPI {
     task.resume()
   }
 
+  final func getWithdrawalHistories(completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
+    let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistories, withParameters: [:]))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(WithdrawalHistoryRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let withdrawHistoryRequest = try JSONDecoder().decode(WithdrawalHistoryRequest.self, from: data!)
+            completion(withdrawHistoryRequest)
+          } catch {
+            completion(WithdrawalHistoryRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(WithdrawalHistoryRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
+  }
+
   final func getWithdrawalHistory(currency: String, completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency]
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
@@ -204,6 +225,27 @@ final class AccountAPI {
           }
         } else {
           completion(WithdrawalHistoryRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
+  }
+
+  final func getDepositHistories(completion: @escaping ((DepositHistoryRequest) -> Void)) {
+    let url = URL(string: urlBuilder.buildUrl(for: .depositHistories, withParameters: [:]))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let depositHistoryRequest = try JSONDecoder().decode(DepositHistoryRequest.self, from: data!)
+            completion(depositHistoryRequest)
+          } catch {
+            completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(DepositHistoryRequest(success: false, message: nil, result: nil))
         }
       }
     }
