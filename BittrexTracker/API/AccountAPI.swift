@@ -143,4 +143,20 @@ final class AccountAPI {
     }
     task.resume()
   }
+
+  final func getOrder() {
+
+  }
+
+  final func getOrderHistory() {
+
+  }
+
+  final func getWithdrawalHistory() {
+
+  }
+
+  final func getDepositHistory() {
+    
+  }
 }
