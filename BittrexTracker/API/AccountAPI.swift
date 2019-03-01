@@ -116,7 +116,14 @@ final class AccountAPI {
     }
     task.resume()
   }
-  
+
+  /// Method to withdraw a specific amount of a currency
+  ///
+  /// - Parameters:
+  ///   - currency:
+  ///   - quantity:
+  ///   - address:
+  ///   - completion:
   final func withdraw(currency: String,
                       quantity: Float,
                       address: String,
@@ -144,6 +151,11 @@ final class AccountAPI {
     task.resume()
   }
 
+  ///
+  ///
+  /// - Parameters:
+  ///   - uuid:
+  ///   - completion:
   final func getOrder(uuid: String, completion: @escaping ((OrderRequest) -> Void)) {
     let parameters = [Placeholder.uuid : uuid]
     let url = URL(string: urlBuilder.buildUrl(for: .order, withParameters: parameters))
@@ -166,6 +178,11 @@ final class AccountAPI {
     task.resume()
   }
 
+  ///
+  ///
+  /// - Parameters:
+  ///   - market:
+  ///   - completion:
   final func getOrderHistory(market: String, completion: @escaping ((OrderHistoryRequest) -> Void)) {
     let parameters = [Placeholder.market : market]
     let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters))
@@ -188,6 +205,9 @@ final class AccountAPI {
     task.resume()
   }
 
+  ///
+  ///
+  /// - Parameter completion:
   final func getWithdrawalHistories(completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistories, withParameters: [:]))
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -209,6 +229,11 @@ final class AccountAPI {
     task.resume()
   }
 
+  ///
+  ///
+  /// - Parameters:
+  ///   - currency:
+  ///   - completion:
   final func getWithdrawalHistory(currency: String, completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency]
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
@@ -231,6 +256,9 @@ final class AccountAPI {
     task.resume()
   }
 
+  ///
+  ///
+  /// - Parameter completion:
   final func getDepositHistories(completion: @escaping ((DepositHistoryRequest) -> Void)) {
     let url = URL(string: urlBuilder.buildUrl(for: .depositHistories, withParameters: [:]))
     let task = session.dataTask(with: url!) { (data, response, error) in
@@ -252,6 +280,11 @@ final class AccountAPI {
     task.resume()
   }
 
+  ///
+  ///
+  /// - Parameters:
+  ///   - currency:
+  ///   - completion: 
   final func getDepositHistory(currency: String, completion: @escaping ((DepositHistoryRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency]
     let url = URL(string: urlBuilder.buildUrl(for: .depositHistory, withParameters: parameters))
