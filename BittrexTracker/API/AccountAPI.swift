@@ -144,19 +144,91 @@ final class AccountAPI {
     task.resume()
   }
 
-  final func getOrder() {
-
+  final func getOrder(uuid: String, completion: @escaping ((OrderRequest) -> Void)) {
+    let parameters = [Placeholder.uuid : uuid]
+    let url = URL(string: urlBuilder.buildUrl(for: .order, withParameters: parameters))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(OrderRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let orderRequest = try JSONDecoder().decode(OrderRequest.self, from: data!)
+            completion(orderRequest)
+          } catch {
+            completion(OrderRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(OrderRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
   }
 
-  final func getOrderHistory() {
-
+  final func getOrderHistory(market: String, completion: @escaping ((OrderHistoryRequest) -> Void)) {
+    let parameters = [Placeholder.market : market]
+    let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(OrderHistoryRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let orderHistoryRequest = try JSONDecoder().decode(OrderHistoryRequest.self, from: data!)
+            completion(orderHistoryRequest)
+          } catch {
+            completion(OrderHistoryRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(OrderHistoryRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
   }
 
-  final func getWithdrawalHistory() {
-
+  final func getWithdrawalHistory(currency: String, completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
+    let parameters = [Placeholder.currency : currency]
+    let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(WithdrawalHistoryRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let withdrawHistoryRequest = try JSONDecoder().decode(WithdrawalHistoryRequest.self, from: data!)
+            completion(withdrawHistoryRequest)
+          } catch {
+            completion(WithdrawalHistoryRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(WithdrawalHistoryRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
   }
 
-  final func getDepositHistory() {
-    
+  final func getDepositHistory(currency: String, completion: @escaping ((DepositHistoryRequest) -> Void)) {
+    let parameters = [Placeholder.currency : currency]
+    let url = URL(string: urlBuilder.buildUrl(for: .depositHistory, withParameters: parameters))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+          let depositHistoryRequest = try JSONDecoder().decode(DepositHistoryRequest.self, from: data!)
+            completion(depositHistoryRequest)
+          } catch {
+            completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(DepositHistoryRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
   }
 }
