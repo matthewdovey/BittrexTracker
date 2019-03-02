@@ -204,6 +204,30 @@ final class AccountAPI {
     }
     task.resume()
   }
+  
+  /// Method to retrieve all of the user's order history
+  ///
+  /// - Parameter completion: Escaping OrderHistoryRequest object
+  final func getOrderHistories(completion: @escaping ((OrderHistoryRequest) -> Void)) {
+    let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: [:]))
+    let task = session.dataTask(with: url!) { (data, response, error) in
+      if error != nil {
+        completion(OrderHistoryRequest(success: false, message: String(describing: error), result: nil))
+      } else {
+        if data != nil {
+          do {
+            let orderHistoryRequest = try JSONDecoder().decode(OrderHistoryRequest.self, from: data!)
+            completion(orderHistoryRequest)
+          } catch {
+            completion(OrderHistoryRequest(success: false, message: String(describing: error), result: nil))
+          }
+        } else {
+          completion(OrderHistoryRequest(success: false, message: nil, result: nil))
+        }
+      }
+    }
+    task.resume()
+  }
 
   /// Method to retrieve the user's entire withdrawal history
   ///
