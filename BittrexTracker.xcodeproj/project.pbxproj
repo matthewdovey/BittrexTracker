@@ -332,8 +332,7 @@
 				9C3CEE2022039F6500476CCD /* Cancel.swift */,
 				9C3CEE2222039F7600476CCD /* OpenOrders.swift */,
 			);
-			name = Market;
-			path = "New Group";
+			path = Market;
 			sourceTree = "<group>";
 		};
 		9C85C05721F7645500E9259D /* APITests */ = {
