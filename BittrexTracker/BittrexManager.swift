@@ -252,4 +252,32 @@ public final class BittrexManager {
       }
     }
   }
+  
+  final func getOrder() {
+    
+  }
+  
+  final func getOrderHistory() {
+    
+  }
+  
+  final func getOrderHistories() {
+    
+  }
+  
+  final func getWithdrawalHistory() {
+    
+  }
+  
+  final func getWithdrawalHistories() {
+    
+  }
+  
+  final func getDepositHistory() {
+    
+  }
+  
+  final func getDepositHistories() {
+    
+  }
 }
