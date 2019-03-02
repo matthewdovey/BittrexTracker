@@ -15,6 +15,7 @@ public final class BittrexManager {
 
   private let publicApi: PublicAPI
   private let marketApi: MarketAPI
+  private let accountApi: AccountAPI
   private let session: URLSession
   private let urlBuilder: RequestUrlBuilder
 
@@ -24,6 +25,7 @@ public final class BittrexManager {
     urlBuilder = RequestUrlBuilder()
     publicApi = PublicAPI(session: session, builder: urlBuilder)
     marketApi = MarketAPI(session: session, apiKey: "")
+    accountApi = AccountAPI(session: session, apiKey: "", apiSecret: "")
   }
 
   /// Setter to allow user to add API key
@@ -190,6 +192,183 @@ public final class BittrexManager {
   /// - Parameter completion: Escaping Outcome object
   final func getOpenOrders(completion: @escaping ((Outcome<[OpenOrders], String>) -> Void)) {
     marketApi.getOpenOrders { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  // MARK: Account API calls
+  
+  /// Method to get balance for specified currency
+  ///
+  /// - Parameters:
+  ///   - currency: The currency to retrieve balance for
+  ///   - completion: Escaping Outcome object
+  final func getBalanceFor(currency: String, completion: @escaping ((Outcome<Balance, String>) -> Void)) {
+    accountApi.getBalanceFor(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return the balance of all currencies owned by a user
+  ///
+  /// - Parameter completion: Escaping Outcome object
+  final func getBalances(completion: @escaping ((Outcome<[Balance], String>) -> Void)) {
+    accountApi.getBalances { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to retrieve or generate an address for a specified currency
+  ///
+  /// - Parameters:
+  ///   - currency: The currency to retrieve or generater an address for
+  ///   - completion: Escaping Outcome object
+  final func getDepositAddress(currency: String, completion: @escaping ((Outcome<[DepositAddress], String>) -> Void)) {
+    accountApi.getDepositAddress(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// The method to withdraw a specified quantity of a currency to a given address
+  ///
+  /// - Parameters:
+  ///   - currency: The currency to withdraw
+  ///   - quantity: The quantity to be withdrawn
+  ///   - address: The address to deposit the withrawal
+  ///   - completion: Escaping Outcome object
+  final func withdraw(currency: String,
+                      quantity: Float,
+                      address: String,
+                      completion: @escaping ((Outcome<Withdraw, String>) -> Void)) {
+    accountApi.withdraw(currency: currency,
+                        quantity: quantity,
+                        address: address) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return the data from a specified existing order
+  ///
+  /// - Parameters:
+  ///   - uuid: The UUID for the order to be retrieved
+  ///   - completion: Escaping Outcome object
+  final func getOrder(uuid: String, completion: @escaping ((Outcome<Order, String>) -> Void)) {
+    accountApi.getOrder(uuid: uuid) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return the order history data for a specified market
+  ///
+  /// - Parameters:
+  ///   - market: The market to retrieve order history for
+  ///   - completion: Escaping Outcome object
+  final func getOrderHistory(market: String, completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
+    accountApi.getOrderHistory(market: market) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return all order history data for a user
+  ///
+  /// - Parameter completion: Escaping Outcome object
+  final func getOrderHistories(completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
+    accountApi.getOrderHistories() { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return the withdrawal history data for a specified currency
+  ///
+  /// - Parameters:
+  ///   - currency: The currency to retrieve withdrawal history for
+  ///   - completion: Escaping Outcome object
+  final func getWithdrawalHistory(currency: String, completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
+    accountApi.getWithdrawalHistory(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return all withdrawal history for a user
+  ///
+  /// - Parameter completion: Escaping Outcome object
+  final func getWithdrawalHistories(completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
+    accountApi.getWithdrawalHistories() { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to return the deposit history for a specified currency
+  ///
+  /// - Parameters:
+  ///   - currency: The currency to get deposit history for
+  ///   - completion: Escaping Outcome object
+  final func getDepositHistory(currency: String, completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
+    accountApi.getDepositHistory(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
+  }
+  
+  /// Method to retrieve all deposit history data
+  ///
+  /// - Parameter completion: Escaping Outcome object
+  final func getDepositHistories(completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
+    accountApi.getDepositHistories() { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
       } else {
