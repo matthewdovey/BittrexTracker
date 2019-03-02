@@ -242,8 +242,7 @@ public final class BittrexManager {
                       completion: @escaping ((Outcome<Withdraw, String>) -> Void)) {
     accountApi.withdraw(currency: currency,
                         quantity: quantity,
-                        address: address)
-    { (request) in
+                        address: address) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
       } else {
@@ -253,31 +252,80 @@ public final class BittrexManager {
     }
   }
   
-  final func getOrder() {
-    
+  final func getOrder(uuid: String, completion: @escaping ((Outcome<Order, String>) -> Void)) {
+    accountApi.getOrder(uuid: uuid) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
   
-  final func getOrderHistory() {
-    
+  final func getOrderHistory(market: String, completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
+    accountApi.getOrderHistory(market: market) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
   
-  final func getOrderHistories() {
-    
+  final func getOrderHistories(completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
+    accountApi.getOrderHistories() { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
   
-  final func getWithdrawalHistory() {
-    
+  final func getWithdrawalHistory(currency: String, completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
+    accountApi.getWithdrawalHistory(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
   
-  final func getWithdrawalHistories() {
-    
+  final func getWithdrawalHistories(completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
+    accountApi.getWithdrawalHistories() { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
   
-  final func getDepositHistory() {
-    
+  final func getDepositHistory(currency: String, completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
+    accountApi.getDepositHistory(currency: currency) { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
   
-  final func getDepositHistories() {
-    
+  final func getDepositHistories(completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
+    accountApi.getDepositHistories() { (request) in
+      if request.success == true, let data = request.result {
+        completion(.success(data: data))
+      } else {
+        let message = request.message ?? UNKNOWN_MESSAGE
+        completion(.failure(error: message))
+      }
+    }
   }
 }
