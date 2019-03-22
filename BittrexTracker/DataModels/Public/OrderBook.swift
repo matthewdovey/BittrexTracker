@@ -18,14 +18,3 @@ public struct OrderBook: Decodable {
     case sell = "sell"
   }
 }
-
-// The data structure for the Transaction objects within an Order Book Request
-public struct Transaction: Decodable {
-  public let quantity: Float?
-  public let rate: Float?
-  
-  private enum CodingKeys: String, CodingKey {
-    case quantity = "quantity"
-    case rate = "rate"
-  }
-}
