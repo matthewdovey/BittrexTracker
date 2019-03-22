@@ -17,4 +17,9 @@ public struct OrderBook: Decodable {
     case buy = "buy"
     case sell = "sell"
   }
+  
+  init(buy: [Transaction]?, sell: [Transaction]?) {
+    self.buy = buy
+    self.sell = sell
+  }
 }
