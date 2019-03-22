@@ -1,5 +1,5 @@
 //
-//  SingleOrderBook.swift
+//  Transaction.swift
 //  BittrexTracker
 //
 //  Created by Matthew Dovey on 22/03/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct SingleOrderBook: Decodable {
+public struct Transaction: Decodable {
   public let quantity: Float?
   public let rate: Float?
   
