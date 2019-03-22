@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C15592D2203291D004887FD /* BittrexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15592C2203291D004887FD /* BittrexManager.swift */; };
+		9C3AB9072245A0CB007740A1 /* SingleOrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB9062245A0CB007740A1 /* SingleOrderBook.swift */; };
 		9C3CEDB921FFB72900476CCD /* balance_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDB821FFB72900476CCD /* balance_test_data.json */; };
 		9C3CEDBB21FFB8B300476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
 		9C3CEDBC21FFBFB200476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
@@ -132,6 +133,7 @@
 
 /* Begin PBXFileReference section */
 		9C15592C2203291D004887FD /* BittrexManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexManager.swift; sourceTree = "<group>"; };
+		9C3AB9062245A0CB007740A1 /* SingleOrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOrderBook.swift; sourceTree = "<group>"; };
 		9C3CEDB821FFB72900476CCD /* balance_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = balance_test_data.json; sourceTree = "<group>"; };
 		9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = balances_test_data.json; sourceTree = "<group>"; };
 		9C3CEDC221FFD45300476CCD /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				9C8F8FD421F683970034DF4A /* Ticker.swift */,
 				9C8F8FD821F683EC0034DF4A /* MarketSummary.swift */,
 				9C3CEE162202718C00476CCD /* OrderBook.swift */,
+				9C3AB9062245A0CB007740A1 /* SingleOrderBook.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				9C3CEE252203A35E00476CCD /* DepositAddress.swift in Sources */,
 				9C3CEDD02200DF3F00476CCD /* DepositHistoryRequest.swift in Sources */,
 				9C3CEDF72202459600476CCD /* MarketAPI.swift in Sources */,
+				9C3AB9072245A0CB007740A1 /* SingleOrderBook.swift in Sources */,
 				9C3CEDC521FFD5C100476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C8F8FD921F683EC0034DF4A /* MarketSummary.swift in Sources */,
 				9C3CEDCA2200D74B00476CCD /* CoinRequest.swift in Sources */,
