@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C15592D2203291D004887FD /* BittrexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15592C2203291D004887FD /* BittrexManager.swift */; };
 		9C3AB9072245A0CB007740A1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB9062245A0CB007740A1 /* Transaction.swift */; };
+		9C3AB90A2245AA90007740A1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB9062245A0CB007740A1 /* Transaction.swift */; };
 		9C3CEDB921FFB72900476CCD /* balance_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDB821FFB72900476CCD /* balance_test_data.json */; };
 		9C3CEDBB21FFB8B300476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
 		9C3CEDBC21FFBFB200476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
@@ -629,6 +630,7 @@
 				9CA5E99D2211B59B004048EE /* OrderBook.swift in Sources */,
 				9C3CEE11220270AC00476CCD /* CancelRequest.swift in Sources */,
 				9C3CEE15220270BA00476CCD /* WithdrawRequest.swift in Sources */,
+				9C3AB90A2245AA90007740A1 /* Transaction.swift in Sources */,
 				9C3CEDC721FFDF6C00476CCD /* Request.swift in Sources */,
 				9C8F8FE021F7C9B50034DF4A /* MarketHistory.swift in Sources */,
 				9C3CEE302203C43700476CCD /* Order.swift in Sources */,
