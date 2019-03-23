@@ -156,8 +156,8 @@ final class PublicAPI {
   ///   - market: The market to retrieve data for
   ///   - type: Orderbook type
   ///   - completion: Escaping OrderBookRequest object
-  final func getOrderBook(market: String, type: String, completion: @escaping ((OrderBookRequest) -> Void)) {
-    let parameters = [Placeholder.market : market, Placeholder.type : type]
+  final func getOrderBook(market: String, type: OrderBookType, completion: @escaping ((OrderBookRequest) -> Void)) {
+    let parameters = [Placeholder.market : market, Placeholder.type : type.rawValue]
     let url = URL(string: urlBuilder.buildUrl(for: .orderBook, withParameters: parameters))
     let task = session.dataTask(with: url!) { (data, response, error) in
       if error != nil {
