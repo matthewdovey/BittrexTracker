@@ -10,16 +10,11 @@ import Foundation
 
 /// The data structure for the result of the Order Book Request
 public struct OrderBook: Decodable {
-  public let buy: [Transaction]?
-  public let sell: [Transaction]?
+  public let quantity: Float?
+  public let rate: Float?
   
   private enum CodingKeys: String, CodingKey {
-    case buy = "buy"
-    case sell = "sell"
-  }
-  
-  init(buy: [Transaction]?, sell: [Transaction]?) {
-    self.buy = buy
-    self.sell = sell
+    case quantity = "Quantity"
+    case rate = "Rate"
   }
 }
