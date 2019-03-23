@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C15592D2203291D004887FD /* BittrexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15592C2203291D004887FD /* BittrexManager.swift */; };
 		9C3AB90D2245BE30007740A1 /* OrderBookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB90C2245BE30007740A1 /* OrderBookType.swift */; };
+		9C3AB90E2245BF8F007740A1 /* OrderBookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB90C2245BE30007740A1 /* OrderBookType.swift */; };
 		9C3CEDB921FFB72900476CCD /* balance_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDB821FFB72900476CCD /* balance_test_data.json */; };
 		9C3CEDBB21FFB8B300476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
 		9C3CEDBC21FFBFB200476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
@@ -643,6 +644,7 @@
 				9C3CEE2E2203C43200476CCD /* DepositAddress.swift in Sources */,
 				9C3CEE2B2203C34800476CCD /* SellLimit.swift in Sources */,
 				9C3CEE2D2203C34D00476CCD /* OpenOrders.swift in Sources */,
+				9C3AB90E2245BF8F007740A1 /* OrderBookType.swift in Sources */,
 				9C3CEDE32201000600476CCD /* BalanceRequest.swift in Sources */,
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C3CEDE82201001200476CCD /* MarketHistoryRequest.swift in Sources */,

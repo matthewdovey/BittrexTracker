@@ -12,7 +12,7 @@ import Foundation
 ///
 /// - sell: The sell order book
 /// - buy: The buy order book
-enum OrderBookType {
+public enum OrderBookType {
   case sell
   case buy
 }
