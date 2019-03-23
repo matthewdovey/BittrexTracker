@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C15592D2203291D004887FD /* BittrexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15592C2203291D004887FD /* BittrexManager.swift */; };
+		9C3AB90D2245BE30007740A1 /* OrderBookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB90C2245BE30007740A1 /* OrderBookType.swift */; };
 		9C3CEDB921FFB72900476CCD /* balance_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDB821FFB72900476CCD /* balance_test_data.json */; };
 		9C3CEDBB21FFB8B300476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
 		9C3CEDBC21FFBFB200476CCD /* balances_test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */; };
@@ -132,6 +133,7 @@
 
 /* Begin PBXFileReference section */
 		9C15592C2203291D004887FD /* BittrexManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BittrexManager.swift; sourceTree = "<group>"; };
+		9C3AB90C2245BE30007740A1 /* OrderBookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookType.swift; sourceTree = "<group>"; };
 		9C3CEDB821FFB72900476CCD /* balance_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = balance_test_data.json; sourceTree = "<group>"; };
 		9C3CEDBA21FFB8B300476CCD /* balances_test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = balances_test_data.json; sourceTree = "<group>"; };
 		9C3CEDC221FFD45300476CCD /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				9C3CEDC221FFD45300476CCD /* Request.swift */,
 				9CC44A0B220DF17100EBCB9D /* Outcome.swift */,
 				9CE9EFF52214514E009C7010 /* Placeholder.swift */,
+				9C3AB90C2245BE30007740A1 /* OrderBookType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				9C3CEDDA2200E0A900476CCD /* MarketSummaryRequest.swift in Sources */,
 				9C3CEE012202651100476CCD /* CancelRequest.swift in Sources */,
 				9C3CEDD82200E08B00476CCD /* WithdrawalHistoryRequest.swift in Sources */,
+				9C3AB90D2245BE30007740A1 /* OrderBookType.swift in Sources */,
 				9C3CEE2122039F6500476CCD /* Cancel.swift in Sources */,
 				9C3CEDC321FFD45300476CCD /* Request.swift in Sources */,
 				9C8F8FD121F6831A0034DF4A /* Market.swift in Sources */,
