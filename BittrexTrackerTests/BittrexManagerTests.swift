@@ -19,7 +19,6 @@ private let MARKET_HISTORY_DATA_FILE = "market_history_test_data"
 private let ORDERBOOK_DATA_FILE = "orderbook_test_data"
 private let JSON = "json"
 private let MARKET = "btc-ltc"
-private let TYPE = "both"
 
 class BittrexManagerTests: XCTestCase {
   
@@ -182,7 +181,7 @@ class BittrexManagerTests: XCTestCase {
         session.data = data
       } catch {}
     }
-    bittrexManager.getOrderBook(market: MARKET, type: TYPE) { result in
+    bittrexManager.getOrderBook(market: MARKET, type: .buy) { result in
       switch result {
       case .success(_):
         XCTAssert(true)
@@ -193,7 +192,7 @@ class BittrexManagerTests: XCTestCase {
   }
   
   func testGetOrderBookReturnsFailure() {
-    bittrexManager.getOrderBook(market: MARKET, type: TYPE) { result in
+    bittrexManager.getOrderBook(market: MARKET, type: .sell) { result in
       switch result {
       case .success(_):
         XCTAssert(false)
