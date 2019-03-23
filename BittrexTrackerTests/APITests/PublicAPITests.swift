@@ -171,7 +171,7 @@ class PublicAPITests: XCTestCase {
         session.data = data
       } catch {}
     }
-    api.getOrderBook(market: "", type: "") { results in
+    api.getOrderBook(market: "", type: .sell) { results in
       XCTAssertTrue(results.success == true)
       XCTAssertFalse(results.result?.isEmpty == true)
     }
@@ -179,7 +179,7 @@ class PublicAPITests: XCTestCase {
   
   func testGetOrderBookReturnsFailure() {
     session.error = URLError(.cannotParseResponse)
-    api.getOrderBook(market: "", type: "") { results in
+    api.getOrderBook(market: "", type: .buy) { results in
       XCTAssertFalse(results.success == true)
     }
   }
