@@ -6,13 +6,15 @@
 //  Copyright © 2019 Matthew Dovey. All rights reserved.
 //
 
-import Foundation
+import CryptoSwift
 
 /// Class to provide all account related API calls to the Bittrex exchange
 final class AccountAPI {
   
   private var session: URLSession
   private var urlBuilder: RequestUrlBuilder
+  private var apiKey: String
+  private var apiSecret: String
   
   /// Initialiser to create an instance of the Account API class
   ///
@@ -23,6 +25,8 @@ final class AccountAPI {
   init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
     self.session = session
     self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)
+    self.apiKey = apiKey
+    self.apiSecret = apiSecret
   }
   
   /// Setter to allow the API key to be set for the user's wallet
@@ -30,6 +34,7 @@ final class AccountAPI {
   /// - Parameter key: user's wallet API key
   public func setApiKey(key: String) {
     urlBuilder.setKey(key: key)
+    apiSecret = key
   }
   
   /// Setter to allow the API secret to be set for the user's... TODO: finish docs
@@ -37,6 +42,21 @@ final class AccountAPI {
   /// - Parameter secret: user's API secret
   public func setApiSecret(secret: String) {
     urlBuilder.setSecret(secret: secret)
+    apiSecret = secret
+  }
+  
+  private func createSignedUrlRequest(url: URL) -> URLRequest {
+    let secretUInt8: [UInt8] = Array(url.absoluteString.utf8)
+    var hmac: [UInt8] = []
+    do {
+      try hmac = HMAC(key: apiSecret, variant: .sha512).authenticate(secretUInt8)
+    } catch {
+      print(error)
+    }
+    var urlRequest = URLRequest(url: url)
+    urlRequest.allHTTPHeaderFields = ["apisign": hmac.toHexString()]
+    urlRequest.httpMethod = "POST"
+    return urlRequest
   }
   
   /// Method to retrieve the balance of a specified currency from the user's wallet
@@ -45,9 +65,11 @@ final class AccountAPI {
   ///   - currency: the balance for a specific currency
   ///   - completion: Escaping BalanceRequest object
   final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
-    let parameters = [Placeholder.currency : currency]
+    let parameters = [Placeholder.currency : currency, Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .balance, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let signedUrlRequest = createSignedUrlRequest(url: url!)
+    
+    let task = session.dataTask(with: signedUrlRequest) { (data, response, error) in
       if error != nil {
         completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -70,8 +92,11 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping BalancesRequest object
   final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .balances, withParameters: [:]))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let parameters = [Placeholder.apiKey : apiKey]
+    let url = URL(string: urlBuilder.buildUrl(for: .balances, withParameters: parameters))
+    let signedUrlRequest = createSignedUrlRequest(url: url!)
+    
+    let task = session.dataTask(with: signedUrlRequest) { (data, response, error) in
       if error != nil {
         completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
       } else {
