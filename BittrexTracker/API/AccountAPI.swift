@@ -22,9 +22,12 @@ final class AccountAPI {
   ///   - session: URLSession object
   ///   - apiKey: The user's API key
   ///   - apiSecret: The user's API secret
-  init(session: URLSession = .shared, apiKey: String = "", apiSecret: String = "") {
+  init(session: URLSession = .shared,
+       builder: RequestUrlBuilder,
+       apiKey: String = "",
+       apiSecret: String = "") {
     self.session = session
-    self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: apiSecret)
+    self.urlBuilder = builder
     self.apiKey = apiKey
     self.apiSecret = apiSecret
   }
