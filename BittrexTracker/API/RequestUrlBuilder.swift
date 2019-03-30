@@ -42,35 +42,6 @@ final class RequestUrlBuilder {
   private let withdrawalHistoryForURL = "/account/getwithdrawalhistory?currency=CURRENCY"
   private let depositHistoryURL = "/account/getdeposithistory"
   private let depositHistoryForURL = "/account/getdeposithistory?currency=CURRENCY"
-  
-  // Wallet access properties
-  private var apiKey: String
-  private var apiSecret: String
-  private var apiSecretBytes: [UInt8]?
-  
-  /// Initialiser to set the API key and API secret
-  ///
-  /// - Parameters:
-  ///   - apiKey: The user's API key
-  ///   - apiSecret: The user's API secret
-  init(key: String = "", secret: String = "") {
-    self.apiKey = key
-    self.apiSecret = secret
-  }
-  
-  /// API key property setter
-  ///
-  /// - Parameter apiKey: The API key
-  func setKey(key: String) {
-    self.apiKey = key
-  }
-  
-  /// API secret property setter
-  ///
-  /// - Parameter apiSecret: The API secret
-  func setSecret(secret: String) {
-    self.apiSecret = secret
-  }
 
   /// Method to take a request URL enum and pass the correlating url string
   ///
@@ -135,6 +106,9 @@ final class RequestUrlBuilder {
       let url = baseURL+apiVersion+depositHistoryForURL
       return replacePlaceholders(for: url, with: parameters)
     case .orderHistory:
+      let url = baseURL+apiVersion+orderHistoryForURL
+      return replacePlaceholders(for: url, with: parameters)
+    case .orderHistories:
       let url = baseURL+apiVersion+orderHistoryURL
       return replacePlaceholders(for: url, with: parameters)
     case .withdrawalHistories:
