@@ -58,7 +58,9 @@ final class AccountAPI {
   ///   - currency: the balance for a specific currency
   ///   - completion: Escaping BalanceRequest object
   final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
-    let parameters = [Placeholder.currency : currency, Placeholder.apiKey : apiKey]
+    let parameters = [Placeholder.currency : currency,
+                      Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .balance, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
@@ -85,7 +87,8 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping BalancesRequest object
   final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
-    let parameters = [Placeholder.apiKey : apiKey]
+    let parameters = [Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .balances, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
