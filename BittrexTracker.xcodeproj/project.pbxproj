@@ -121,6 +121,7 @@
 		9CE9EFF62214514E009C7010 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9EFF52214514E009C7010 /* Placeholder.swift */; };
 		9CE9EFF7221457DD009C7010 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9EFF52214514E009C7010 /* Placeholder.swift */; };
 		9CF82DB0224D56EB00CC3419 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF82DA6224D56A000CC3419 /* CryptoSwift.framework */; };
+		9CF82DB6224FFBF100CC3419 /* SignedURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF82DB5224FFBF100CC3419 /* SignedURLRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		9CC44A0B220DF17100EBCB9D /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
 		9CE9EFF52214514E009C7010 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		9CF82D9D224D569F00CC3419 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = Carthage/Checkouts/CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		9CF82DB5224FFBF100CC3419 /* SignedURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedURLRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +462,7 @@
 				9C3CEDF62202459600476CCD /* MarketAPI.swift */,
 				9C3CEDF1220128B600476CCD /* AccountAPI.swift */,
 				9C3CEDC421FFD5C100476CCD /* RequestUrlBuilder.swift */,
+				9CF82DB5224FFBF100CC3419 /* SignedURLRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				9C3CEDDA2200E0A900476CCD /* MarketSummaryRequest.swift in Sources */,
 				9C3CEE012202651100476CCD /* CancelRequest.swift in Sources */,
 				9C3CEDD82200E08B00476CCD /* WithdrawalHistoryRequest.swift in Sources */,
+				9CF82DB6224FFBF100CC3419 /* SignedURLRequest.swift in Sources */,
 				9C3AB90D2245BE30007740A1 /* OrderBookType.swift in Sources */,
 				9C3CEE2122039F6500476CCD /* Cancel.swift in Sources */,
 				9C3CEDC321FFD45300476CCD /* Request.swift in Sources */,
