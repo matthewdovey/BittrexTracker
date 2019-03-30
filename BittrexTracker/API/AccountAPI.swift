@@ -36,7 +36,6 @@ final class AccountAPI {
   ///
   /// - Parameter key: user's wallet API key
   func setApiKey(key: String) {
-    urlBuilder.setKey(key: key)
     apiKey = key
   }
   
@@ -44,7 +43,6 @@ final class AccountAPI {
   ///
   /// - Parameter secret: user's API secret
   func setApiSecret(secret: String) {
-    urlBuilder.setSecret(secret: secret)
     apiSecret = secret
   }
   
