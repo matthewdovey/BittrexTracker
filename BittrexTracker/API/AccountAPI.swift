@@ -34,7 +34,7 @@ final class AccountAPI {
   /// - Parameter key: user's wallet API key
   func setApiKey(key: String) {
     urlBuilder.setKey(key: key)
-    apiSecret = key
+    apiKey = key
   }
   
   /// Setter to allow the API secret to be set for the user's... TODO: finish docs
@@ -43,6 +43,10 @@ final class AccountAPI {
   func setApiSecret(secret: String) {
     urlBuilder.setSecret(secret: secret)
     apiSecret = secret
+  }
+  
+  private var nonce: String {
+    return String(Date().timeIntervalSince1970)
   }
   
   /// Method to retrieve the balance of a specified currency from the user's wallet
