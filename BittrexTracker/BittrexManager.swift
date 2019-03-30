@@ -208,7 +208,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - currency: The currency to retrieve balance for
   ///   - completion: Escaping Outcome object
-  final func getBalanceFor(currency: String, completion: @escaping ((Outcome<Balance, String>) -> Void)) {
+  public final func getBalanceFor(currency: String, completion: @escaping ((Outcome<Balance, String>) -> Void)) {
     accountApi.getBalanceFor(currency: currency) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -222,7 +222,7 @@ public final class BittrexManager {
   /// Method to return the balance of all currencies owned by a user
   ///
   /// - Parameter completion: Escaping Outcome object
-  final func getBalances(completion: @escaping ((Outcome<[Balance], String>) -> Void)) {
+  public final func getBalances(completion: @escaping ((Outcome<[Balance], String>) -> Void)) {
     accountApi.getBalances { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
