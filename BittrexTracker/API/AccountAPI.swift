@@ -115,9 +115,12 @@ final class AccountAPI {
   ///   - currency: The specific currency
   ///   - completion: Escaping DepositAddressRequest object
   final func getDepositAddress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
-    let parameters = [Placeholder.currency : currency]
+    let parameters = [Placeholder.currency : currency,
+                      Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .depositAddress, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(DepositAddressRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -147,11 +150,14 @@ final class AccountAPI {
                       quantity: Float,
                       address: String,
                       completion: @escaping ((WithdrawRequest) -> Void)) {
-    let parameters: [Placeholder : String] = [.currency : currency,
-                                              .quantity : String(quantity),
-                                              .address : address]
+    let parameters = [Placeholder.currency : currency,
+                      Placeholder.quantity : String(quantity),
+                      Placeholder.address : address,
+                      Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .withdraw, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(WithdrawRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -176,9 +182,12 @@ final class AccountAPI {
   ///   - uuid: The uuid of the existing order
   ///   - completion: Escaping OrderRequest object
   final func getOrder(uuid: String, completion: @escaping ((OrderRequest) -> Void)) {
-    let parameters = [Placeholder.uuid : uuid]
+    let parameters = [Placeholder.uuid : uuid,
+                      Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .order, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(OrderRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -203,9 +212,12 @@ final class AccountAPI {
   ///   - market: The market to be checked
   ///   - completion: Escaping OrderHistoryRequest object
   final func getOrderHistory(market: String, completion: @escaping ((OrderHistoryRequest) -> Void)) {
-    let parameters = [Placeholder.market : market]
+    let parameters = [Placeholder.market : market,
+                      Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(OrderHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -228,8 +240,11 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping OrderHistoryRequest object
   final func getOrderHistories(completion: @escaping ((OrderHistoryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: [:]))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let parameters = [Placeholder.apiKey : apiKey]
+    let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters))
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(OrderHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -252,8 +267,11 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping WithdrawalHistoryRequest object
   final func getWithdrawalHistories(completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistories, withParameters: [:]))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let parameters = [Placeholder.apiKey : apiKey]
+    let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistories, withParameters: parameters))
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(WithdrawalHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -278,10 +296,12 @@ final class AccountAPI {
   ///   - currency: The specific currency
   ///   - completion: Escaping WithdrawalHistoryRequest object
   final func getWithdrawalHistory(currency: String, completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
-    let parameters = [Placeholder.currency : currency]
+    let parameters = [Placeholder.currency : currency,
+                      Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
-      if error != nil {
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in      if error != nil {
         completion(WithdrawalHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
@@ -303,8 +323,11 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping DepositHistoryRequest object
   final func getDepositHistories(completion: @escaping ((DepositHistoryRequest) -> Void)) {
-    let url = URL(string: urlBuilder.buildUrl(for: .depositHistories, withParameters: [:]))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let parameters = [Placeholder.apiKey : apiKey]
+    let url = URL(string: urlBuilder.buildUrl(for: .depositHistories, withParameters: parameters))
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -329,15 +352,18 @@ final class AccountAPI {
   ///   - currency: The specific currency to be checked
   ///   - completion: Escaping DepositHistoryRequest object
   final func getDepositHistory(currency: String, completion: @escaping ((DepositHistoryRequest) -> Void)) {
-    let parameters = [Placeholder.currency : currency]
-    let url = URL(string: urlBuilder.buildUrl(for: .depositHistory, withParameters: parameters))
-    let task = session.dataTask(with: url!) { (data, response, error) in
+    let parameters = [Placeholder.currency : currency,
+                      Placeholder.apiKey : apiKey]
+    let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
+    
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
       } else {
         if data != nil {
           do {
-          let depositHistoryRequest = try JSONDecoder().decode(DepositHistoryRequest.self, from: data!)
+            let depositHistoryRequest = try JSONDecoder().decode(DepositHistoryRequest.self, from: data!)
             completion(depositHistoryRequest)
           } catch {
             completion(DepositHistoryRequest(success: false, message: String(describing: error), result: nil))
