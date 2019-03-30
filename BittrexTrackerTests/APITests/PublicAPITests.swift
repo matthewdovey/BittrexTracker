@@ -103,7 +103,6 @@ class PublicAPITests: XCTestCase {
     if let url = bundle?.url(forResource: SUMMARIES_DATA_FILE, withExtension: JSON) {
       do {
         let data = try Data(contentsOf: url, options: .mappedIfSafe)
-        print(data)
         session.data = data
       } catch {}
     }
