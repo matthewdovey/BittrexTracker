@@ -61,14 +61,14 @@ final class RequestUrlBuilder {
   /// API key property setter
   ///
   /// - Parameter apiKey: The API key
-  public func setKey(key: String) {
+  func setKey(key: String) {
     self.apiKey = key
   }
   
   /// API secret property setter
   ///
   /// - Parameter apiSecret: The API secret
-  public func setSecret(secret: String) {
+  func setSecret(secret: String) {
     self.apiSecret = secret
   }
 
@@ -78,7 +78,7 @@ final class RequestUrlBuilder {
   ///   - request: Request URL enum to define the URL to return
   ///   - withParameters: The parameters to replace with URL placeholders
   /// - Returns: Request URL to be used with the Bittrex API
-  public func buildUrl(for request: Request, withParameters parameters: [Placeholder : String]) -> String {
+  func buildUrl(for request: Request, withParameters parameters: [Placeholder : String]) -> String {
     switch request {
     case .markets:
       let url = baseURL+apiVersion+marketsURL
