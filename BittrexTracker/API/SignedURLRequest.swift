@@ -8,7 +8,7 @@
 
 import CryptoSwift
 
-class SignedURLRequest {
+final class SignedURLRequest {
   
   private let url: URL
   private let apiKey: String

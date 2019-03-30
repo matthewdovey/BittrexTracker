@@ -122,6 +122,8 @@
 		9CE9EFF7221457DD009C7010 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9EFF52214514E009C7010 /* Placeholder.swift */; };
 		9CF82DB0224D56EB00CC3419 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF82DA6224D56A000CC3419 /* CryptoSwift.framework */; };
 		9CF82DB6224FFBF100CC3419 /* SignedURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF82DB5224FFBF100CC3419 /* SignedURLRequest.swift */; };
+		9CF82DBA224FFED500CC3419 /* SignedURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF82DB5224FFBF100CC3419 /* SignedURLRequest.swift */; };
+		9CF82DBB224FFEDD00CC3419 /* SignedURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF82DB7224FFD2B00CC3419 /* SignedURLRequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +238,7 @@
 		9CE9EFF52214514E009C7010 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		9CF82D9D224D569F00CC3419 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = Carthage/Checkouts/CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		9CF82DB5224FFBF100CC3419 /* SignedURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedURLRequest.swift; sourceTree = "<group>"; };
+		9CF82DB7224FFD2B00CC3419 /* SignedURLRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedURLRequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +388,7 @@
 				9C85C05821F7647400E9259D /* PublicAPITests.swift */,
 				9C3CEDED2201049A00476CCD /* RequestUrlBuilderTests.swift */,
 				9C3CEDF322012C8900476CCD /* AccountAPITests.swift */,
+				9CF82DB7224FFD2B00CC3419 /* SignedURLRequestTests.swift */,
 			);
 			path = APITests;
 			sourceTree = "<group>";
@@ -715,6 +719,7 @@
 				9C3CEDE62201000D00476CCD /* TickerRequest.swift in Sources */,
 				9C3CEE2F2203C43500476CCD /* Withdraw.swift in Sources */,
 				9C85C05421F759C100E9259D /* URLSessionMock.swift in Sources */,
+				9CF82DBA224FFED500CC3419 /* SignedURLRequest.swift in Sources */,
 				9C3CEDF422012C8A00476CCD /* AccountAPITests.swift in Sources */,
 				9C8F8FDF21F7C9B30034DF4A /* DepositHistory.swift in Sources */,
 				9C8F8FDD21F7C9AE0034DF4A /* Market.swift in Sources */,
@@ -756,6 +761,7 @@
 				9C3CEDC621FFDF1E00476CCD /* RequestUrlBuilder.swift in Sources */,
 				9C3CEDE82201001200476CCD /* MarketHistoryRequest.swift in Sources */,
 				9C3CEE2C2203C34B00476CCD /* Cancel.swift in Sources */,
+				9CF82DBB224FFEDD00CC3419 /* SignedURLRequestTests.swift in Sources */,
 				9C3CEDEC2201001C00476CCD /* CoinRequest.swift in Sources */,
 				9C3CEE0F220270A600476CCD /* BuyLimitRequest.swift in Sources */,
 			);
