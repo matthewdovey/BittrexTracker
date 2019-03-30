@@ -261,7 +261,7 @@ public final class BittrexManager {
   ///   - quantity: The quantity to be withdrawn
   ///   - address: The address to deposit the withrawal
   ///   - completion: Escaping Outcome object
-  public final func withdraw(currency: String,
+  final func withdraw(currency: String,
                       quantity: Float,
                       address: String,
                       completion: @escaping ((Outcome<Withdraw, String>) -> Void)) {
