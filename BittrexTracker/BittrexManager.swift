@@ -24,13 +24,18 @@ public final class BittrexManager {
     self.session = session
     urlBuilder = RequestUrlBuilder()
     publicApi = PublicAPI(session: session, builder: urlBuilder)
-    marketApi = MarketAPI(session: session, apiKey: "")
-    accountApi = AccountAPI(session: session, apiKey: "", apiSecret: "")
+    marketApi = MarketAPI(session: session)
+    accountApi = AccountAPI(session: session, builder: urlBuilder)
   }
 
   /// Setter to allow user to add API key
   public func setApiKey(key: String) {
     marketApi.setApiKey(key: key)
+    accountApi.setApiKey(key: key)
+  }
+  
+  public func setApiSecret(secret: String) {
+    accountApi.setApiSecret(secret: secret)
   }
 
   // MARK: Public API calls
