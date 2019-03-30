@@ -23,14 +23,14 @@ final class MarketAPI {
   init(session: URLSession = .shared, apiKey: String = "") {
     self.session = session
     self.apiKey = apiKey
-    self.urlBuilder = RequestUrlBuilder(key: apiKey, secret: "")
+    self.urlBuilder = RequestUrlBuilder()
   }
   
   /// Setter to allow the API key to be set for the user's wallet
   ///
   /// - Parameter key: user's wallet API key
   func setApiKey(key: String) {
-    urlBuilder.setKey(key: key)
+    apiKey = key
   }
   
   /// Method to place a buy order in a specific market
