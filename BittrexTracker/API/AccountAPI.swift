@@ -32,7 +32,7 @@ final class AccountAPI {
   /// Setter to allow the API key to be set for the user's wallet
   ///
   /// - Parameter key: user's wallet API key
-  public func setApiKey(key: String) {
+  func setApiKey(key: String) {
     urlBuilder.setKey(key: key)
     apiSecret = key
   }
@@ -40,7 +40,7 @@ final class AccountAPI {
   /// Setter to allow the API secret to be set for the user's... TODO: finish docs
   ///
   /// - Parameter secret: user's API secret
-  public func setApiSecret(secret: String) {
+  func setApiSecret(secret: String) {
     urlBuilder.setSecret(secret: secret)
     apiSecret = secret
   }
