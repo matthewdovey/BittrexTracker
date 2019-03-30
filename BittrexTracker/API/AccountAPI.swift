@@ -45,20 +45,6 @@ final class AccountAPI {
     apiSecret = secret
   }
   
-  private func createSignedUrlRequest(url: URL) -> URLRequest {
-    let secretUInt8: [UInt8] = Array(url.absoluteString.utf8)
-    var hmac: [UInt8] = []
-    do {
-      try hmac = HMAC(key: apiSecret, variant: .sha512).authenticate(secretUInt8)
-    } catch {
-      print(error)
-    }
-    var urlRequest = URLRequest(url: url)
-    urlRequest.allHTTPHeaderFields = ["apisign": hmac.toHexString()]
-    urlRequest.httpMethod = "POST"
-    return urlRequest
-  }
-  
   /// Method to retrieve the balance of a specified currency from the user's wallet
   ///
   /// - Parameters:
@@ -67,9 +53,9 @@ final class AccountAPI {
   final func getBalanceFor(currency: String, completion: @escaping ((BalanceRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency, Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .balance, withParameters: parameters))
-    let signedUrlRequest = createSignedUrlRequest(url: url!)
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
-    let task = session.dataTask(with: signedUrlRequest) { (data, response, error) in
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(BalanceRequest(success: false, message: String(describing: error), result: nil))
       } else {
@@ -94,9 +80,9 @@ final class AccountAPI {
   final func getBalances(completion: @escaping ((BalancesRequest) -> Void)) {
     let parameters = [Placeholder.apiKey : apiKey]
     let url = URL(string: urlBuilder.buildUrl(for: .balances, withParameters: parameters))
-    let signedUrlRequest = createSignedUrlRequest(url: url!)
+    let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
-    let task = session.dataTask(with: signedUrlRequest) { (data, response, error) in
+    let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
       if error != nil {
         completion(BalancesRequest(success: false, message: String(describing: error), result: nil))
       } else {
