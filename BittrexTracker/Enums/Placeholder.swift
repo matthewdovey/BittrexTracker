@@ -19,6 +19,7 @@ import Foundation
 /// - currency: The currency value placeholder
 /// - address: The address value placeholder
 /// - paymentid: The payment ID placeholder
+/// - nonce: The nonce value placeholder
 enum Placeholder: String {
   case apiKey = "API_KEY"
   case market = "MARKET"
@@ -29,4 +30,5 @@ enum Placeholder: String {
   case currency = "CURRENCY"
   case address = "ADDRESS"
   case paymentid = "PAYMENT_ID"
+  case nonce = "NONCE"
 }

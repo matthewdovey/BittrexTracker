@@ -24,13 +24,18 @@ public final class BittrexManager {
     self.session = session
     urlBuilder = RequestUrlBuilder()
     publicApi = PublicAPI(session: session, builder: urlBuilder)
-    marketApi = MarketAPI(session: session, apiKey: "")
-    accountApi = AccountAPI(session: session, apiKey: "", apiSecret: "")
+    marketApi = MarketAPI(session: session)
+    accountApi = AccountAPI(session: session, builder: urlBuilder)
   }
 
   /// Setter to allow user to add API key
   public func setApiKey(key: String) {
     marketApi.setApiKey(key: key)
+    accountApi.setApiKey(key: key)
+  }
+  
+  public func setApiSecret(secret: String) {
+    accountApi.setApiSecret(secret: secret)
   }
 
   // MARK: Public API calls
@@ -208,7 +213,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - currency: The currency to retrieve balance for
   ///   - completion: Escaping Outcome object
-  final func getBalanceFor(currency: String, completion: @escaping ((Outcome<Balance, String>) -> Void)) {
+  public final func getBalanceFor(currency: String, completion: @escaping ((Outcome<Balance, String>) -> Void)) {
     accountApi.getBalanceFor(currency: currency) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -222,7 +227,7 @@ public final class BittrexManager {
   /// Method to return the balance of all currencies owned by a user
   ///
   /// - Parameter completion: Escaping Outcome object
-  final func getBalances(completion: @escaping ((Outcome<[Balance], String>) -> Void)) {
+  public final func getBalances(completion: @escaping ((Outcome<[Balance], String>) -> Void)) {
     accountApi.getBalances { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -238,7 +243,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - currency: The currency to retrieve or generater an address for
   ///   - completion: Escaping Outcome object
-  final func getDepositAddress(currency: String, completion: @escaping ((Outcome<[DepositAddress], String>) -> Void)) {
+  public final func getDepositAddress(currency: String, completion: @escaping ((Outcome<[DepositAddress], String>) -> Void)) {
     accountApi.getDepositAddress(currency: currency) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -277,7 +282,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - uuid: The UUID for the order to be retrieved
   ///   - completion: Escaping Outcome object
-  final func getOrder(uuid: String, completion: @escaping ((Outcome<Order, String>) -> Void)) {
+  public final func getOrder(uuid: String, completion: @escaping ((Outcome<Order, String>) -> Void)) {
     accountApi.getOrder(uuid: uuid) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -293,7 +298,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - market: The market to retrieve order history for
   ///   - completion: Escaping Outcome object
-  final func getOrderHistory(market: String, completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
+  public final func getOrderHistory(market: String, completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
     accountApi.getOrderHistory(market: market) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -307,7 +312,7 @@ public final class BittrexManager {
   /// Method to return all order history data for a user
   ///
   /// - Parameter completion: Escaping Outcome object
-  final func getOrderHistories(completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
+  public final func getOrderHistories(completion: @escaping ((Outcome<[OrderHistory], String>) -> Void)) {
     accountApi.getOrderHistories() { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -323,7 +328,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - currency: The currency to retrieve withdrawal history for
   ///   - completion: Escaping Outcome object
-  final func getWithdrawalHistory(currency: String, completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
+  public final func getWithdrawalHistory(currency: String, completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
     accountApi.getWithdrawalHistory(currency: currency) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -337,7 +342,7 @@ public final class BittrexManager {
   /// Method to return all withdrawal history for a user
   ///
   /// - Parameter completion: Escaping Outcome object
-  final func getWithdrawalHistories(completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
+  public final func getWithdrawalHistories(completion: @escaping ((Outcome<[WithdrawalHistory], String>) -> Void)) {
     accountApi.getWithdrawalHistories() { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -353,7 +358,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - currency: The currency to get deposit history for
   ///   - completion: Escaping Outcome object
-  final func getDepositHistory(currency: String, completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
+  public final func getDepositHistory(currency: String, completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
     accountApi.getDepositHistory(currency: currency) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -367,7 +372,7 @@ public final class BittrexManager {
   /// Method to retrieve all deposit history data
   ///
   /// - Parameter completion: Escaping Outcome object
-  final func getDepositHistories(completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
+  public final func getDepositHistories(completion: @escaping ((Outcome<[DepositHistory], String>) -> Void)) {
     accountApi.getDepositHistories() { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))

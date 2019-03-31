@@ -31,9 +31,9 @@ final class RequestUrlBuilder {
   private let openOrdersURL = "/market/getopenorders?apikey=API_KEY&market=MARKET"
   
   // URL constants (account requests)
-  private let balancesURL = "/account/getbalances?apikey=API_KEY"
-  private let balanceURL = "/account/getbalance?apikey=API_KEY&currency=CURRENCY"
-  private let depositAddressUrl = "/account/getdepositaddress?apikey=API_KEY&currency=CURRENCY"
+  private let balancesURL = "/account/getbalances?apikey=API_KEY&nonce=NONCE"
+  private let balanceURL = "/account/getbalance?apikey=API_KEY&currency=CURRENCY&nonce=NONCE"
+  private let depositAddressUrl = "/account/getdepositaddress?apikey=API_KEY&currency=CURRENCY&nonce=NONCE"
   private let withdrawURL = "/account/withdraw?apikey=API_KEY&currency=CURRENCY&quantity=QUANTITY&address=ADDRESS"
   private let orderURL = "/account/getorder&uuid=UUID"
   private let orderHistoryURL = "/account/getorderhistory"
@@ -42,35 +42,6 @@ final class RequestUrlBuilder {
   private let withdrawalHistoryForURL = "/account/getwithdrawalhistory?currency=CURRENCY"
   private let depositHistoryURL = "/account/getdeposithistory"
   private let depositHistoryForURL = "/account/getdeposithistory?currency=CURRENCY"
-  
-  // Wallet access properties
-  private var apiKey: String
-  private var apiSecret: String
-  private var apiSecretBytes: [UInt8]?
-  
-  /// Initialiser to set the API key and API secret
-  ///
-  /// - Parameters:
-  ///   - apiKey: The user's API key
-  ///   - apiSecret: The user's API secret
-  init(key: String = "", secret: String = "") {
-    self.apiKey = key
-    self.apiSecret = secret
-  }
-  
-  /// API key property setter
-  ///
-  /// - Parameter apiKey: The API key
-  public func setKey(key: String) {
-    self.apiKey = key
-  }
-  
-  /// API secret property setter
-  ///
-  /// - Parameter apiSecret: The API secret
-  public func setSecret(secret: String) {
-    self.apiSecret = secret
-  }
 
   /// Method to take a request URL enum and pass the correlating url string
   ///
@@ -78,7 +49,7 @@ final class RequestUrlBuilder {
   ///   - request: Request URL enum to define the URL to return
   ///   - withParameters: The parameters to replace with URL placeholders
   /// - Returns: Request URL to be used with the Bittrex API
-  public func buildUrl(for request: Request, withParameters parameters: [Placeholder : String]) -> String {
+  func buildUrl(for request: Request, withParameters parameters: [Placeholder : String]) -> String {
     switch request {
     case .markets:
       let url = baseURL+apiVersion+marketsURL
@@ -135,6 +106,9 @@ final class RequestUrlBuilder {
       let url = baseURL+apiVersion+depositHistoryForURL
       return replacePlaceholders(for: url, with: parameters)
     case .orderHistory:
+      let url = baseURL+apiVersion+orderHistoryForURL
+      return replacePlaceholders(for: url, with: parameters)
+    case .orderHistories:
       let url = baseURL+apiVersion+orderHistoryURL
       return replacePlaceholders(for: url, with: parameters)
     case .withdrawalHistories:
