@@ -22,4 +22,13 @@ class URLSessionMock : URLSession {
       completionHandler(data, nil, error)
     }
   }
+  
+  override func dataTask(with request: URLRequest, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask {
+    let data = self.data
+    let error = self.error
+    
+    return URLSessionDataTaskMock {
+      completionHandler(data, nil, error)
+    }
+  }
 }

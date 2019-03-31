@@ -22,7 +22,8 @@ class AccountAPITests: XCTestCase {
   
   override func setUp() {
     session = URLSessionMock()
-    api = AccountAPI(session: session, apiKey: "", apiSecret: "")
+    let urlBuilder = RequestUrlBuilder()
+    api = AccountAPI(session: session, builder: urlBuilder)
     bundle = Bundle(identifier: BUNDLE_IDENTIFIER)
   }
 
