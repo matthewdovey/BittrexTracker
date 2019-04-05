@@ -77,6 +77,7 @@ Run carthage update to build the framework and drag the built BittrexTracker.fra
 ## Built With
 
 - Bittrex Developer API v1.1 (https://bittrex.github.io/api/v1-1)
+- CryptoSwift 0.15.0 (https://github.com/krzyzanowskim/CryptoSwift/releases/tag/0.15.0)
 
 ## Usage
 
