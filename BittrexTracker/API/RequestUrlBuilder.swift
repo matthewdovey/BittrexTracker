@@ -36,13 +36,13 @@ final class RequestUrlBuilder {
   private let depositAddressUrl = "/account/getdepositaddress?apikey=API_KEY&currency=CURRENCY&nonce=NONCE"
   private let withdrawURL = "/account/withdraw?apikey=API_KEY&currency=CURRENCY&quantity=QUANTITY&address=ADDRESS"
   private let orderURL = "/account/getorder&uuid=UUID"
-  private let orderHistoryURL = "/account/getorderhistory"
-  private let orderHistoryForURL = "/account/getorderhistory?market=MARKET"
-  private let withdrawalHistoryURL = "/account/getwithdrawalhistory"
-  private let withdrawalHistoryForURL = "/account/getwithdrawalhistory?currency=CURRENCY"
-  private let depositHistoryURL = "/account/getdeposithistory"
-  private let depositHistoryForURL = "/account/getdeposithistory?currency=CURRENCY"
-
+  private let orderHistoryURL = "/account/getorderhistory?apikey=API_KEY&nonce=NONCE"
+  private let orderHistoryForURL = "/account/getorderhistory?market=MARKET&apikey=API_KEY&nonce=NONCE"
+  private let withdrawalHistoryURL = "/account/getwithdrawalhistory?apikey=API_KEY&nonce=NONCE"
+  private let withdrawalHistoryForURL = "/account/getwithdrawalhistory?currency=CURRENCY&apikey=API_KEY&nonce=NONCE"
+  private let depositHistoryURL = "/account/getdeposithistory?apikey=API_KEY&nonce=NONCE"
+  private let depositHistoryForURL = "/account/getdeposithistory?currency=CURRENCY&apikey=API_KEY&nonce=NONCE"
+  
   /// Method to take a request URL enum and pass the correlating url string
   ///
   /// - Parameters:
@@ -119,7 +119,7 @@ final class RequestUrlBuilder {
       return replacePlaceholders(for: url, with: parameters)
     }
   }
-
+  
   private func replacePlaceholders(for url: String, with parameters: [Placeholder : String]) -> String {
     var finalisedURL = url
     parameters.forEach { parameter in

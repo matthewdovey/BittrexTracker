@@ -243,7 +243,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - currency: The currency to retrieve or generater an address for
   ///   - completion: Escaping Outcome object
-  public final func getDepositAddress(currency: String, completion: @escaping ((Outcome<[DepositAddress], String>) -> Void)) {
+  public final func getDepositAddress(currency: String, completion: @escaping ((Outcome<DepositAddress, String>) -> Void)) {
     accountApi.getDepositAddress(currency: currency) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))
@@ -282,7 +282,7 @@ public final class BittrexManager {
   /// - Parameters:
   ///   - uuid: The UUID for the order to be retrieved
   ///   - completion: Escaping Outcome object
-  public final func getOrder(uuid: String, completion: @escaping ((Outcome<Order, String>) -> Void)) {
+  final func getOrder(uuid: String, completion: @escaping ((Outcome<Order, String>) -> Void)) {
     accountApi.getOrder(uuid: uuid) { (request) in
       if request.success == true, let data = request.result {
         completion(.success(data: data))

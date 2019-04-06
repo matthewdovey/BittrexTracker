@@ -116,7 +116,8 @@ final class AccountAPI {
   ///   - completion: Escaping DepositAddressRequest object
   final func getDepositAddress(currency: String, completion: @escaping ((DepositAddressRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency,
-                      Placeholder.apiKey : apiKey]
+                      Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .depositAddress, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
@@ -213,7 +214,8 @@ final class AccountAPI {
   ///   - completion: Escaping OrderHistoryRequest object
   final func getOrderHistory(market: String, completion: @escaping ((OrderHistoryRequest) -> Void)) {
     let parameters = [Placeholder.market : market,
-                      Placeholder.apiKey : apiKey]
+                      Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
@@ -240,8 +242,9 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping OrderHistoryRequest object
   final func getOrderHistories(completion: @escaping ((OrderHistoryRequest) -> Void)) {
-    let parameters = [Placeholder.apiKey : apiKey]
-    let url = URL(string: urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters))
+    let parameters = [Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
+    let url = URL(string: urlBuilder.buildUrl(for: .orderHistories, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
     let task = session.dataTask(with: signedUrlRequest.request) { (data, response, error) in
@@ -267,7 +270,8 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping WithdrawalHistoryRequest object
   final func getWithdrawalHistories(completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
-    let parameters = [Placeholder.apiKey : apiKey]
+    let parameters = [Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistories, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
@@ -297,7 +301,8 @@ final class AccountAPI {
   ///   - completion: Escaping WithdrawalHistoryRequest object
   final func getWithdrawalHistory(currency: String, completion: @escaping ((WithdrawalHistoryRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency,
-                      Placeholder.apiKey : apiKey]
+                      Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
@@ -323,7 +328,8 @@ final class AccountAPI {
   ///
   /// - Parameter completion: Escaping DepositHistoryRequest object
   final func getDepositHistories(completion: @escaping ((DepositHistoryRequest) -> Void)) {
-    let parameters = [Placeholder.apiKey : apiKey]
+    let parameters = [Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .depositHistories, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     
@@ -353,7 +359,8 @@ final class AccountAPI {
   ///   - completion: Escaping DepositHistoryRequest object
   final func getDepositHistory(currency: String, completion: @escaping ((DepositHistoryRequest) -> Void)) {
     let parameters = [Placeholder.currency : currency,
-                      Placeholder.apiKey : apiKey]
+                      Placeholder.apiKey : apiKey,
+                      Placeholder.nonce : nonce]
     let url = URL(string: urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters))
     let signedUrlRequest = SignedURLRequest(url: url!, apiKey: apiKey, apiSecret: apiSecret)
     

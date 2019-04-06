@@ -132,40 +132,51 @@ class RequestUrlBuilderTests: XCTestCase {
   }
 
   func testDepositHistoryUrl() {
-    let depositHistoryUrl = urlBuilder.buildUrl(for: .depositHistories, withParameters: [:])
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory"
+    let parameters = [Placeholder.apiKey : API_KEY,
+                      Placeholder.nonce : NONCE]
+    let depositHistoryUrl = urlBuilder.buildUrl(for: .depositHistories, withParameters: parameters)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory?apikey=\(API_KEY)&nonce=\(NONCE)"
     XCTAssertEqual(depositHistoryUrl, actualUrl)
   }
   
   func testDepositHistoryForUrl() {
-    let parameters = [Placeholder.currency : CURRENCY]
+    let parameters = [Placeholder.currency : CURRENCY,
+                      Placeholder.apiKey : API_KEY,
+                      Placeholder.nonce : NONCE]
     let depositHistoryUrl = urlBuilder.buildUrl(for: .depositHistory, withParameters: parameters)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory?currency=\(CURRENCY)"
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getdeposithistory?currency=\(CURRENCY)&apikey=\(API_KEY)&nonce=\(NONCE)"
+    XCTAssertEqual(depositHistoryUrl, actualUrl)
   }
   
   func testOrderHistoriesUrl() {
-    let orderHistoryUrl = urlBuilder.buildUrl(for: .orderHistories, withParameters: [:])
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getorderhistory"
+    let parameters = [Placeholder.apiKey : API_KEY,
+                      Placeholder.nonce : NONCE]
+    let orderHistoryUrl = urlBuilder.buildUrl(for: .orderHistories, withParameters: parameters)
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getorderhistory?apikey=\(API_KEY)&nonce=\(NONCE)"
     XCTAssertEqual(orderHistoryUrl, actualUrl)
   }
   
   func testOrderHistoryUrl() {
-    let parameters = [Placeholder.market : MARKET]
+    let parameters = [Placeholder.market : MARKET,
+                      Placeholder.apiKey : API_KEY,
+                      Placeholder.nonce : NONCE]
     let orderHistoryUrl = urlBuilder.buildUrl(for: .orderHistory, withParameters: parameters)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getorderhistory?market=\(MARKET)"
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getorderhistory?market=\(MARKET)&apikey=\(API_KEY)&nonce=\(NONCE)"
     XCTAssertEqual(orderHistoryUrl, actualUrl)
   }
 
   func testWithdrawalHistoryUrl() {
-    let parameters = [Placeholder.currency : CURRENCY]
+    let parameters = [Placeholder.currency : CURRENCY,
+                      Placeholder.apiKey : API_KEY,
+                      Placeholder.nonce : NONCE]
     let withdrawalHistoryUrl = urlBuilder.buildUrl(for: .withdrawalHistory, withParameters: parameters)
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getwithdrawalhistory?currency=\(CURRENCY)"
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getwithdrawalhistory?currency=\(CURRENCY)&apikey=\(API_KEY)&nonce=\(NONCE)"
     XCTAssertEqual(withdrawalHistoryUrl, actualUrl)
   }
   
   func textWithdrawalHistoriesUrl() {
     let withdrawalHistoriesUrl = urlBuilder.buildUrl(for: .withdrawalHistories, withParameters: [:])
-    let actualUrl = "https://bittrex.com/api/v1.1/account/getwithdrawalhistory"
+    let actualUrl = "https://bittrex.com/api/v1.1/account/getwithdrawalhistory?apikey=\(API_KEY)&nonce=\(NONCE)"
     XCTAssertEqual(withdrawalHistoriesUrl, actualUrl)
   }
 

@@ -18,7 +18,7 @@ A framework acting as a SWIFT wrapper around the Bittrex Exchange APIs allowing 
 
 ## Development Version
 
-- 1.4.1
+- 1.4.2
 
 ## Supported API
 
@@ -38,14 +38,17 @@ Bittrex Market APIs:
 - [ ] getOpenOrders
 
 Bittrex Account APIs:
-- [ ] getBalances
-- [ ] getBalance
-- [ ] getDepositAddress
+- [x] getBalances
+- [x] getBalance
+- [x] getDepositAddress
 - [ ] withdraw
 - [ ] getOrder
-- [ ] getOrderHistory
-- [ ] getWithdrawalHistory
-- [ ] getDepositHistory
+- [x] getOrderHistories
+- [x] getOrderHistory
+- [x] getWithdrawalHistories
+- [x] getWithdrawalHistory
+- [x] getDepositHistories
+- [x] getDepositHistory
 
 ## Requirements
 
