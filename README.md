@@ -38,14 +38,17 @@ Bittrex Market APIs:
 - [ ] getOpenOrders
 
 Bittrex Account APIs:
-- [ ] getBalances
-- [ ] getBalance
-- [ ] getDepositAddress
+- [x] getBalances
+- [x] getBalance
+- [x] getDepositAddress
 - [ ] withdraw
 - [ ] getOrder
-- [ ] getOrderHistory
-- [ ] getWithdrawalHistory
-- [ ] getDepositHistory
+- [x] getOrderHistories
+- [x] getOrderHistory
+- [x] getWithdrawalHistories
+- [x] getWithdrawalHistory
+- [x] getDepositHistories
+- [x] getDepositHistory
 
 ## Requirements
 
