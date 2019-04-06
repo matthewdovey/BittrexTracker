@@ -12,9 +12,9 @@ import Foundation
 struct DepositAddressRequest: Decodable {
   let success: Bool?
   let message: String?
-  let result: [DepositAddress]?
+  let result: DepositAddress?
   
-  init(success: Bool?, message: String?, result: [DepositAddress]?) {
+  init(success: Bool?, message: String?, result: DepositAddress?) {
     self.success = success
     self.message = message
     self.result = result
